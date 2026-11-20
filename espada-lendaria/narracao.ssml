@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Narração para TTS (pt-BR). Voz masculina grave; ritmo acelerado.
+     Pausas: 0,5 s nas reticências, 1 s antes de "digno".
+     Cada <p> marca o início de uma cena; alinhe na edição pelos tempos do roteiro. -->
+<speak version="1.1" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="pt-BR">
+  <prosody rate="110%" pitch="-15%">
+    <!-- Cena 1: 0–6 s -->
+    <p>Há mil anos, uma espada lendária desapareceu<break time="500ms"/> e todos os reinos queriam encontrá-la.</p>
+    <!-- Cena 2: 6–13 s -->
+    <p>Diziam que seu poder poderia transformar qualquer homem no senhor de todos os reinos.</p>
+    <!-- Cena 3: 13–21 s -->
+    <p>Mas enquanto os maiores guerreiros fracassavam<break time="500ms"/> um simples camponês decidiu tentar.</p>
+    <!-- Cena 4: 21–29 s -->
+    <p>Depois de enfrentar o guardião da floresta, ele finalmente encontrou a espada.</p>
+    <!-- Cena 5: 29–39 s (1 s de silêncio no início da cena) -->
+    <p><break time="1s"/>Mas a espada não escolhia o mais forte<break time="500ms"/> ela escolhia aquele que era<break time="1s"/> <emphasis level="strong">digno.</emphasis></p>
+    <!-- Cena 6: 39–45 s -->
+    <p>O que Arthur não sabia<break time="500ms"/> era que retirar aquela espada havia despertado algo que deveria permanecer adormecido.</p>
+  </prosody>
+</speak>
