@@ -1,0 +1,10 @@
+{
+  "name": "o-livro-proibido",
+  "private": true,
+  "description": "Série de animação 3D procedural (Three.js) — O Livro Proibido",
+  "scripts": {
+    "previa": "node render.js --preview 3,15,24,27,30,33,38,42,48,50,52,55,58,64,69,71,74 --scale 0.5",
+    "render": "node render.js --out build/ep01_sem_legenda.mp4"
+  },
+  "dependencies": { "three": "0.170.0" }
+}
