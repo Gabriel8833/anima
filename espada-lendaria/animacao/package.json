@@ -1,0 +1,6 @@
+{
+  "name": "espada-lendaria-animacao",
+  "private": true,
+  "description": "Animação procedural (Three.js) de A Espada Lendária",
+  "dependencies": { "three": "0.170.0" }
+}

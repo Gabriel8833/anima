@@ -1,0 +1,23 @@
+{
+  "_doc": "Momentos-chave (segundos) usados pela animação (main.js) e pela trilha sonora (trilha.py).",
+  "cuts": [1.3, 2.3, 2.9, 9.6, 11.0, 16.2, 18.4, 22.5, 23.95, 25.3, 26.95, 32.4, 34.6, 37.6],
+  "eyeOn": 21.3,
+  "growl": 21.6,
+  "knightSteps": [22.6, 23.0, 25.75, 26.0, 26.25],
+  "swing": 23.55,
+  "clash": 23.9,
+  "slam": 24.75,
+  "roll": 24.45,
+  "trip": 26.4,
+  "crash": 26.85,
+  "roar": 27.2,
+  "dissolve": 27.6,
+  "whiteFlash": 29.0,
+  "grip": 33.4,
+  "pull": 34.6,
+  "burst": 36.0,
+  "goldFlash": 39.0,
+  "shadowRise": 39.3,
+  "eyesOpen": 41.8,
+  "end": 44.6
+}

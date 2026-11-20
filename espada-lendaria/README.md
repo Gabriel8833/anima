@@ -8,6 +8,8 @@ Animação 3D vertical (9:16), 45 s, 6 cenas. Reino de Eldoria, espada Excalion,
 | [narracao.txt](narracao.txt) | Texto limpo da narração, para gravar ou colar num gerador de voz |
 | [narracao.ssml](narracao.ssml) | Narração em SSML com as pausas (0,5 s / 1 s) para TTS que aceita SSML |
 | [legendas.srt](legendas.srt) | Legendas com os tempos de cada cena |
+| [espada_lendaria.mp4](espada_lendaria.mp4) | Animação 3D procedural de 45 s (1080×1920, 30 fps) com narração-guia sintética, trilha, efeitos e legendas |
+| [animacao/](animacao/LEIAME.md) | Código que gera o vídeo (Three.js + Python) |
 | [prompts.md](prompts.md) | Prompts por cena para geradores de imagem/vídeo 3D, com bloco de continuidade |
 
 ## Observação de tempo
