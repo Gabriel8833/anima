@@ -1,136 +1,102 @@
-// Objetos recorrentes: o Livro Proibido, altares, colunas, estantes, velas, porta de pedra.
-import { THREE, V, rng, lerp, std, mesh, glowSprite, mergeGeometries, drawRune } from '../motor/base.js';
+// Objetos recorrentes: o Livro Proibido, altar, velas, estantes, porta de pedra, bola de cristal.
+import { TAU, lerp, clamp, rng, rgba } from '../motor/base.js';
+import { OUT, shape, circle, ellipse, poly, line, glow, rrect, rune, sparkle } from '../motor/desenho.js';
 
-// Textura de página: linhas de "escrita" rúnica e um diagrama circular.
-function pageTex(seed) {
-  const c = document.createElement('canvas'); c.width = 256; c.height = 360; const x = c.getContext('2d');
-  x.fillStyle = '#000'; x.fillRect(0, 0, 256, 360);
-  const r = rng(seed);
-  x.strokeStyle = '#fff'; x.lineCap = 'round'; x.lineWidth = 2.2;
-  for (let line = 0; line < 13; line++) {
-    let px = 26; const y = 32 + line * 24;
-    if (line >= 4 && line <= 8 && seed % 2) { if (line === 6) { x.lineWidth = 3; x.beginPath(); x.arc(128, y, 52, 0, 6.28); x.stroke(); x.beginPath(); x.arc(128, y, 30, 0, 6.28); x.stroke(); for (let i = 0; i < 6; i++) drawRune(x, 128 + Math.cos(i) * 42, y + Math.sin(i) * 42, 7, r); x.lineWidth = 2.2; } continue; }
-    while (px < 225) { drawRune(x, px, y, 6 + r() * 2, r); px += 14 + r() * 6; if (r() < 0.12) px += 12; }
-  }
-  const t = new THREE.CanvasTexture(c); return t;
-}
-
-// O Livro: capa, miolo, páginas com runas brilhantes e uma página que vira sozinha.
-export function makeBook() {
-  const g = new THREE.Group();
-  const leather = std(0x3a1410, 0.6), goldM = std(0xd2a53c, 0.3, 1), paper = std(0x8a7c62, 0.95);
-  const W = 0.36, Hh = 0.5;
-  const halves = [];
-  for (const s of [-1, 1]) {
-    const half = new THREE.Group(); g.add(half); halves.push(half);
-    const cover = mesh(new THREE.BoxGeometry(W, 0.018, Hh), leather); cover.position.set(s * W / 2, 0, 0); half.add(cover);
-    for (const cz of [-1, 1]) { const corner = mesh(new THREE.BoxGeometry(0.06, 0.022, 0.06), goldM); corner.position.set(s * (W - 0.03), 0, cz * (Hh / 2 - 0.03)); half.add(corner); }
-    const block = mesh(new THREE.BoxGeometry(W - 0.03, 0.05, Hh - 0.03), paper); block.position.set(s * (W / 2 - 0.005), 0.034, 0); half.add(block);
-    const texM = new THREE.MeshStandardMaterial({ color: 0x8a7c62, roughness: 0.95, emissive: 0x7fd8ff, emissiveMap: pageTex(s > 0 ? 3 : 4), emissiveIntensity: 1 });
-    const page = mesh(new THREE.PlaneGeometry(W - 0.06, Hh - 0.06), texM, false); page.rotation.x = -Math.PI / 2; page.position.set(s * (W / 2 - 0.005), 0.0605, 0); half.add(page);
-    half.userData.pageMat = texM;
-  }
-  const spine = mesh(new THREE.CylinderGeometry(0.03, 0.03, Hh, 12, 1, false, 0, Math.PI), leather); spine.rotation.x = Math.PI / 2; spine.rotation.y = Math.PI; spine.position.y = -0.005; g.add(spine);
-  const emblem = mesh(new THREE.TorusGeometry(0.05, 0.01, 6, 20), goldM); emblem.rotation.x = Math.PI / 2; emblem.position.set(0.18, -0.012, 0); halves[1].add(emblem);
-  // página que vira (pivô na lombada, segmentada para curvar)
-  const pg = new THREE.PlaneGeometry(W - 0.04, Hh - 0.04, 12, 1); pg.rotateX(-Math.PI / 2); pg.translate((W - 0.04) / 2, 0, 0);
-  const turnTex = pageTex(5);
-  const turnMat = new THREE.MeshStandardMaterial({ color: 0xb8a888, roughness: 0.9, side: THREE.DoubleSide, emissive: 0xff2a1a, emissiveMap: turnTex, emissiveIntensity: 0 });
-  const turn = mesh(pg, turnMat, false); turn.position.y = 0.062; g.add(turn);
-  turn.userData.base = Float32Array.from(pg.attributes.position.array);
-  const light = new THREE.PointLight(0x7fd8ff, 3, 5, 1.6); light.position.y = 0.3; g.add(light);
-  const glow = glowSprite(0x9fe4ff, 1.2, 0.5); glow.position.y = 0.1; g.add(glow);
-  g.userData = { halves, turn, turnMat, light, glow, W };
-  setBookOpen(g, 1);
-  return g;
-}
-export function setBookOpen(b, k) {
-  const a = lerp(Math.PI / 2 - 0.02, 0.12, k);
-  b.userData.halves[0].rotation.z = -a; b.userData.halves[1].rotation.z = a;
-}
-// u 0..1: página vira da direita para a esquerda, curvando
-export function turnPage(b, u, color = null) {
-  const t = b.userData.turn, base = t.userData.base, p = t.geometry.attributes.position;
-  const ang = Math.PI * u, bend = Math.sin(Math.PI * u) * 0.9;
-  for (let i = 0; i < p.count; i++) {
-    const x = base[i * 3], z = base[i * 3 + 2];
-    const d = x / (b.userData.W - 0.04);
-    const a = ang + bend * d * 0.6 - 0.06;
-    const r = x;
-    p.setXYZ(i, Math.cos(a) * r, Math.sin(a) * r + 0.003, z);
-  }
-  p.needsUpdate = true; t.geometry.computeVertexNormals();
-}
-export function bookGlow(b, k, color = 0x7fd8ff) {
-  const u = b.userData;
-  u.halves.forEach(h => { h.userData.pageMat.emissive.set(color); h.userData.pageMat.emissiveIntensity = k * 1.6; });
-  u.light.color.set(color); u.light.intensity = k * 6; u.glow.material.color.set(color); u.glow.material.opacity = k * 0.6;
-}
-
-// Altar de pedra com degraus e runas
-export function makeAltar(runeColor = 0x5fd0ff) {
-  const g = new THREE.Group();
-  const stone = std(0x5d5a56, 0.95, 0, { flatShading: true });
-  const parts = [[2.6, 0.2, 2.6, 0.1], [1.9, 0.2, 1.9, 0.3], [0.9, 0.75, 0.9, 0.775], [1.3, 0.14, 1.3, 1.22]];
-  parts.forEach(([w, h, d, y]) => { const m = mesh(new THREE.BoxGeometry(w, h, d), stone); m.position.y = y; g.add(m); });
-  const rm = new THREE.MeshBasicMaterial({ color: runeColor, transparent: true, opacity: 0.6 });
-  for (let k = 0; k < 4; k++) for (let i = 0; i < 3; i++) {
-    const r = mesh(new THREE.BoxGeometry(0.05, 0.16, 0.01), rm, false);
-    const a = k * Math.PI / 2; r.position.set(Math.sin(a) * 0.456 + Math.cos(a) * (i - 1) * 0.22, 0.8, Math.cos(a) * 0.456 - Math.sin(a) * (i - 1) * 0.22);
-    r.rotation.y = a; r.rotation.z = (i - 1) * 0.4; g.add(r);
-  }
-  g.userData = { runeMat: rm, top: 1.29 };
-  return g;
-}
-
-// Coluna clássica (opcionalmente quebrada)
-export function columnGeo(x, z, h, r = 0.5, broken = 0, seed = 1) {
-  const R = rng(seed), geos = [];
-  const base = new THREE.BoxGeometry(r * 2.6, 0.4, r * 2.6); base.translate(x, 0.2, z); geos.push(base);
-  const hh = h * (broken ? lerp(0.35, 0.75, R()) : 1);
-  const sh = new THREE.CylinderGeometry(r * 0.92, r, hh, 16); sh.translate(x, 0.4 + hh / 2, z); geos.push(sh);
-  if (!broken) { const cap = new THREE.BoxGeometry(r * 2.6, 0.45, r * 2.6); cap.translate(x, 0.4 + hh + 0.22, z); geos.push(cap); }
-  return geos;
-}
-
-// Estante com livros (geometrias para mesclar)
-export function shelfGeos(x, z, rotY, w = 3, h = 4, seed = 1) {
-  const R = rng(seed), wood = [], books = [], cols = [];
-  const m = new THREE.Matrix4().makeRotationY(rotY).setPosition(x, 0, z);
-  const add = (arr, g) => { g.applyMatrix4(m); arr.push(g); };
-  add(wood, new THREE.BoxGeometry(w, h, 0.08).translate(0, h / 2, -0.25));
-  for (const s of [-1, 1]) add(wood, new THREE.BoxGeometry(0.1, h, 0.55).translate(s * w / 2, h / 2, 0));
-  const rows = Math.floor(h / 0.6);
-  const palette = [0x5a1e1a, 0x1e3a5a, 0x2e4a22, 0x4a3a1a, 0x3a1e4a, 0x6a5030, 0x222222];
-  for (let i = 0; i <= rows; i++) {
-    const y = i * (h / rows);
-    add(wood, new THREE.BoxGeometry(w, 0.06, 0.55).translate(0, y + 0.03, 0));
-    if (i === rows) break;
-    let px = -w / 2 + 0.08;
-    while (px < w / 2 - 0.12) {
-      const bw = lerp(0.05, 0.12, R()), bh = lerp(0.3, 0.5, R());
-      if (R() < 0.08) { px += 0.15; continue; }
-      const g = new THREE.BoxGeometry(bw, bh, lerp(0.3, 0.42, R())).translate(px + bw / 2, y + 0.06 + bh / 2, 0.02);
-      if (R() < 0.1) g.rotateZ(0.0);
-      const c = new THREE.Color(palette[Math.floor(R() * palette.length)]).multiplyScalar(lerp(0.6, 1.2, R()));
-      const n = g.attributes.position.count; const ca = new Float32Array(n * 3); for (let k = 0; k < n; k++) { ca[k * 3] = c.r; ca[k * 3 + 1] = c.g; ca[k * 3 + 2] = c.b; }
-      g.setAttribute('color', new THREE.BufferAttribute(ca, 3));
-      add(books, g); px += bw + 0.005;
+// O Livro aberto, visto de frente e de cima. s = escala; brilho 0..1; cor do brilho; virar 0..1 (página virando)
+export function livro(c, x, y, s, t, { brilho = 1, cor = '#7fd8ff', virar = 0, flutuar = true } = {}) {
+  const fy = flutuar ? Math.sin(t * 1.6) * 10 * s : 0;
+  c.save(); c.translate(x, y + fy); c.scale(s, s);
+  glow(c, 0, -10, 260, cor, 0.55 * brilho);
+  // sombra/capa
+  shape(c, c => { c.moveTo(-190, 10); c.quadraticCurveTo(-100, -10, 0, 18); c.quadraticCurveTo(100, -10, 190, 10); c.lineTo(178, 64); c.quadraticCurveTo(90, 44, 0, 72); c.quadraticCurveTo(-90, 44, -178, 64); c.closePath(); }, '#6a2230');
+  for (const sx of [-1, 1]) {
+    // bloco de páginas
+    shape(c, c => { c.moveTo(0, 50); c.quadraticCurveTo(sx * 90, 22, sx * 172, 44); c.lineTo(sx * 180, -2); c.quadraticCurveTo(sx * 92, -24, 0, 6); c.closePath(); }, '#f4e6c4');
+    line(c, [[sx * 172, 44], [sx * 176, 30], [sx * 178, 14]], '#c9b48a', 3);
+    // linhas de runas
+    for (let i = 0; i < 6; i++) {
+      const yy = -2 + i * 7.5, x0 = sx * 22, x1 = sx * (150 - (i === 5 ? 50 : 0));
+      c.save(); c.globalAlpha *= 0.35 + brilho * 0.65; c.strokeStyle = brilho > 0.2 ? cor : '#8a7a5a'; c.lineWidth = 4; c.setLineDash([10, 6]); c.beginPath(); c.moveTo(x0, yy + 6 - Math.abs(x0) * 0.02); c.quadraticCurveTo((x0 + x1) / 2, yy - 6, x1, yy + 4); c.stroke(); c.restore();
     }
   }
-  return { wood, books };
+  line(c, [[0, 6], [0, 50]], '#c9b48a', 3);
+  // cantos dourados e marcador
+  for (const sx of [-1, 1]) poly(c, [[sx * 190, 10], [sx * 164, 4], [sx * 178, 64]], '#e3b23c', { lw: 4 });
+  shape(c, c => { c.moveTo(-8, 60); c.lineTo(-8, 110); c.lineTo(0, 100); c.lineTo(8, 110); c.lineTo(8, 60); c.closePath(); }, '#c0182c', { lw: 4 });
+  // página virando (direita → esquerda)
+  if (virar > 0 && virar < 1) {
+    const ang = virar * Math.PI, w = Math.cos(ang) * 172, lift = Math.sin(ang) * 120;
+    shape(c, c => { c.moveTo(0, 6); c.quadraticCurveTo(w * 0.5, -lift - 20, w, -lift * 0.7 - 2); c.lineTo(w * 1.02, -lift * 0.7 + 40); c.quadraticCurveTo(w * 0.5, -lift + 30, 0, 50); c.closePath(); }, '#fbf0d6');
+    glow(c, w * 0.6, -lift * 0.5, 120, '#ff3020', virar * 0.8);
+  }
+  aura(c, 0, -60, 150, cor, t, brilho * 0.8);
+  c.restore();
+}
+function aura(c, x, y, r, cor, t, a) {
+  for (let i = 0; i < 8; i++) { const an = i / 8 * TAU + t * 0.6; rune(c, x + Math.cos(an) * r * 1.2, y + Math.sin(an) * r * 0.45 - 40, 13, 200 + i, cor, a * (0.6 + 0.4 * Math.sin(t * 3 + i))); }
 }
 
-// Vela com chama
-export function makeCandle(h = 0.25, color = 0xffb060, light = true) {
-  const g = new THREE.Group();
-  g.add(mesh(new THREE.CylinderGeometry(0.035, 0.04, h, 10), std(0xe8dcc0, 0.7)));
-  const flame = glowSprite(color, 0.18, 0.95); flame.position.y = h / 2 + 0.05; flame.scale.set(0.09, 0.16, 1); g.add(flame);
-  const halo = glowSprite(color, 0.7, 0.35); halo.position.y = h / 2 + 0.05; g.add(halo);
-  if (light) { const l = new THREE.PointLight(color, 1.6, 6, 1.6); l.position.y = h / 2 + 0.1; g.add(l); g.userData.light = l; }
-  g.userData.flame = flame; g.userData.ph = Math.random() * 6;
-  return g;
+// Pedestal de pedra
+export function altar(c, x, y, s = 1, runa = '#6fd8ff', a = 0.8) {
+  c.save(); c.translate(x, y); c.scale(s, s);
+  rrect(c, -170, -40, 340, 50, 10, '#6a6878');
+  rrect(c, -120, -90, 240, 56, 10, '#7a7888');
+  rrect(c, -70, -300, 140, 214, 8, '#8a8898');
+  rrect(c, -110, -330, 220, 44, 10, '#9a98a8');
+  for (let i = 0; i < 3; i++) rune(c, -40 + i * 40, -200 + (i % 2) * 30, 14, 40 + i, runa, a);
+  line(c, [[-50, -250], [-30, -230], [-44, -210]], '#5a5868', 4);
+  c.restore();
 }
-export function flickerCandles(list, t) {
-  list.forEach((c, i) => { const f = 1 + 0.15 * Math.sin(t * 13 + i * 2.3) + 0.08 * Math.sin(t * 29 + i); c.userData.flame.scale.set(0.09 * f, 0.16 * f, 1); if (c.userData.light) c.userData.light.intensity = 1.6 * f; });
+// Vela flutuante
+export function vela(c, x, y, s, t, cor = '#ffb040', i = 0) {
+  const f = 1 + 0.15 * Math.sin(t * 13 + i * 2.3), by = Math.sin(t * 1.3 + i) * 8;
+  c.save(); c.translate(x, y + by); c.scale(s, s);
+  glow(c, 0, -60, 90 * f, cor, 0.7);
+  rrect(c, -14, -40, 28, 70, 6, '#f5ecd8', { lw: 4 });
+  shape(c, c => { c.moveTo(0, -78 * f); c.quadraticCurveTo(14, -52, 0, -44); c.quadraticCurveTo(-14, -52, 0, -78 * f); }, cor, { lw: 3 });
+  ellipse(c, 0, -52, 4, 6, '#ffffff', { stroke: null });
+  c.restore();
+}
+// Estante cheia de livros coloridos
+const BOOKC = ['#d9534f', '#f0ad4e', '#5cb85c', '#5bc0de', '#9b59b6', '#e67e22', '#3a6fd6', '#c0392b', '#16a085'];
+export function estante(c, x, y, w, h, seed = 1) {
+  const r = rng(seed);
+  rrect(c, x, y, w, h, 6, '#7a4a2e');
+  const rows = Math.floor(h / 150);
+  for (let i = 0; i < rows; i++) {
+    const yy = y + 16 + i * (h - 20) / rows, rh = (h - 20) / rows - 16;
+    c.fillStyle = '#4a2a1a'; c.fillRect(x + 12, yy, w - 24, rh);
+    let px = x + 16;
+    while (px < x + w - 30) {
+      const bw = 16 + r() * 18, bh = rh * (0.7 + r() * 0.28);
+      if (r() < 0.08) { px += 20; continue; }
+      rrect(c, px, yy + rh - bh, bw, bh, 3, BOOKC[Math.floor(r() * BOOKC.length)], { lw: 3 });
+      line(c, [[px + 4, yy + rh - bh + 14], [px + bw - 4, yy + rh - bh + 14]], '#ffffff', 2, 0.6);
+      px += bw + 2;
+    }
+    rrect(c, x + 4, yy + rh, w - 8, 14, 3, '#9a6a44', { lw: 4 });
+  }
+}
+// Porta de pedra dupla (k = abertura 0..1)
+export function portaPedra(c, x, y, w, h, k, glifo = '#6fd8ff') {
+  const half = w / 2, off = k * half * 0.95;
+  for (const s of [-1, 1]) {
+    c.save(); c.beginPath(); c.rect(x - w / 2 - 10, y - h - 10, w + 20, h + 20); c.clip();
+    const x0 = s < 0 ? x - half - off : x + off;
+    rrect(c, x0, y - h, half, h, 6, '#6e6a7a');
+    for (let i = 1; i < 5; i++) line(c, [[x0 + 6, y - h + i * h / 5], [x0 + half - 6, y - h + i * h / 5]], '#5a5666', 4);
+    shape(c, c => c.arc(s < 0 ? x0 + half : x0, y - h * 0.55, half * 0.55, s < 0 ? Math.PI / 2 : -Math.PI / 2, s < 0 ? Math.PI * 1.5 : Math.PI / 2), null, { stroke: glifo, lw: 8 });
+    c.restore();
+  }
+  glow(c, x, y - h * 0.55, half * 1.2, glifo, 0.35 * (1 - k));
+}
+// Bola de cristal com imagem do livro dentro
+export function bolaCristal(c, x, y, r, t, a = 1, cor = '#ff2a3a') {
+  rrect(c, x - r * 0.7, y + r * 0.7, r * 1.4, r * 0.5, 10, '#3a2a3a');
+  glow(c, x, y, r * 2.2, cor, 0.6 * a);
+  circle(c, x, y, r, '#2a1030');
+  c.save(); c.beginPath(); c.arc(x, y, r - 4, 0, TAU); c.clip();
+  c.globalAlpha = a; livro(c, x, y + r * 0.15, r / 320, t, { brilho: 1, cor, flutuar: false });
+  c.restore();
+  ellipse(c, x - r * 0.35, y - r * 0.4, r * 0.2, r * 0.12, 'rgba(255,255,255,0.6)', { stroke: null }, -0.6);
 }

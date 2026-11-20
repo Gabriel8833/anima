@@ -1,0 +1,24 @@
+{
+  "titulo": "O Livro Proibido",
+  "episodio": "Episódio 1 — A Guerra dos Magos",
+  "duracao": 76,
+  "cenas": {
+    "c1_era_da_magia": [0, 11],
+    "c2_livro_sagrado": [11, 22],
+    "c3_quatro_magos": [22, 34],
+    "c4_descoberta": [34, 46],
+    "c5_guerra": [46, 61],
+    "c6_final": [61, 73]
+  },
+  "tela_preta": 73.0,
+  "continua": [73.6, 76],
+  "narracao": [
+    { "cena": 1, "inicio": 0.8,  "fim": 10.4, "texto": "Em uma era esquecida pelo tempo, quando a magia governava os reinos, existia um segredo capaz de mudar o destino de toda a humanidade." },
+    { "cena": 2, "inicio": 11.6, "fim": 21.4, "texto": "Diziam que existia um livro contendo os feitiços mais poderosos já criados. Um livro capaz de controlar a vida, a morte e até mesmo o tempo." },
+    { "cena": 3, "inicio": 22.4, "fim": 33.6, "texto": "Durante séculos, os maiores feiticeiros procuraram esse artefato. Alguns desejavam poder. Outros queriam impedir que ele caísse nas mãos erradas." },
+    { "cena": 4, "inicio": 34.6, "fim": 45.6, "texto": "Até que, durante uma noite de eclipse, um jovem mago chamado Kael encontrou aquilo que todos procuravam: a localização do livro." },
+    { "cena": 5, "inicio": 46.8, "fim": 58.8, "texto": "Quando a notícia se espalhou, os magos iniciaram uma guerra. Reinos inteiros foram destruídos. Ninguém estava disposto a desistir do poder absoluto." },
+    { "cena": 6, "inicio": 63.0, "fim": 68.4, "texto": "Mas quando Kael finalmente encontrou o livro, percebeu algo que jamais deveria ter acontecido..." },
+    { "cena": 6, "inicio": 70.4, "fim": 72.8, "texto": "...alguém havia acabado de ler a última página." }
+  ]
+}

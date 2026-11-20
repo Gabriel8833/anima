@@ -1,24 +1,23 @@
-// Renderiza um episódio quadro a quadro no Chromium (Playwright) e gera o MP4 com ffmpeg.
-//   node render.js [--ep ep01] [--out build/ep01_sem_legenda.mp4] [--fps 30] [--start 0] [--end <duração>] [--scale 1]
+// Renderiza um episódio 2D quadro a quadro no Chromium (Playwright) e gera o MP4 com ffmpeg.
+//   node render.js [--ep ep01] [--legendas 0|1] [--out arquivo.mp4] [--fps 30] [--start 0] [--end <duração>] [--scale 1]
 //   node render.js --preview 3,15,24 --outdir previas --scale 0.5      (só quadros soltos em JPG)
 const { chromium } = require('playwright');
 const http = require('http'), fs = require('fs'), path = require('path'), { spawn } = require('child_process');
 const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i > 0 ? process.argv[i + 1] : d; };
-const MOD = path.resolve(arg('modules', path.join(__dirname, 'node_modules')));
-const EP = arg('ep', 'ep01'), FPS = +arg('fps', 30), SCALE = +arg('scale', 1);
-const PREVIEW = arg('preview', null), OUTDIR = arg('outdir', 'previas'), OUT = arg('out', `build/${EP}_sem_legenda.mp4`);
+const LEG = arg('legendas', '0'); const EP = arg('ep', 'ep01'), FPS = +arg('fps', 30), SCALE = +arg('scale', 1);
+const PREVIEW = arg('preview', null), OUTDIR = arg('outdir', 'previas'), OUT = arg('out', `build/${EP}_${LEG === '1' ? 'com' : 'sem'}_legenda.mp4`);
 const types = { '.js': 'text/javascript', '.html': 'text/html', '.json': 'application/json' };
 const srv = http.createServer((q, s) => {
   const u = decodeURIComponent(q.url.split('?')[0]);
-  const f = u.startsWith('/node_modules/') ? path.join(MOD, u.slice(14)) : path.join(__dirname, u === '/' ? 'index.html' : u);
+  const f = path.join(__dirname, u === '/' ? 'index.html' : u);
   fs.readFile(f, (e, d) => { if (e) { s.writeHead(404); return s.end(); } s.writeHead(200, { 'Content-Type': types[path.extname(f)] || 'application/octet-stream' }); s.end(d); });
 }).listen(0);
 (async () => {
-  const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
+  const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 540, height: 960 } });
   page.on('console', m => { if (!/GPU stall|GL Driver/.test(m.text())) console.log('[página]', m.text()); });
   page.on('pageerror', e => { console.error('[erro]', e.message, e.stack); process.exit(1); });
-  await page.goto(`http://localhost:${srv.address().port}/index.html?ep=${EP}&scale=${SCALE}`);
+  await page.goto(`http://localhost:${srv.address().port}/index.html?ep=${EP}&scale=${SCALE}&legendas=${LEG}`);
   await page.waitForFunction('window.ready === true', null, { timeout: 900000 });
   const dur = await page.evaluate('window.duracao');
   const START = +arg('start', 0), END = +arg('end', dur);

@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Gera as legendas do episódio (.srt e .ass) a partir de episodios/<ep>/tempos.json.
+"""Gera as legendas do episódio em .srt (frases curtas) a partir de episodios/<ep>/tempos.json.
+
+O vídeo "com legenda" já traz as legendas queimadas palavra por palavra (desenhadas pelo episodio.js);
+este .srt serve para importar no seu editor de vídeo.
 
 Uso: python3 legendas.py [ep01] [pasta_saida]
 
@@ -81,25 +84,6 @@ def ass_t(s):
 with open(os.path.join(OUT, f"{EP}.srt"), "w", encoding="utf-8") as f:
     for i, (a, b, txt) in enumerate(itens, 1):
         f.write(f"{i}\n{srt_t(a)} --> {srt_t(b)}\n" + "\n".join(quebra(txt)) + "\n\n")
-
-ASS_HEAD = """[Script Info]
-ScriptType: v4.00+
-PlayResX: 1080
-PlayResY: 1920
-WrapStyle: 2
-
-[V4+ Styles]
-Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Legenda,Inter,66,&H00FFFFFF,&H00FFFFFF,&H00100A05,&H96000000,-1,0,0,0,100,100,0,0,1,7,3,2,90,90,520,1
-
-[Events]
-Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-"""
-with open(os.path.join(OUT, f"{EP}.ass"), "w", encoding="utf-8") as f:
-    f.write(ASS_HEAD)
-    for a, b, txt in itens:
-        linhas = "\\N".join(quebra(txt))
-        f.write(f"Dialogue: 0,{ass_t(a)},{ass_t(b)},Legenda,,0,0,0,,{{\\fad(120,120)\\fscx108\\fscy108\\t(0,160,\\fscx100\\fscy100)}}{linhas}\n")
 
 for a, b, txt in itens:
     print(f"{a:6.2f}-{b:6.2f}  {txt}")

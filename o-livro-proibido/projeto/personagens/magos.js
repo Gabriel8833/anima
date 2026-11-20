@@ -1,103 +1,97 @@
-// Personagens da série. A aparência de cada um é definida só aqui, para ficar idêntica em todas as cenas.
-import { THREE, V, rng, std, mesh, taperTube, glowSprite } from '../motor/base.js';
-import { humanoid, robe, face } from '../motor/rig.js';
-
-function hairCap(h, mat, { tufts = 14, seed = 1, size = 1 } = {}) {
-  const c = mesh(new THREE.SphereGeometry(0.13, 24, 16, 0, Math.PI * 2, 0, Math.PI * 0.56), mat);
-  c.position.set(0, 0.17, -0.012); c.rotation.x = -0.35; c.scale.set(1.0, 1.05, 1.07); h.head.add(c);
-  const r = rng(seed);
-  for (let i = 0; i < tufts; i++) {
-    const a = r() * Math.PI * 2, el = 0.3 + r() * 0.8;
-    const t = mesh(new THREE.SphereGeometry((0.026 + r() * 0.016) * size, 8, 6), mat);
-    t.position.set(Math.cos(a) * Math.sin(el) * 0.127, 0.17 + Math.cos(el) * 0.13, Math.sin(a) * Math.sin(el) * 0.127 - 0.012);
-    h.head.add(t);
-  }
-}
+// Os quatro magos da série. A aparência de cada um fica definida só aqui (igual em todas as cenas).
+import { TAU, lerp } from '../motor/base.js';
+import { OUT, shape, circle, ellipse, poly, line, glow, star5 } from '../motor/desenho.js';
+import { Personagem } from '../motor/personagem.js';
 
 // KAEL — jovem mago (~22 anos), cabelo prateado, olhos azuis, roupas azuis com detalhes prateados.
-export function makeKael() {
-  const skin = std(0xf0cdb0, 0.65);
-  const h = humanoid({ skin, legs: std(0x18233f, 0.9), boots: std(0x2b3248, 0.6, 0.3) });
-  robe(h, { color: 0x1f4fae, trim: 0xd4dbe6, trim2: 0x7fd0ff, mantle: { color: 0x163b85 } });
-  const hair = std(0xdfe5ee, 0.4, 0.35);
-  hairCap(h, hair, { seed: 3, tufts: 14, size: 0.75 });
-  // franja e mechas laterais até o queixo
-  for (const [x, z, rz, len] of [[-0.1, 0.05, 0.25, 0.14], [0.1, 0.05, -0.25, 0.14], [-0.115, -0.02, 0.15, 0.16], [0.115, -0.02, -0.15, 0.16]]) {
-    const m = mesh(new THREE.CapsuleGeometry(0.02, len, 4, 8), hair); m.position.set(x, 0.12, z); m.rotation.z = rz; h.head.add(m);
-  }
-  const fringe = mesh(new THREE.SphereGeometry(0.07, 12, 8), hair); fringe.position.set(0.03, 0.245, 0.08); fringe.scale.set(1.5, 0.5, 0.8); fringe.rotation.z = -0.2; h.head.add(fringe);
-  const back = mesh(new THREE.SphereGeometry(0.12, 16, 12), hair); back.position.set(0, 0.1, -0.06); back.scale.set(1.05, 1.1, 0.8); h.head.add(back);
-  face(h, { iris: 0x2f8cff, brow: 0xc8ced8, skin });
-  h.name = 'Kael'; h.magic = 0x58b4ff;
-  return h;
-}
+export const kael = () => new Personagem({
+  pele: '#fff7f0', olhos: '#2f7bff', sobrancelha: '#9aa6b8',
+  roupa: '#2f6fd6', roupaSombra: '#1c4aa0', manga: '#2f6fd6', enfeite: '#e8eef8', broche: '#9fe0ff', capa: '#1f4fa8',
+  perna: '#26324f', sapato: '#3a4460',
+  cabeloTras: (c) => shape(c, c => { c.moveTo(-70, -300); c.quadraticCurveTo(-86, -250, -64, -228); c.lineTo(64, -228); c.quadraticCurveTo(86, -250, 70, -300); c.closePath(); }, '#d9e1ee'),
+  cabeloFrente: (c) => {
+    // topete prateado com mechas pontudas
+    shape(c, c => {
+      c.moveTo(-76, 4); c.quadraticCurveTo(-90, -70, -30, -82); c.quadraticCurveTo(10, -102, 52, -80);
+      c.quadraticCurveTo(92, -60, 78, 4); c.lineTo(66, -22); c.lineTo(58, -8); c.lineTo(40, -40);
+      c.lineTo(22, -22); c.lineTo(6, -46); c.lineTo(-14, -24); c.lineTo(-28, -44); c.lineTo(-50, -20); c.lineTo(-62, -30); c.closePath();
+    }, '#e6ecf5');
+    line(c, [[-20, -70], [10, -60]], '#ffffff', 5, 0.8);
+    line(c, [[30, -72], [52, -58]], '#b9c4d6', 4, 0.8);
+  },
+});
 
-// MORVATH — mago das sombras: vestes negras, capuz, olhos vermelhos.
-export function makeMorvath() {
-  const skin = std(0xa8a2a6, 0.7);
-  const h = humanoid({ skin, legs: std(0x0a090c, 0.9), boots: std(0x111014, 0.5, 0.4) });
-  robe(h, { color: 0x0d0c11, trim: 0x6a0c16, trim2: 0xff2030, hood: { color: 0x09080c }, mantle: { color: 0x070609 } });
-  face(h, { iris: 0xff2020, glow: true, brow: 0x111111, browSize: 1.25, skin, lips: 0x5a4048 });
-  // olheiras / sombra no rosto
-  const shade = mesh(new THREE.SphereGeometry(0.123, 24, 16, 0, Math.PI * 2, 0, Math.PI * 0.45), new THREE.MeshBasicMaterial({ color: 0x000000, transparent: true, opacity: 0.45 }), false);
-  shade.position.set(0, 0.15, 0.005); shade.scale.set(0.95, 1.1, 1.0); // (sombra removida: o rosto precisa ler na câmera)
-  h.root.scale.setScalar(1.06);
-  h.name = 'Morvath'; h.magic = 0xff2040;
-  return h;
-}
+// MORVATH — mago das sombras: capuz e vestes negras, olhos vermelhos brilhantes.
+export const morvath = () => new Personagem({
+  pele: '#d8d2dc', olhos: '#ff2a2a', sobrancelha: '#1a1420', sobrancelhaW: 8,
+  roupa: '#231c2b', roupaSombra: '#110c16', enfeite: '#c0182c', cinto: '#3a1a24', broche: '#ff2a3a', capa: '#140f1a',
+  perna: '#1a1420', sapato: '#100c14',
+  atrasCabeca: (c) => shape(c, c => { c.moveTo(-96, 40); c.quadraticCurveTo(-110, -70, -20, -112); c.lineTo(0, -138); c.lineTo(20, -112); c.quadraticCurveTo(110, -70, 96, 40); c.quadraticCurveTo(0, 70, -96, 40); c.closePath(); }, '#1d1724'),
+  cabeloFrente: (c) => {
+    // borda do capuz em volta do rosto (com sombra sobre a testa)
+    shape(c, c => { c.moveTo(-96, 40); c.quadraticCurveTo(-110, -70, -20, -112); c.lineTo(0, -138); c.lineTo(20, -112); c.quadraticCurveTo(110, -70, 96, 40); c.lineTo(78, 40); c.quadraticCurveTo(84, -60, 0, -72); c.quadraticCurveTo(-84, -60, -78, 40); c.closePath(); }, '#1d1724');
+    c.save(); c.globalAlpha *= 0.35; c.fillStyle = '#000'; c.beginPath(); c.ellipse(0, -48, 70, 26, 0, 0, TAU); c.fill(); c.restore();
+    line(c, [[-78, 38], [-70, -40], [0, -70], [70, -40], [78, 38]], '#c0182c', 4, 0.9);
+  },
+});
 
 // ELDRIN — mago ancião: barba branca, roupas douradas, cajado luminoso.
-export function makeEldrin() {
-  const skin = std(0xe6c0a2, 0.75);
-  const h = humanoid({ skin, legs: std(0x5a4420, 0.9), boots: std(0x4a3418, 0.7) });
-  robe(h, { color: 0xc89b2f, trim: 0xf6e7b8, trim2: 0xffffff, mantle: { color: 0x8f6a1c } });
-  const white = std(0xf2f0ea, 0.85);
-  hairCap(h, white, { seed: 9, tufts: 10, size: 1.2 });
-  const long = mesh(new THREE.CapsuleGeometry(0.1, 0.18, 6, 12), white); long.position.set(0, 0.04, -0.07); long.scale.set(1.1, 1, 0.6); h.head.add(long);
-  face(h, { iris: 0x6a8fa8, brow: 0xffffff, browSize: 1.5, skin, age: 1 });
-  // barba e bigode
-  const beard = mesh(new THREE.ConeGeometry(0.1, 0.42, 16), white); beard.rotation.x = Math.PI; beard.position.set(0, -0.12, 0.085); beard.scale.z = 0.6; h.face.add(beard);
-  const cheeks = mesh(new THREE.SphereGeometry(0.105, 16, 12, 0, Math.PI * 2, Math.PI * 0.45, Math.PI * 0.55), white); cheeks.position.set(0, -0.02, 0.015); h.face.add(cheeks);
-  for (const s of [-1, 1]) { const m = mesh(new THREE.CapsuleGeometry(0.014, 0.05, 4, 8), white); m.position.set(0.025 * s, -0.04, 0.115); m.rotation.z = 1.2 * s; h.face.add(m); }
-  h.mouth.position.z = 0.122;
-  h.name = 'Eldrin'; h.magic = 0xffc040;
-  return h;
-}
+export const eldrin = () => new Personagem({
+  pele: '#ffefe2', olhos: '#5a7a96', sobrancelha: '#ffffff', sobrancelhaW: 11, blush: 0.35,
+  roupa: '#e3a92e', roupaSombra: '#b07a14', enfeite: '#fff3cf', cinto: '#9a6a12', broche: '#ffffff', capa: '#a8761a',
+  perna: '#6a4a1a', sapato: '#4a3010',
+  cabeloTras: (c) => shape(c, c => { c.moveTo(-80, -300); c.quadraticCurveTo(-96, -230, -60, -214); c.lineTo(60, -214); c.quadraticCurveTo(96, -230, 80, -300); c.closePath(); }, '#f4f2ee'),
+  cabeloFrente: (c, p) => {
+    // tufos laterais, careca no topo com diadema
+    for (const s of [-1, 1]) shape(c, c => { c.moveTo(s * 50, -54); c.quadraticCurveTo(s * 96, -40, s * 82, 10); c.quadraticCurveTo(s * 70, -10, s * 60, -8); c.closePath(); }, '#f4f2ee');
+    shape(c, c => { c.moveTo(-58, -46); c.quadraticCurveTo(0, -66, 58, -46); }, null, { stroke: '#e3b23c', lw: 9 });
+    circle(c, 0, -58, 9, '#9fe4ff', { lw: 4 });
+    // barba volumosa (a boca é redesenhada por cima)
+    shape(c, c => { c.moveTo(-62, 14); c.quadraticCurveTo(-74, 90, -30, 128); c.quadraticCurveTo(-10, 112, 0, 150); c.quadraticCurveTo(10, 112, 30, 128); c.quadraticCurveTo(74, 90, 62, 14); c.quadraticCurveTo(0, 50, -62, 14); c.closePath(); }, '#f6f4f0');
+    line(c, [[-20, 70], [-14, 110]], '#d6d2ca', 4); line(c, [[18, 74], [14, 108]], '#d6d2ca', 4);
+    // bigode
+    for (const s of [-1, 1]) shape(c, c => { c.moveTo(0, 20); c.quadraticCurveTo(s * 30, 8, s * 44, 32); c.quadraticCurveTo(s * 24, 28, 0, 30); c.closePath(); }, '#ffffff', { lw: 4 });
+    const m = p.boca;
+    if (m === 'aberta' || m === 'grito' || m === 'o') ellipse(c, 0, 44, m === 'o' ? 7 : 12, m === 'o' ? 8 : 11, '#8a2028', { lw: 4 });
+  },
+});
 
-// ZARETH — feiticeiro misterioso: cabelo escuro, roupas roxas, poderes desconhecidos.
-export function makeZareth() {
-  const skin = std(0xd6a985, 0.65);
-  const h = humanoid({ skin, legs: std(0x1d1028, 0.9), boots: std(0x20122e, 0.6, 0.3) });
-  robe(h, { color: 0x56288e, trim: 0xb9a0e6, trim2: 0xd060ff, mantle: { color: 0x2c1250 } });
-  const hair = std(0x16121c, 0.55);
-  hairCap(h, hair, { seed: 17, tufts: 16 });
-  const tail = mesh(taperTube([V(0, 0.18, -0.12), V(0, 0.05, -0.16), V(0, -0.12, -0.14), V(0, -0.3, -0.1)], 0.05, 0.015, 8, 12), hair); h.head.add(tail);
-  const lock = mesh(new THREE.CapsuleGeometry(0.026, 0.13, 4, 8), hair); lock.position.set(0.06, 0.17, 0.1); lock.rotation.set(0.4, 0, -0.35); h.head.add(lock);
-  // capuz abaixado (gola)
-  const cowl = mesh(new THREE.TorusGeometry(0.14, 0.06, 10, 24), std(0x3b1a63, 0.9)); cowl.rotation.x = Math.PI / 2 + 0.25; cowl.position.set(0, 0.54, -0.03); h.torso.add(cowl);
-  face(h, { iris: 0xb46cff, brow: 0x16121c, skin });
-  // tatuagem rúnica sob o olho
-  const tat = mesh(new THREE.PlaneGeometry(0.018, 0.035), new THREE.MeshBasicMaterial({ color: 0xc070ff, transparent: true, opacity: 0.9 }), false);
-  tat.position.set(-0.05, -0.02, 0.105); tat.rotation.y = -0.35; h.face.add(tat); h.tattoo = tat;
-  h.name = 'Zareth'; h.magic = 0xa040ff;
-  return h;
-}
+// ZARETH — feiticeiro misterioso: cabelo escuro, roupas roxas, tatuagem rúnica sob o olho.
+export const zareth = () => new Personagem({
+  pele: '#f2c9a4', olhos: '#9a4cff', sobrancelha: '#1c1424',
+  roupa: '#7a3fc4', roupaSombra: '#552a94', enfeite: '#d9c4ff', cinto: '#3a1a6a', broche: '#e070ff', capa: '#3c1c6e',
+  perna: '#2a1a3a', sapato: '#1c1228',
+  cabeloTras: (c, p, t) => {
+    shape(c, c => { c.moveTo(-74, -310); c.quadraticCurveTo(-92, -230, -70, -190); c.lineTo(70, -190); c.quadraticCurveTo(92, -230, 74, -310); c.closePath(); }, '#1f1828');
+    // rabo de cavalo
+    const sw = Math.sin(t * 3) * 6;
+    shape(c, c => { c.moveTo(40, -300); c.quadraticCurveTo(120 + sw, -260, 100 + sw, -150); c.quadraticCurveTo(80, -220, 50, -260); c.closePath(); }, '#1f1828');
+  },
+  cabeloFrente: (c) => {
+    shape(c, c => { c.moveTo(-76, 0); c.quadraticCurveTo(-86, -76, -10, -84); c.quadraticCurveTo(70, -90, 78, -10); c.quadraticCurveTo(50, -50, 20, -46); c.quadraticCurveTo(-20, -40, -40, 10); c.quadraticCurveTo(-56, -10, -76, 0); c.closePath(); }, '#2a2034');
+    line(c, [[0, -70], [30, -64]], '#4a3a5a', 4);
+    // tatuagem rúnica
+    c.save(); c.translate(34, 22); line(c, [[0, -8], [0, 8]], '#b066ff', 4); line(c, [[-6, 0], [6, 0]], '#b066ff', 3); c.restore();
+    glow(c, 34, 22, 18, '#b066ff', 0.6);
+  },
+});
 
-// Cajado de Eldrin (objeto separado; posicionado pela cena na mão do mago)
-export function makeStaff() {
-  const g = new THREE.Group();
-  const pts = []; for (let i = 0; i <= 8; i++) pts.push(V(Math.sin(i * 1.3) * 0.015, -1.05 + i * 0.25, Math.cos(i * 1.7) * 0.015));
-  g.add(mesh(taperTube(pts, 0.03, 0.022, 7, 40), std(0x5a3a1c, 0.8)));
-  const top = V(0, 0.95, 0);
-  for (let k = 0; k < 4; k++) { const a = k / 4 * 6.283; g.add(mesh(taperTube([V(0, 0.9, 0), V(Math.cos(a) * 0.07, 1.0, Math.sin(a) * 0.07), V(Math.cos(a) * 0.03, 1.12, Math.sin(a) * 0.03)], 0.016, 0.004, 5, 8), std(0x5a3a1c, 0.8))); }
-  const orbM = new THREE.MeshStandardMaterial({ color: 0xfff1c0, emissive: 0xffc850, emissiveIntensity: 2, roughness: 0.1 });
-  const orb = mesh(new THREE.SphereGeometry(0.055, 16, 12), orbM, false); orb.position.set(0, 1.03, 0); g.add(orb);
-  const glow = glowSprite(0xffd060, 0.6, 0.8); glow.position.copy(orb.position); g.add(glow);
-  const light = new THREE.PointLight(0xffc850, 4, 8, 1.5); light.position.copy(orb.position); g.add(light);
-  g.userData = { orb, glow, light, orbM, tip: orb };
-  return g;
-}
-export function staffGlow(s, k, t = 0) {
-  const u = s.userData, f = 1 + 0.1 * Math.sin(t * 9);
-  u.orbM.emissiveIntensity = 1 + k * 3; u.glow.material.opacity = 0.5 + k * 0.5; u.glow.scale.setScalar((0.5 + k * 1.2) * f); u.light.intensity = (2 + k * 18) * f;
-}
+// Cajado de Eldrin (desenhado preso à mão)
+export const cajado = (brilho = 1) => (c, side, t) => {
+  c.save(); c.rotate(side * -0.05);
+  shape(c, c => { c.moveTo(-6, 130); c.quadraticCurveTo(4, 40, -4, -120); c.lineTo(8, -120); c.quadraticCurveTo(14, 40, 6, 130); c.closePath(); }, '#7a4a22');
+  for (const a of [-0.6, 0, 0.6]) line(c, [[2, -118], [2 + Math.sin(a) * 26, -150], [2 + Math.sin(a) * 14, -168]], '#7a4a22', 7);
+  const f = 1 + 0.08 * Math.sin(t * 9);
+  glow(c, 2, -150, 70 * brilho * f, '#ffd060', 0.9);
+  circle(c, 2, -150, 15, '#fff4c8', { lw: 4 });
+  c.restore();
+};
+// Pergaminho segurado com as duas mãos (desenhado na mão direita)
+export const pergaminho = (brilho = 0) => (c) => {
+  c.save(); c.translate(-46, -10);
+  shape(c, c => c.roundRect(-50, -40, 100, 70, 6), '#f1deb0');
+  for (let i = 0; i < 4; i++) line(c, [[-34, -24 + i * 14], [30 - (i % 2) * 18, -24 + i * 14]], brilho > 0.3 ? '#4fa8ff' : '#a08050', 4);
+  for (const y of [-40, 30]) shape(c, c => c.roundRect(-58, y - 7, 116, 14, 7), '#c9a46a');
+  glow(c, 0, -6, 120 * brilho, '#58b4ff', brilho);
+  c.restore();
+};
