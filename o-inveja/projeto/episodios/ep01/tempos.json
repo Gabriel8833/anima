@@ -1,0 +1,25 @@
+{
+  "titulo": "A vitória do outro",
+  "episodio": "",
+  "duracao": 90,
+  "cenas": {
+    "c1_a_realidade_brasileira": [0, 15],
+    "c2_dois_caminhos": [15, 30],
+    "c3_quando_o_sucesso_incomoda": [30, 48],
+    "c4_a_armadilha_da_comparacao": [48, 64.4],
+    "c5_a_reflexao": [64.4, 79.2],
+    "c6_final": [79.2, 87.8]
+  },
+  "tela_preta": 999,
+  "continua": [999, 999],
+  "preto_final": 87.8,
+  "texto_final_tela": [87.9, 90],
+  "narracao": [
+    { "cena": 1, "inicio": 0.6,  "fim": 14.4, "texto": "Imagine viver em um país onde milhões de pessoas acordam cedo, trabalham o dia inteiro e, mesmo assim, sentem que suas vidas não saem do lugar. Um país cheio de sonhos, mas onde nem todo mundo começa com as mesmas oportunidades." },
+    { "cena": 2, "inicio": 15.4, "fim": 29.4, "texto": "Lucas e Rafael cresceram juntos. Os dois tinham sonhos parecidos. Mas, com o passar dos anos, Lucas conseguiu uma oportunidade e começou a construir uma vida melhor. Rafael, por outro lado, continuava tentando encontrar seu caminho." },
+    { "cena": 3, "inicio": 30.6, "fim": 45.6, "texto": "Quando Lucas conquistou sua primeira moto, ficou feliz e compartilhou aquele momento. Mas algumas pessoas não enxergaram uma conquista. Enxergaram um motivo para criticar. E Rafael começou a fazer o mesmo." },
+    { "cena": 4, "inicio": 48.4, "fim": 63.6, "texto": "Rafael começou a comparar sua vida com a de todo mundo. Cada conquista alheia parecia uma prova de que ele estava fracassando. E, sem perceber, passou a gastar mais energia criticando os outros do que tentando mudar sua própria situação." },
+    { "cena": 5, "inicio": 64.8, "fim": 78.6, "texto": "Mas existe uma coisa que precisamos entender: o Brasil realmente tem desigualdades enormes. Nem todos recebem as mesmas oportunidades. E sentir frustração diante das dificuldades é humano. Mas desejar que alguém fracasse não melhora a sua realidade." },
+    { "cena": 6, "inicio": 79.2, "fim": 87.6, "texto": "Você não precisa diminuir a conquista de alguém para reconhecer suas próprias dificuldades. A vitória de outra pessoa não precisa ser a sua derrota." }
+  ]
+}
