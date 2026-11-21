@@ -151,3 +151,33 @@ export function energiaVermelha(c, x, y, t, a = 1, h = 700) {
 export function poeira(c, x0, y0, w, h, t, color = '#ffffff', a = 0.8, n = 40, seed = 5) {
   for (let i = 0; i < n; i++) { const s = S200[(i + seed * 7) % 200]; const px = x0 + s[0] * w + Math.sin(t * 0.5 + s[3] * 6) * 20, py = y0 + ((s[1] * h - t * 20 * (0.3 + s[2])) % h + h) % h; sparkle(c, px, py, 3 + s[2] * 7, color, a * (0.4 + 0.6 * Math.abs(Math.sin(t * (1 + s[4]) + i)))); }
 }
+// Feixe de energia entre dois pontos (tremulante)
+export function feixe(c, x0, y0, x1, y1, color, a, t, w = 40) {
+  if (a <= 0.01) return;
+  const n = 14, pts = [];
+  for (let i = 0; i <= n; i++) { const u = i / n, off = Math.sin(u * 20 - t * 30) * 10 * Math.sin(u * Math.PI); const dx = x1 - x0, dy = y1 - y0, L = Math.hypot(dx, dy); pts.push([x0 + dx * u - dy / L * off, y0 + dy * u + dx / L * off]); }
+  c.save(); c.globalAlpha *= a;
+  for (let i = 0; i <= n; i += 2) glow(c, pts[i][0], pts[i][1], w * 2.5, color, 0.5);
+  c.lineCap = 'round'; c.lineJoin = 'round';
+  c.beginPath(); pts.forEach(([x, y], i) => (i ? c.lineTo(x, y) : c.moveTo(x, y))); c.strokeStyle = color; c.lineWidth = w; c.stroke();
+  c.beginPath(); pts.forEach(([x, y], i) => (i ? c.lineTo(x, y) : c.moveTo(x, y))); c.strokeStyle = '#ffffff'; c.lineWidth = w * 0.35; c.stroke();
+  glow(c, x1, y1, w * 5, color, 0.9); glow(c, x0, y0, w * 2.5, color, 0.8);
+  c.restore();
+}
+// Correntes de luz em anel (selo)
+export function correntes(c, x, y, rx, ry, t, a, color = '#9fe8ff', voltas = 3) {
+  if (a <= 0.01) return;
+  c.save(); c.globalAlpha *= a;
+  for (let k = 0; k < voltas; k++) {
+    const yy = y + (k - (voltas - 1) / 2) * ry * 0.7, rot = t * (1.5 + k * 0.4) * (k % 2 ? -1 : 1);
+    for (let i = 0; i < 22; i++) {
+      const an = i / 22 * TAU + rot, px = x + Math.cos(an) * rx, py = yy + Math.sin(an) * ry * 0.25;
+      if (Math.sin(an) < -0.2) continue;
+      c.save(); c.translate(px, py); c.rotate(an + Math.PI / 2);
+      ellipse(c, 0, 0, 20, 11, null, { stroke: '#2b1f2a', lw: 10 }); ellipse(c, 0, 0, 20, 11, null, { stroke: color, lw: 6 });
+      c.restore();
+    }
+    glow(c, x, yy, rx * 1.1, color, 0.3);
+  }
+  c.restore();
+}

@@ -32,21 +32,26 @@ function torre(c, x, base, w, h, telhado, parede = '#e8dccb', janelas = '#ffd36a
 }
 
 // ---------- 1. Reino ao entardecer ----------
-export function reino(st, t, foco = 0) {
+// v.vermelho (0..1): céu e cristais tomados pelo feitiço vermelho; v.sigilo (0..1): símbolo gigante no céu
+export function reino(st, t, foco = 0, v = {}) {
+  const vr = v.vermelho || 0, sg = v.sigilo || 0;
+  const cristal = (cor, i) => mix(cor, '#ff2a1a', sstep(i * 0.18, i * 0.18 + 0.3, vr));
   st.camada(0, c => {
-    vgrad(c, 0, 0, W, H, [[0, '#26245e'], [0.38, '#6a3f8e'], [0.62, '#e0708a'], [0.8, '#ffb070'], [1, '#ffd890']]);
+    const ceu = [['#26245e', '#1a0610'], ['#6a3f8e', '#5a0a1a'], ['#e0708a', '#a01a1a'], ['#ffb070', '#d0402a'], ['#ffd890', '#ff7a4a']];
+    vgrad(c, 0, 0, W, H, [0, 0.38, 0.62, 0.8, 1].map((p, i) => [p, mix(ceu[i][0], ceu[i][1], vr)]));
     estrelas(c, 60, 0, 0, W, 500, t, 0.8);
-    glow(c, 540, 1180, 700, '#ffcf70', 0.75); circle(c, 540, 1180, 120, '#fff0b8', { stroke: null });
+    glow(c, 540, 1180, 700, mix('#ffcf70', '#ff3a1a', vr), 0.75); circle(c, 540, 1180, 120, mix('#fff0b8', '#ff6a4a', vr), { stroke: null });
+    if (sg > 0) { magicCircle(c, 540, 560, 420 * (0.6 + 0.4 * sg), '#ff3a2a', sg, t * 0.6, 77); glow(c, 540, 560, 600, '#ff2010', sg * 0.4); }
   });
   st.camada(0.15, c => { [[-300, 420], [500, 300], [1200, 500], [200, 700], [900, 760], [1700, 360]].forEach(([x, y], i) => cloud(c, x + t * 8, y, 140, i % 2 ? '#f7a9c0' : '#ffd0b0', { seed: i + 1, alpha: 0.9 })); });
   st.camada(0.3, c => montanhas(c, 1250, 420, '#7a5aa8', 2, -1500, 2600, '#e8dcff'));
   st.camada(0.5, c => {
     montanhas(c, 1330, 260, '#5a4a9a', 5);
     // torres de magos distantes
-    [[-250, '#58b4ff'], [1350, '#b070ff']].forEach(([x, cor], i) => { rrect(c, x - 25, 760, 50, 580, 6, '#8a7aa8', { lw: 4 }); poly(c, [[x - 40, 770], [x, 660], [x + 40, 770]], '#4a3a7a', { lw: 4 }); const cy = 600 + Math.sin(t * 1.5 + i) * 15; glow(c, x, cy, 140, cor, 0.9); poly(c, [[x, cy - 40], [x + 22, cy], [x, cy + 40], [x - 22, cy]], cor, { lw: 4 }); });
+    [[-250, '#58b4ff'], [1350, '#b070ff']].forEach(([x, cor0], i) => { const cor = cristal(cor0, i * 2 + 1); rrect(c, x - 25, 760, 50, 580, 6, '#8a7aa8', { lw: 4 }); poly(c, [[x - 40, 770], [x, 660], [x + 40, 770]], '#4a3a7a', { lw: 4 }); const cy = 600 + Math.sin(t * 1.5 + i) * 15; glow(c, x, cy, 140, cor, 0.9); poly(c, [[x, cy - 40], [x + 22, cy], [x, cy + 40], [x - 22, cy]], cor, { lw: 4 }); });
   });
   st.camada(0.75, c => {
-    shape(c, c => { c.moveTo(-1400, 1500); c.quadraticCurveTo(-400, 1300, 200, 1380); c.quadraticCurveTo(540, 1240, 900, 1360); c.quadraticCurveTo(1600, 1300, 2500, 1480); c.lineTo(2500, 2600); c.lineTo(-1400, 2600); c.closePath(); }, '#4f9a5a', { stroke: null });
+    shape(c, c => { c.moveTo(-1400, 1500); c.quadraticCurveTo(-400, 1300, 200, 1380); c.quadraticCurveTo(540, 1240, 900, 1360); c.quadraticCurveTo(1600, 1300, 2500, 1480); c.lineTo(2500, 2600); c.lineTo(-1400, 2600); c.closePath(); }, mix('#4f9a5a', '#5a2a2a', vr), { stroke: null });
     // castelo principal no morro
     const b = 1300;
     rrect(c, 330, b - 260, 420, 270, 6, '#e8dccb', { lw: 6 });
@@ -59,7 +64,7 @@ export function reino(st, t, foco = 0) {
     torre(c, 440, b - 250, 56, 170, '#3b4fa8', '#e8dccb', '#ffd36a', 4, null, t);
     torre(c, 640, b - 250, 56, 200, '#3b4fa8', '#e8dccb', '#ffd36a', 5, null, t);
     // torres de magos próximas com cristais
-    [[-80, '#58b4ff', 980], [1180, '#ffc040', 1000]].forEach(([x, cor, base], i) => {
+    [[-80, '#58b4ff', 980], [1180, '#ffc040', 1000]].forEach(([x, cor0, base], i) => { const cor = cristal(cor0, i * 2);
       torre(c, x, base + 300, 70, 640, '#5a3a8a', '#cfc4e0', cor, 7 + i, null, t);
       const cy = base - 470 + Math.sin(t * 1.4 + i) * 18;
       glow(c, x, cy, 220, cor, 0.85); poly(c, [[x, cy - 60], [x + 32, cy], [x, cy + 60], [x - 32, cy]], cor, { lw: 5 }); line(c, [[x - 6, cy - 34], [x - 14, cy]], '#ffffff', 5, 0.8);
@@ -69,9 +74,9 @@ export function reino(st, t, foco = 0) {
     for (let i = 0; i < 5; i++) { const bx = (i * 260 + t * 70) % 1600 - 250, by = 700 + Math.sin(i * 3) * 120, f = Math.sin(t * 10 + i) * 10; line(c, [[bx - 18, by - f], [bx, by], [bx + 18, by - f]], '#3a2a4a', 4); }
   });
   st.camada(1.15, c => {
-    shape(c, c => { c.moveTo(-1400, 1700); c.quadraticCurveTo(0, 1560, 540, 1640); c.quadraticCurveTo(1200, 1560, 2500, 1700); c.lineTo(2500, 2800); c.lineTo(-1400, 2800); c.closePath(); }, '#3d7d4a', { stroke: null });
+    shape(c, c => { c.moveTo(-1400, 1700); c.quadraticCurveTo(0, 1560, 540, 1640); c.quadraticCurveTo(1200, 1560, 2500, 1700); c.lineTo(2500, 2800); c.lineTo(-1400, 2800); c.closePath(); }, mix('#3d7d4a', '#4a2222', vr), { stroke: null });
     const r = rng(9);
-    for (let i = 0; i < 26; i++) { const x = -1000 + i * 140 + r() * 60, y = 1680 + r() * 160; arvoreRedonda(c, x, y, 1.3 + r() * 0.6, r() < 0.5 ? '#2f7a44' : '#3f8f4f'); }
+    for (let i = 0; i < 26; i++) { const x = -1000 + i * 140 + r() * 60, y = 1680 + r() * 160; arvoreRedonda(c, x, y, 1.3 + r() * 0.6, mix(r() < 0.5 ? '#2f7a44' : '#3f8f4f', '#5a2a3a', vr * 0.8)); }
   });
 }
 
@@ -252,4 +257,25 @@ export function camara(st, t, vermelho = 0) {
     for (const x of [140, 940]) { rrect(c, x - 60, 300, 120, 1200, 8, mix('#3a4468', '#5a2222', vermelho)); }
   });
   st.camada(1, c => { vgrad(c, -400, 1500, 1900, 800, [[0, mix('#2a3050', '#3a1414', vermelho)], [1, '#10121c']]); });
+}
+
+// ---------- Penhasco sobre o reino, à noite (céu vermelho) ----------
+export function penhasco(st, t, brilho = 0) {
+  st.camada(0, c => {
+    vgrad(c, 0, 0, W, H, [[0, '#12040c'], [0.45, '#4a0a1a'], [0.75, '#9a2a2a'], [1, '#ff7a4a']]);
+    estrelas(c, 90, 0, 0, W, 900, t, 0.8, 21);
+    magicCircle(c, 540, 520, 300, '#ff3a2a', 0.55, t * 0.5, 77); glow(c, 540, 520, 420, '#ff2010', 0.3);
+  });
+  st.camada(0.25, c => {
+    montanhas(c, 1380, 260, '#3a0e1e', 31);
+    // reino distante (silhueta com janelas vermelhas)
+    shape(c, c => { c.moveTo(200, 1380); for (let i = 0; i < 9; i++) { const x = 200 + i * 80; c.lineTo(x, 1300 - (i % 3) * 60); c.lineTo(x + 20, 1260 - (i % 3) * 60 - (i === 4 ? 90 : 0)); c.lineTo(x + 40, 1300 - (i % 3) * 60); c.lineTo(x + 40, 1330); } c.lineTo(920, 1380); c.closePath(); }, '#1a0610', { stroke: null });
+    for (let i = 0; i < 16; i++) { const x = 220 + (i * 47) % 680, y = 1290 + (i * 31) % 70; c.fillStyle = '#ff4a2a'; c.fillRect(x, y, 6, 10); }
+  });
+  st.camada(0.6, c => { for (let i = 0; i < 5; i++) cloud(c, (i * 330 + t * 40) % 1600 - 250, 1450 + (i % 2) * 60, 170, rgba('#ff8a6a', 0.25), { seed: i + 50 }); });
+  st.camada(1, c => {
+    shape(c, c => { c.moveTo(-300, 1500); c.lineTo(160, 1470); c.lineTo(420, 1490); c.lineTo(700, 1460); c.lineTo(900, 1500); c.lineTo(1000, 1640); c.lineTo(940, 2400); c.lineTo(-300, 2400); c.closePath(); }, '#3a2430');
+    line(c, [[160, 1530], [240, 1600], [200, 1700]], '#2a1620', 5); line(c, [[620, 1520], [580, 1620]], '#2a1620', 5);
+    for (let i = 0; i < 14; i++) { const k = (t * (0.6 + (i % 4) * 0.2) + i * 0.37) % 1; line(c, [[-100 + k * 1400, 900 + i * 60], [-40 + k * 1400, 900 + i * 60]], '#ffd0c0', 3, 0.25 * Math.sin(k * Math.PI)); }
+  });
 }

@@ -1,0 +1,24 @@
+{
+  "titulo": "O Livro Proibido",
+  "episodio": "Episódio 2: A Página Arrancada",
+  "duracao": 76,
+  "cenas": {
+    "c1_o_rastro": [0, 12],
+    "c2_o_confronto": [12, 24],
+    "c3_ceu_vermelho": [24, 36],
+    "c4_a_criatura": [36, 52],
+    "c5_o_selo": [52, 64],
+    "c6_pagina_arrancada": [64, 73]
+  },
+  "tela_preta": 73.0,
+  "continua": [73.6, 76],
+  "narracao": [
+    { "cena": 1, "inicio": 0.8,  "fim": 11.2, "texto": "A última página estava em branco. As palavras tinham desaparecido... mas deixaram um rastro de luz roxa." },
+    { "cena": 2, "inicio": 12.6, "fim": 23.2, "texto": "Morvath e Eldrin também haviam encontrado o caminho até a câmara. E cada um queria o livro por um motivo diferente." },
+    { "cena": 3, "inicio": 24.6, "fim": 35.2, "texto": "Enquanto discutiam, o céu do reino ficou vermelho. O feitiço da última página estava se espalhando por toda parte." },
+    { "cena": 4, "inicio": 36.8, "fim": 51.0, "texto": "Das sombras do livro surgiu uma criatura antiga. Pela primeira vez, inimigos precisaram lutar lado a lado. Mas ela ficava mais forte a cada feitiço." },
+    { "cena": 5, "inicio": 52.6, "fim": 63.2, "texto": "Kael percebeu que só o próprio livro poderia detê-la. E, ao selar a criatura, encontrou uma pista entre as páginas." },
+    { "cena": 6, "inicio": 64.6, "fim": 68.4, "texto": "A última página não tinha desaparecido..." },
+    { "cena": 6, "inicio": 70.0, "fim": 72.8, "texto": "...ela havia sido arrancada." }
+  ]
+}

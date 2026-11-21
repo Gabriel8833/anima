@@ -1,4 +1,13 @@
-# O Livro Proibido — Episódio 1: A Guerra dos Magos
+# O Livro Proibido
+
+| Episódio | Arquivos |
+|---|---|
+| 1 — A Guerra dos Magos | `ep01_com_legenda.mp4`, `ep01_sem_legenda.mp4`, `ep01.srt` (nesta pasta) |
+| 2 — A Página Arrancada | pasta `ep02/` (vídeos, `.srt` e `PROMPT_NARRACAO_E_SOM.md`) |
+
+---
+
+# Episódio 1: A Guerra dos Magos
 
 Animação **2D cartoon** gerada por código (Canvas 2D): personagens de cabeça redonda grande, braços "macarrão",
 contorno escuro e cores chapadas, fundos ilustrados com raios de luz e brilhos, e legenda grande palavra por palavra.
@@ -95,3 +104,25 @@ Para assistir no navegador sem renderizar: sirva a pasta `projeto` com qualquer 
 - **Sem som.** Como pedido, não há narração, música nem efeitos sonoros.
 - **Legendas estimadas.** As legendas seguem o tempo previsto em `tempos.json`; se a narração gravada tiver outro ritmo, ajuste os tempos e renderize de novo a versão com legenda.
 - **Personagens e cenários originais.** O estilo segue a referência enviada (cartoon 2D de cabeças grandes), mas os personagens, cenários e a arte são próprios desta série.
+
+---
+
+# Episódio 2: A Página Arrancada
+
+76 s, mesmo formato e estilo. Arquivos em `ep02/`. O prompt completo de narração, música e efeitos está em
+`ep02/PROMPT_NARRACAO_E_SOM.md`.
+
+| Cena | Imagem | Fala começa | Termina até |
+|---|---|---|---|
+| 1 — O rastro | 0–12 s | 0,8 s | 11,2 s |
+| 2 — O confronto | 12–24 s | 12,6 s | 23,2 s |
+| 3 — O céu vermelho | 24–36 s | 24,6 s | 35,2 s |
+| 4 — A criatura | 36–52 s | 36,8 s | 51,0 s |
+| 5 — O selo | 52–64 s | 52,6 s | 63,2 s |
+| 6 — A página arrancada (parte 1) | 64–73 s | 64,6 s | 68,4 s |
+| 6 — A página arrancada (parte 2) | | 70,0 s | 72,8 s |
+| Tela preta + "CONTINUA..." | 73–76 s | — | — |
+
+Código: `projeto/episodios/ep02/` (usa `motor/serie.js` para legendas, título e "CONTINUA...").
+Novos recursos reaproveitáveis: a criatura de sombra (`personagens/criatura.js`), livro fechado e página arrancada
+(`cenarios/objetos.js`), céu vermelho do reino e penhasco (`cenarios/fundos.js`), feixes e correntes de luz (`motor/efeitos.js`).
