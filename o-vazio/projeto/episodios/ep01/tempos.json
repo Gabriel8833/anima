@@ -1,0 +1,25 @@
+{
+  "titulo": "E se você sentisse um vazio que não consegue explicar?",
+  "episodio": "",
+  "duracao": 90,
+  "cenas": {
+    "c1_algo_esta_faltando": [0, 15],
+    "c2_no_meio_de_todo_mundo": [15, 30],
+    "c3_a_busca_por_algo": [30, 45],
+    "c4_a_pergunta": [45, 62],
+    "c5_uma_pequena_descoberta": [62, 78],
+    "c6_final_reflexivo": [78, 90]
+  },
+  "tela_preta": 999,
+  "continua": [999, 999],
+  "preto_final": 88.7,
+  "texto_final_tela": [86.8, 90],
+  "narracao": [
+    { "cena": 1, "inicio": 0.6,  "fim": 14.4, "texto": "Imagine acordar todos os dias, levantar da cama, fazer suas coisas e continuar vivendo normalmente... mas sentir que existe alguma coisa faltando dentro de você. Você não sabe explicar o que é. Só sabe que está ali." },
+    { "cena": 2, "inicio": 15.4, "fim": 29.4, "texto": "Você sai, conversa, sorri e até brinca com seus amigos. Por fora, parece estar tudo bem. Mas, quando fica sozinho, aquela sensação volta. É estranho... como se você estivesse vivendo, mas não estivesse realmente presente." },
+    { "cena": 3, "inicio": 30.4, "fim": 44.4, "texto": "Então você tenta preencher esse espaço. Passa horas no celular, procura distrações, sai com pessoas e tenta encontrar alguma coisa que faça tudo voltar a ter sentido. Mas a sensação nunca desaparece completamente." },
+    { "cena": 4, "inicio": 45.6, "fim": 61.4, "texto": "E então começa a se perguntar: será que estou desperdiçando minha vida? Será que estou no caminho errado? Ou será que estou procurando felicidade em lugares onde ela nunca esteve?" },
+    { "cena": 5, "inicio": 62.6, "fim": 77.4, "texto": "Mas talvez você não precise descobrir o sentido de toda a sua existência de uma vez. Talvez precise começar pelas pequenas coisas. Uma conversa verdadeira, um objetivo, uma experiência nova... um motivo para levantar amanhã." },
+    { "cena": 6, "inicio": 78.2, "fim": 88.6, "texto": "Porque nem sempre você está perdido. Às vezes, está apenas tentando descobrir quem é e o que realmente importa para você. E talvez essa busca também faça parte de viver." }
+  ]
+}
