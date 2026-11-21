@@ -1,0 +1,25 @@
+{
+  "titulo": "E se você tivesse dependência emocional em um relacionamento tóxico?",
+  "episodio": "",
+  "duracao": 90,
+  "cenas": {
+    "c1_quando_tudo_comeca": [0, 14.2],
+    "c2_o_medo_de_perder": [14.2, 26.4],
+    "c3_voce_comeca_a_se_perder": [26.4, 42],
+    "c4_o_ciclo": [42, 57.2],
+    "c5_voce_ja_nao_se_reconhece": [57.2, 70.4],
+    "c6_a_reflexao": [70.4, 87.6]
+  },
+  "tela_preta": 999,
+  "continua": [999, 999],
+  "preto_final": 87.6,
+  "texto_final_tela": [87.7, 90],
+  "narracao": [
+    { "cena": 1, "inicio": 0.5,  "fim": 13.8, "texto": "Imagine conhecer alguém e sentir que finalmente encontrou a pessoa que faltava na sua vida. Vocês conversam até de madrugada, fazem planos e você começa a imaginar um futuro ao lado dela. No começo, tudo parece perfeito." },
+    { "cena": 2, "inicio": 14.6, "fim": 26.0, "texto": "Mas, aos poucos, alguma coisa muda. As mensagens diminuem, o carinho desaparece e você começa a sentir medo de qualquer silêncio. Uma simples demora para responder consegue acabar com seu dia inteiro." },
+    { "cena": 3, "inicio": 26.8, "fim": 41.6, "texto": "Você começa a mudar seu jeito de ser. Deixa de sair com seus amigos, evita falar o que sente e pede desculpas até quando não fez nada de errado. Tudo para evitar uma discussão. Tudo para não correr o risco de perder aquela pessoa." },
+    { "cena": 4, "inicio": 42.4, "fim": 56.8, "texto": "E então acontece uma coisa perigosa: depois de dias de frieza, ela volta a ser carinhosa. E você sente um alívio enorme. Esquece tudo o que sofreu e começa a acreditar que agora vai ser diferente. Mas o ciclo se repete." },
+    { "cena": 5, "inicio": 57.6, "fim": 70.0, "texto": "Até que um dia você percebe que já não sabe mais quem era antes daquele relacionamento. Sua felicidade depende de uma mensagem. Sua tranquilidade depende do humor de outra pessoa. E você aceita coisas que, antes, jamais imaginaria aceitar." },
+    { "cena": 6, "inicio": 70.8, "fim": 87.4, "texto": "E talvez a parte mais dolorosa seja perceber que você estava tão ocupado tentando não perder alguém... que acabou perdendo a si mesmo. Amor não deveria exigir que você desaparecesse para manter outra pessoa ao seu lado. Você também merece ser amado sem precisar implorar por isso." }
+  ]
+}
