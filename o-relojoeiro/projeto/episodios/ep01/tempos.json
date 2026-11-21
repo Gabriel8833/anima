@@ -1,0 +1,25 @@
+{
+  "titulo": "E se você fosse O Relojoeiro?",
+  "episodio": "",
+  "duracao": 90,
+  "cenas": {
+    "c1_uma_vida_comum": [0, 15],
+    "c2_a_noticia": [15, 28],
+    "c3_uma_oportunidade_perigosa": [28, 43],
+    "c4_a_primeira_decisao": [43, 58],
+    "c5_o_nascimento_do_relojoeiro": [58, 73],
+    "c6_o_preco_do_poder": [73, 88]
+  },
+  "tela_preta": 999,
+  "continua": [999, 999],
+  "preto_final": 88.0,
+  "texto_final_tela": [88.2, 90],
+  "narracao": [
+    { "cena": 1, "inicio": 0.6,  "fim": 14.4, "texto": "Imagine acordar todos os dias sabendo que seu talento poderia ter levado você muito mais longe. Você tem 50 anos, conserta relógios numa loja pequena e passa as noites instalando cofres de banco. Trabalha duro... mas as contas nunca fecham. Sua vida parece comum... até que tudo muda." },
+    { "cena": 2, "inicio": 15.4, "fim": 27.4, "texto": "Um dia, chega uma carta: em trinta dias, você vai perder a loja e a casa. De repente, o chão desaparece. Você olha para sua esposa, para seu filho... e se pergunta como eles vão sobreviver." },
+    { "cena": 3, "inicio": 28.4, "fim": 42.4, "texto": "Numa madrugada, enquanto instala um cofre, você vê uma quadrilha fugir de mãos vazias. Eles falharam onde você nunca falharia. E uma ideia começa a crescer: ninguém conhece fechaduras e alarmes melhor do que você." },
+    { "cena": 4, "inicio": 43.4, "fim": 57.4, "texto": "Você procura o mais jovem deles, Nico, e faz uma proposta: você planeja, ele executa. Diz a si mesmo que é só uma vez, só pela família. Mas quando o cofre se abre no segundo exato que você previu... algo dentro de você gosta daquela sensação de poder." },
+    { "cena": 5, "inicio": 58.4, "fim": 72.4, "texto": "Com o dinheiro chegando, sua vida muda. Mas os riscos também crescem. Você mente para sua esposa, esconde segredos dentro dos relógios e entra num mundo onde um erro pode custar tudo. O homem tímido começa a desaparecer. Alguém diferente está surgindo." },
+    { "cena": 6, "inicio": 73.4, "fim": 87.6, "texto": "Agora você já não faz isso para sobreviver. Quer respeito, controle e reconhecimento. Nas ruas, chamam você de O Relojoeiro, e esse nome dá medo. Mas quanto mais poder você conquista, mais perde aquilo que dizia proteger. E agora... será que você ainda consegue voltar a ser quem era?" }
+  ]
+}
