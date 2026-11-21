@@ -1,0 +1,28 @@
+{
+  "titulo": "Abrigo 47",
+  "episodio": "",
+  "duracao": 114,
+  "cenas": {
+    "c1_o_mundo_do_amanha": [0, 14],
+    "c2_as_sirenes": [14, 28],
+    "c3_a_vida_no_abrigo": [28, 44],
+    "c4_la_fora": [44, 58],
+    "c5_o_ermo": [58, 74],
+    "c6_porto_sucata": [74, 94],
+    "c7_o_sinal": [94, 110.6]
+  },
+  "tela_preta": 999,
+  "continua": [999, 999],
+  "preto_final": 110.6,
+  "texto_final_tela": [111.0, 114],
+  "narracao": [
+    { "cena": 1, "inicio": 0.8,  "fim": 13.4, "texto": "Imagine um futuro que parou nos anos 50. Carros atômicos, robôs em todas as casas... e uma empresa que vendia abrigos subterrâneos prometendo salvar a sua família do fim do mundo." },
+    { "cena": 2, "inicio": 14.6, "fim": 27.4, "texto": "Até que, num dia comum, as sirenes tocaram. Você era apenas uma criança quando sua família correu até o Abrigo 47. A porta se fechou segundos antes do céu pegar fogo." },
+    { "cena": 3, "inicio": 28.6, "fim": 43.4, "texto": "Lá embaixo, você cresceu. Ganhou seu próprio PulsoTec, aprendeu as regras do abrigo e ouviu a mesma frase todos os dias: ninguém nunca sai. Até que, vinte anos depois, a água começou a acabar." },
+    { "cena": 4, "inicio": 44.6, "fim": 57.4, "texto": "Você é escolhido para sair e encontrar uma peça para a bomba d'água. A porta se abre... e pela primeira vez você vê o sol. Mas o mundo lá fora virou um deserto de ruínas e radiação." },
+    { "cena": 5, "inicio": 58.6, "fim": 73.4, "texto": "Cada passo é uma escolha. Você vasculha ruínas atrás de comida, munição e peças. E logo descobre que a radiação criou criaturas que nenhum livro do abrigo mostrava." },
+    { "cena": 6, "inicio": 74.6, "fim": 93.4, "texto": "Numa cidade feita de sucata, você encontra a peça que procurava. Mas saqueadores atacam, e você precisa tomar sua primeira grande decisão: fugir com a peça ou ficar e lutar pela cidade. Você escolhe ficar." },
+    { "cena": 7, "inicio": 94.6, "fim": 105.6, "texto": "Você volta para casa com a peça... mas a porta do Abrigo 47 não se abre mais. E no seu PulsoTec, um sinal de outro abrigo começa a piscar." },
+    { "cena": 7, "inicio": 107.0, "fim": 110.0, "texto": "Sua aventura no Ermo estava só começando." }
+  ]
+}
