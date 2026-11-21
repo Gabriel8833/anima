@@ -1,0 +1,25 @@
+{
+  "titulo": "A prisão dentro de você",
+  "episodio": "",
+  "duracao": 90,
+  "cenas": {
+    "c1_uma_vida_vazia": [0, 14.6],
+    "c2_o_encontro": [14.6, 28.8],
+    "c3_o_porao": [28.8, 42.8],
+    "c4_a_transformacao": [42.8, 57.4],
+    "c5_a_revelacao": [57.4, 71.6],
+    "c6_a_reflexao_final": [71.6, 88]
+  },
+  "tela_preta": 999,
+  "continua": [999, 999],
+  "preto_final": 88.0,
+  "texto_final_tela": [88.1, 90],
+  "narracao": [
+    { "cena": 1, "inicio": 0.6,  "fim": 14.2, "texto": "Imagine acordar, trabalhar, voltar para casa... e repetir tudo de novo. Você tem emprego, apartamento, roupas bonitas. Tudo o que disseram que você deveria querer. Mas existe um problema... você não sente absolutamente nada." },
+    { "cena": 2, "inicio": 14.8, "fim": 28.4, "texto": "Você para de dormir. Passa as noites olhando o teto. Até que conhece um homem que não liga para dinheiro, aparência ou opinião de ninguém. Ele te olha e diz: você está preso numa vida que nem escolheu." },
+    { "cena": 3, "inicio": 29.0, "fim": 42.4, "texto": "Ele te leva a um porão escondido, onde homens destroem tudo aquilo que um dia compraram. Ali, ninguém liga para seu salário ou seu carro. E, pela primeira vez em anos... você sente alguma coisa." },
+    { "cena": 4, "inicio": 43.0, "fim": 57.0, "texto": "Ele questiona tudo: o dinheiro, as vitrines, comprar coisas para preencher um vazio que nunca vai embora. Mas tem um detalhe que você ainda não percebeu. Ele não está mudando sua vida. Está assumindo o controle dela." },
+    { "cena": 5, "inicio": 57.6, "fim": 71.2, "texto": "Até que você descobre a verdade. Ele nunca existiu. Ele é você. Tudo o que você queria ser e nunca teve coragem. Você não estava seguindo um homem livre... estava seguindo a si mesmo, sem controle." },
+    { "cena": 6, "inicio": 71.8, "fim": 87.8, "texto": "Você não precisa destruir tudo para se sentir vivo. Ser livre não é perder o controle. Então pergunte: você está vivendo a sua vida... ou seguindo um roteiro que escreveram para você? Às vezes, o maior inimigo não está no mundo. Está dentro de você." }
+  ]
+}
