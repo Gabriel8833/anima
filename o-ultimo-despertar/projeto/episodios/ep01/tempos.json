@@ -1,0 +1,27 @@
+{
+  "titulo": "O Último Despertar",
+  "episodio": "Episódio 1: O Garoto Sem Poder",
+  "duracao": 63,
+  "cenas": {
+    "c1_o_mundo_de_aether": [0, 9],
+    "c2_o_nascimento_de_kael": [9, 18],
+    "c3_o_passar_dos_anos": [18, 27],
+    "c4_a_humilhacao": [27, 37],
+    "c5_o_teste": [37, 48],
+    "c6_o_despertar_misterioso": [48, 60.4]
+  },
+  "tela_preta": 999,
+  "continua": [999, 999],
+  "preto_final": 60.4,
+  "texto_final_tela": [60.6, 63],
+  "voz_misteriosa": { "inicio": 54.0, "fim": 57.0, "texto": "Finalmente... encontrei você." },
+  "narracao": [
+    { "cena": 1, "inicio": 0.4,  "fim": 8.6,  "texto": "Imagine nascer em um mundo onde todos possuem poderes... menos você. Em Aether, cada pessoa desperta sua habilidade no seu próprio tempo." },
+    { "cena": 2, "inicio": 9.4,  "fim": 17.6, "texto": "Kael tentava desde pequeno. Fechava os olhos, apertava os punhos... e esperava. Mas nada acontecia." },
+    { "cena": 3, "inicio": 18.4, "fim": 26.6, "texto": "Os anos passaram. Um a um, seus amigos despertaram. E, um a um, eles foram se afastando." },
+    { "cena": 4, "inicio": 27.4, "fim": 36.6, "texto": "Aos dezesseis anos, Kael era o único sem poder. Para os outros, ele não era um colega. Era uma piada." },
+    { "cena": 5, "inicio": 37.4, "fim": 47.6, "texto": "No dia da avaliação, toda a academia parou para ver. Kael tocou o cristal... e nada. Mais uma vez, nada." },
+    { "cena": 6, "inicio": 48.2, "fim": 53.4, "texto": "Até que o cristal começou a rachar. E todos os poderes de Aether... se apagaram." },
+    { "cena": 6, "inicio": 57.6, "fim": 60.2, "texto": "Kael não sabia. Mas algo antigo tinha acordado." }
+  ]
+}
