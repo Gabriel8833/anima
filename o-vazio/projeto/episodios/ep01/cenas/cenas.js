@@ -125,11 +125,11 @@ export const c2 = {
             if (!vDesenhado && k.y > V.y) { V.draw(c, t); vDesenhado = true; }
             p.reset(); p.s = 0.95; p.y = k.y; p.flip = k.dir;
             const span = 3200; p.x = ((k.x0 + k.dir * k.v * vel * (t - 15) * 2.2) % span + span) % span - 1000;
-            p.walk = t * 6 * vel + k.x0; p.alpha = 1 - fantasma * 0.6;
+            p.walk = t * 6 * vel + k.x0; p.alpha = 1 - fantasma * 0.7;
             if (k.cel) { p.maoD = celular(1); p.bracos(0.2, 0.1, 0.8, 2.2); p.olhar = [0, 0.7]; p.exp = 'normal'; p.boca = 'reta'; }
             else if (k.rindo) { p.exp = 'feliz'; p.boca = Math.sin(t * 10 + k.x0) > 0 ? 'aberta' : 'sorriso'; p.bracos(0.3, 0.6, 0.3 + Math.abs(Math.sin(t * 4 + k.x0)) * 0.6, 0.8); p.olhar = [k.dir * 0.8, 0]; }
             else { p.exp = 'normal'; p.boca = 'sorriso'; p.olhar = [k.dir * 0.8, 0]; }
-            if (fantasma > 0) { c.save(); c.filter = `grayscale(${fantasma}) blur(${fantasma * 3}px)`; p.draw(c, t); c.restore(); } else p.draw(c, t);
+            p.draw(c, t);
           }
           if (!vDesenhado) V.draw(c, t);
           const [px, py] = peito(V); pecaVazia(c, px, py, 0.9, sstep(26.5, 27.5, t), 0, t);
