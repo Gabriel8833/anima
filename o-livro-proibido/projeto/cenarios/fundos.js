@@ -260,21 +260,27 @@ export function camara(st, t, vermelho = 0) {
 }
 
 // ---------- Penhasco sobre o reino, à noite (céu vermelho) ----------
-export function penhasco(st, t, brilho = 0) {
+// amanhecer 0..1: céu vermelho → nascer do sol; sigilo: força do símbolo vermelho; largo: topo plano maior (4 personagens)
+export function penhasco(st, t, { amanhecer = 0, sigilo = 1, largo = false } = {}) {
+  const am = amanhecer;
   st.camada(0, c => {
-    vgrad(c, 0, 0, W, H, [[0, '#12040c'], [0.45, '#4a0a1a'], [0.75, '#9a2a2a'], [1, '#ff7a4a']]);
-    estrelas(c, 90, 0, 0, W, 900, t, 0.8, 21);
-    magicCircle(c, 540, 520, 300, '#ff3a2a', 0.55, t * 0.5, 77); glow(c, 540, 520, 420, '#ff2010', 0.3);
+    const a = [['#12040c', '#2a2a6a'], ['#4a0a1a', '#9a5a9a'], ['#9a2a2a', '#ff9a7a'], ['#ff7a4a', '#ffe2a0']];
+    vgrad(c, 0, 0, W, H, [0, 0.45, 0.75, 1].map((p, i) => [p, mix(a[i][0], a[i][1], am)]));
+    estrelas(c, 90, 0, 0, W, 900, t, 0.8 * (1 - am), 21);
+    if (am > 0) { const sy = lerp(1500, 1180, am); glow(c, 540, sy, 700, '#ffd070', am); circle(c, 540, sy, 130, '#fff2c0', { stroke: null }); rays(c, 540, sy, Math.PI, 9, 1400, 1400, '#fff0c0', am * 0.25, t, 13); }
+    const sg = sigilo * (1 - am);
+    if (sg > 0) { magicCircle(c, 540, 520, 300, '#ff3a2a', 0.55 * sg, t * 0.5, 77); glow(c, 540, 520, 420, '#ff2010', 0.3 * sg); }
   });
   st.camada(0.25, c => {
-    montanhas(c, 1380, 260, '#3a0e1e', 31);
+    montanhas(c, 1380, 260, mix('#3a0e1e', '#7a5a9a', am), 31);
     // reino distante (silhueta com janelas vermelhas)
-    shape(c, c => { c.moveTo(200, 1380); for (let i = 0; i < 9; i++) { const x = 200 + i * 80; c.lineTo(x, 1300 - (i % 3) * 60); c.lineTo(x + 20, 1260 - (i % 3) * 60 - (i === 4 ? 90 : 0)); c.lineTo(x + 40, 1300 - (i % 3) * 60); c.lineTo(x + 40, 1330); } c.lineTo(920, 1380); c.closePath(); }, '#1a0610', { stroke: null });
-    for (let i = 0; i < 16; i++) { const x = 220 + (i * 47) % 680, y = 1290 + (i * 31) % 70; c.fillStyle = '#ff4a2a'; c.fillRect(x, y, 6, 10); }
+    shape(c, c => { c.moveTo(200, 1380); for (let i = 0; i < 9; i++) { const x = 200 + i * 80; c.lineTo(x, 1300 - (i % 3) * 60); c.lineTo(x + 20, 1260 - (i % 3) * 60 - (i === 4 ? 90 : 0)); c.lineTo(x + 40, 1300 - (i % 3) * 60); c.lineTo(x + 40, 1330); } c.lineTo(920, 1380); c.closePath(); }, mix('#1a0610', '#5a4a7a', am), { stroke: null });
+    for (let i = 0; i < 16; i++) { const x = 220 + (i * 47) % 680, y = 1290 + (i * 31) % 70; c.fillStyle = mix('#ff4a2a', '#ffe08a', am); c.fillRect(x, y, 6, 10); }
   });
-  st.camada(0.6, c => { for (let i = 0; i < 5; i++) cloud(c, (i * 330 + t * 40) % 1600 - 250, 1450 + (i % 2) * 60, 170, rgba('#ff8a6a', 0.25), { seed: i + 50 }); });
+  st.camada(0.6, c => { for (let i = 0; i < 5; i++) cloud(c, (i * 330 + t * 40) % 1600 - 250, 1450 + (i % 2) * 60, 170, rgba(mix('#ff8a6a', '#ffffff', am), 0.25 + am * 0.2), { seed: i + 50 }); });
   st.camada(1, c => {
-    shape(c, c => { c.moveTo(-300, 1500); c.lineTo(160, 1470); c.lineTo(420, 1490); c.lineTo(700, 1460); c.lineTo(900, 1500); c.lineTo(1000, 1640); c.lineTo(940, 2400); c.lineTo(-300, 2400); c.closePath(); }, '#3a2430');
+    if (largo) shape(c, c => { c.moveTo(-400, 1500); c.lineTo(160, 1470); c.lineTo(420, 1490); c.lineTo(700, 1460); c.lineTo(1100, 1495); c.lineTo(1300, 1520); c.lineTo(1400, 2400); c.lineTo(-400, 2400); c.closePath(); }, mix('#3a2430', '#6a4a5a', am));
+    else shape(c, c => { c.moveTo(-300, 1500); c.lineTo(160, 1470); c.lineTo(420, 1490); c.lineTo(700, 1460); c.lineTo(900, 1500); c.lineTo(1000, 1640); c.lineTo(940, 2400); c.lineTo(-300, 2400); c.closePath(); }, '#3a2430');
     line(c, [[160, 1530], [240, 1600], [200, 1700]], '#2a1620', 5); line(c, [[620, 1520], [580, 1620]], '#2a1620', 5);
     for (let i = 0; i < 14; i++) { const k = (t * (0.6 + (i % 4) * 0.2) + i * 0.37) % 1; line(c, [[-100 + k * 1400, 900 + i * 60], [-40 + k * 1400, 900 + i * 60]], '#ffd0c0', 3, 0.25 * Math.sin(k * Math.PI)); }
   });

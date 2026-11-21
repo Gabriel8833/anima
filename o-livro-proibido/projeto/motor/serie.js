@@ -30,5 +30,10 @@ export function telaFinal(st, t, tempos) {
   if (t < tempos.tela_preta) return;
   st.overlay('#000', 1);
   const a = tempos.continua[0];
-  st.text('CONTINUA...', W / 2, H / 2, { size: 110, fill: '#ffffff', alpha: sstep(a, a + 0.5, t), scale: 0.7 + 0.3 * easeBack(clamp((t - a) / 0.5)), glow: 'rgba(255,40,30,0.8)', lw: 16 });
+  if (tempos.texto_final === 'FIM') {
+    st.text('FIM', W / 2, H / 2 - 40, { size: 190, fill: '#ffe9a8', alpha: sstep(a, a + 0.6, t), scale: 0.7 + 0.3 * easeBack(clamp((t - a) / 0.6)), glow: 'rgba(255,190,80,0.9)', lw: 22 });
+    st.text(tempos.titulo.toUpperCase(), W / 2, H / 2 + 110, { size: 52, fill: '#ffffff', alpha: sstep(a + 0.5, a + 1.0, t), lw: 10 });
+    return;
+  }
+  st.text(tempos.texto_final || 'CONTINUA...', W / 2, H / 2, { size: 110, fill: '#ffffff', alpha: sstep(a, a + 0.5, t), scale: 0.7 + 0.3 * easeBack(clamp((t - a) / 0.5)), glow: 'rgba(255,40,30,0.8)', lw: 16 });
 }

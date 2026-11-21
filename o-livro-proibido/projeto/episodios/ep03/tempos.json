@@ -1,0 +1,25 @@
+{
+  "titulo": "O Livro Proibido",
+  "episodio": "Episódio 3 (Final): O Último Feitiço",
+  "duracao": 76,
+  "cenas": {
+    "c1_o_encontro": [0, 12],
+    "c2_a_revelacao": [12, 24],
+    "c3_traicao_e_escolha": [24, 38],
+    "c4_o_ritual": [38, 54],
+    "c5_o_fim_do_livro": [54, 64],
+    "c6_epilogo": [64, 74]
+  },
+  "tela_preta": 74.0,
+  "continua": [74.3, 76],
+  "texto_final": "FIM",
+  "narracao": [
+    { "cena": 1, "inicio": 0.8,  "fim": 11.0, "texto": "Seguindo o rastro de luz roxa, Kael, Morvath e Eldrin chegaram ao penhasco. Zareth já os esperava." },
+    { "cena": 2, "inicio": 12.6, "fim": 23.4, "texto": "A última página guardava o único feitiço capaz de destruir o livro para sempre. Mas ele exigia o poder dos quatro magos." },
+    { "cena": 3, "inicio": 24.6, "fim": 37.2, "texto": "Morvath tentou tomar a página para si. Mas a sombra do livro começou a dominá-lo... e Kael estendeu a mão." },
+    { "cena": 4, "inicio": 38.6, "fim": 53.0, "texto": "Pela primeira vez, os quatro magos uniram suas magias. Luz, sombra, sabedoria e mistério... contra o livro que quase destruiu o mundo." },
+    { "cena": 5, "inicio": 54.6, "fim": 63.6, "texto": "As páginas se desfizeram em luz. O céu vermelho desapareceu, e a magia voltou a pertencer a todos." },
+    { "cena": 6, "inicio": 65.0, "fim": 69.6, "texto": "Alguns segredos nunca deveriam ser lidos." },
+    { "cena": 6, "inicio": 70.6, "fim": 73.6, "texto": "E este... finalmente chegou ao fim." }
+  ]
+}

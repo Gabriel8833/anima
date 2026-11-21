@@ -4,6 +4,7 @@
 |---|---|
 | 1 — A Guerra dos Magos | `ep01_com_legenda.mp4`, `ep01_sem_legenda.mp4`, `ep01.srt` (nesta pasta) |
 | 2 — A Página Arrancada | pasta `ep02/` (vídeos, `.srt` e `PROMPT_NARRACAO_E_SOM.md`) |
+| 3 (final) — O Último Feitiço | pasta `ep03/` (vídeos, `.srt` e `PROMPT_NARRACAO_E_SOM.md`) |
 
 ---
 
@@ -126,3 +127,23 @@ Para assistir no navegador sem renderizar: sirva a pasta `projeto` com qualquer 
 Código: `projeto/episodios/ep02/` (usa `motor/serie.js` para legendas, título e "CONTINUA...").
 Novos recursos reaproveitáveis: a criatura de sombra (`personagens/criatura.js`), livro fechado e página arrancada
 (`cenarios/objetos.js`), céu vermelho do reino e penhasco (`cenarios/fundos.js`), feixes e correntes de luz (`motor/efeitos.js`).
+
+---
+
+# Episódio 3 (final): O Último Feitiço
+
+76 s, mesmo formato e estilo; termina com "FIM". Arquivos em `ep03/`. O prompt completo de narração, música e efeitos
+está em `ep03/PROMPT_NARRACAO_E_SOM.md`.
+
+| Cena | Imagem | Fala começa | Termina até |
+|---|---|---|---|
+| 1 — O encontro | 0–12 s | 0,8 s | 11,0 s |
+| 2 — A revelação | 12–24 s | 12,6 s | 23,4 s |
+| 3 — Traição e escolha | 24–38 s | 24,6 s | 37,2 s |
+| 4 — O ritual | 38–54 s | 38,6 s | 53,0 s |
+| 5 — O fim do livro | 54–64 s | 54,6 s | 63,6 s |
+| 6 — Epílogo (parte 1) | 64–74 s | 65,0 s | 69,6 s |
+| 6 — Epílogo (parte 2) | | 70,6 s | 73,6 s |
+| Tela preta + "FIM" | 74–76 s | — | — |
+
+Código: `projeto/episodios/ep03/`. Para mostrar "FIM" em vez de "CONTINUA...", o `tempos.json` usa `"texto_final": "FIM"`.

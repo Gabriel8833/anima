@@ -116,12 +116,12 @@ export function raio(c, x0, y0, x1, y1, seed, a = 1, color = '#cfe4ff') {
 }
 export const flashRaio = dt => (dt > 0 && dt < 0.35 ? (dt < 0.07 ? 1 : dt < 0.13 ? 0.25 : dt < 0.2 ? 1 : 1 - (dt - 0.2) / 0.15) : 0);
 // Explosão cartoon: estrela de impacto + nuvens de fumaça + faíscas
-export function explosao(c, x, y, s, dt, cores = ['#fff3b0', '#ffb340', '#ff5a2a']) {
+export function explosao(c, x, y, s, dt, cores = ['#fff3b0', '#ffb340', '#ff5a2a'], { fumaca: comFumaca = true } = {}) {
   if (dt <= 0 || dt > 2.2) return;
   const u = clamp(dt / 0.35), fade = 1 - sstep(1.2, 2.2, dt);
   c.save();
   // fumaça
-  for (let i = 0; i < 8; i++) { const an = i / 8 * TAU + 0.3, d = s * (0.4 + easeOut(clamp(dt / 1.2)) * 0.9); c.globalAlpha = fade * 0.9; cloud(c, x + Math.cos(an) * d, y + Math.sin(an) * d * 0.6 - dt * 40, s * 0.32, '#5a5060', { stroke: OUT, seed: i + 3 }); }
+  if (comFumaca) for (let i = 0; i < 8; i++) { const an = i / 8 * TAU + 0.3, d = s * (0.4 + easeOut(clamp(dt / 1.2)) * 0.9); c.globalAlpha = fade * 0.9; cloud(c, x + Math.cos(an) * d, y + Math.sin(an) * d * 0.6 - dt * 40, s * 0.32, '#5a5060', { stroke: OUT, seed: i + 3 }); }
   c.globalAlpha = 1;
   if (dt < 0.6) {
     const k = easeOut(u) * (1 - sstep(0.35, 0.6, dt) * 0.5), R = s * 1.1 * k;
@@ -180,4 +180,17 @@ export function correntes(c, x, y, rx, ry, t, a, color = '#9fe8ff', voltas = 3) 
     glow(c, x, yy, rx * 1.1, color, 0.3);
   }
   c.restore();
+}
+
+// Páginas se soltando e voando em espiral (viram brilho)
+export function paginasVoando(c, x, y, dt, n = 40, alcance = 900) {
+  if (dt <= 0 || dt > 5) return;
+  for (let i = 0; i < n; i++) {
+    const s = S200[(i + 120) % 200], u = clamp(dt / (2.5 + s[3] * 2));
+    const an = s[0] * TAU + dt * (1 + s[1]) * (s[2] > 0.5 ? 1 : -1), d = easeOut(u) * alcance * (0.4 + s[1] * 0.6);
+    const px = x + Math.cos(an) * d, py = y + Math.sin(an) * d * 0.5 - u * 500 * (0.5 + s[4]);
+    const a = 1 - sstep(0.6, 1, u);
+    if (u < 0.75) { c.save(); c.globalAlpha *= a; c.translate(px, py); c.rotate(dt * 4 * (s[2] - 0.5) + i); c.scale(1, Math.abs(Math.sin(dt * 5 + i)) * 0.8 + 0.2); shape(c, c => c.rect(-26, -34, 52, 68), '#fff3d8', { lw: 4 }); c.restore(); }
+    sparkle(c, px, py, 12 + s[2] * 10, '#fff6c8', sstep(0.4, 0.8, u) * a + 0.2 * a);
+  }
 }

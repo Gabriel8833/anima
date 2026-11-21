@@ -4,7 +4,7 @@ import { OUT, shape, ellipse, limb, line, glow, poly } from '../motor/desenho.js
 import { fumaca } from '../motor/efeitos.js';
 
 // (x,y) = base da criatura; s = escala; olhos 0..1; boca 0..1 (aberta); alpha
-export function criatura(c, x, y, s, t, { olhos = 1, boca = 0, alpha = 1, raiva = 0 } = {}) {
+export function criatura(c, x, y, s, t, { olhos = 1, boca = 0, alpha = 1, raiva = 0, rachado = 0 } = {}) {
   if (alpha <= 0.01 || s <= 0.01) return;
   c.save(); c.globalAlpha *= alpha; c.translate(x, y); c.scale(s, s);
   glow(c, 0, -300, 520, '#ff1030', 0.35 + raiva * 0.2);
@@ -41,5 +41,10 @@ export function criatura(c, x, y, s, t, { olhos = 1, boca = 0, alpha = 1, raiva 
     shape(c, c => { c.moveTo(-130, -250); c.quadraticCurveTo(0, -250 + h * 2.2, 130, -250); c.quadraticCurveTo(0, -250 + h * 0.6, -130, -250); c.closePath(); }, '#6a0a14', { stroke: '#3a0a1a', lw: 6 });
     for (let i = 0; i < 7; i++) { const x0 = -110 + i * 36; poly(c, [[x0, -250 + h * 0.1], [x0 + 14, -250 + h * 0.6], [x0 + 28, -250 + h * 0.15]], '#fff6e0', { lw: 3 }); }
   } else line(c, [[-110, -250], [-40, -236], [40, -236], [110, -250]], '#ff4a3a', 6);
+  if (rachado > 0) {
+    const R = [[[0, -540], [-40, -440], [10, -360], [-30, -260]], [[-200, -420], [-120, -380], [-140, -300], [-60, -240]], [[210, -400], [140, -350], [170, -260], [90, -180]], [[-60, -160], [20, -120], [-10, -60]], [[120, -520], [80, -460], [130, -420]]];
+    R.forEach((pts, i) => { const k = clamp(rachado * 1.6 - i * 0.15); if (k <= 0) return; const p = pts.slice(0, Math.max(2, Math.ceil(pts.length * k))); line(c, p, '#ffffff', 14, 0.9); line(c, p, '#fff6c8', 6); glow(c, p[p.length - 1][0], p[p.length - 1][1], 120, '#ffffff', k); });
+    glow(c, 0, -300, 600, '#ffffff', rachado * 0.5);
+  }
   c.restore();
 }

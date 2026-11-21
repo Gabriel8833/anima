@@ -89,7 +89,7 @@ export const c6 = {
         else if (t < 70) cam = kf(t, [[67, [460, 1150, 1.4]], [70, [470, 1020, 1.6]]], easeInOut);
         else cam = [hx, hy + 20, lerp(2.4, 3.2, easeIn(clamp((t - 70) / 3)))];
         st.setCam(cam[0], cam[1], cam[2]);
-        penhasco(st, t);
+        penhasco(st, t, {});
         st.mundo(c => {
           Z.draw(c, t);
           const [px, py] = Z.mao(1), ergue = sstep(67.2, 68.2, t);
