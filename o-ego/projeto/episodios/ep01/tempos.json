@@ -1,0 +1,25 @@
+{
+  "titulo": "E se você tivesse ego demais?",
+  "episodio": "",
+  "duracao": 90,
+  "cenas": {
+    "c1_voce_e_diferente": [0, 15],
+    "c2_voce_nunca_esta_errado": [15, 30],
+    "c3_voce_despreza_os_outros": [30, 45],
+    "c4_o_preco_do_seu_ego": [45, 62],
+    "c5_o_espelho": [62, 75.4],
+    "c6_a_reflexao": [75.4, 87.6]
+  },
+  "tela_preta": 999,
+  "continua": [999, 999],
+  "preto_final": 87.6,
+  "texto_final_tela": [87.8, 90],
+  "narracao": [
+    { "cena": 1, "inicio": 0.6,  "fim": 14.4, "texto": "Imagine acordar todos os dias acreditando que você é diferente de todo mundo. Que sua inteligência é superior, que suas opiniões são melhores e que poucas pessoas estão à sua altura. No começo, você chama isso de confiança." },
+    { "cena": 2, "inicio": 15.4, "fim": 29.4, "texto": "Mas, aos poucos, algo muda. Você não aceita críticas, não admite erros e sempre encontra uma maneira de colocar a culpa nos outros. Pedir desculpas parece uma derrota. Afinal, na sua cabeça, você nunca está errado." },
+    { "cena": 3, "inicio": 30.4, "fim": 44.4, "texto": "Você começa a tratar pessoas como se fossem inferiores. Quando alguém consegue algo melhor que você, sente inveja. Quando alguém discorda, considera essa pessoa ignorante. E quando alguém tenta ajudar, você interpreta como uma tentativa de diminuir sua importância." },
+    { "cena": 4, "inicio": 45.6, "fim": 61.4, "texto": "Até que um dia você percebe que as pessoas começaram a se afastar. Seus amigos já não procuram você. Ninguém mais compartilha suas conquistas. E, pela primeira vez, você começa a perceber que talvez o problema não esteja em todos ao seu redor." },
+    { "cena": 5, "inicio": 62.6, "fim": 74.6, "texto": "Você olha para o espelho e percebe uma coisa assustadora: passou tanto tempo tentando provar que era melhor que os outros... que esqueceu de melhorar a si mesmo." },
+    { "cena": 6, "inicio": 75.8, "fim": 87.2, "texto": "Porque confiança é saber o seu valor. Arrogância é precisar diminuir os outros para se sentir importante. E talvez a maior demonstração de força seja ter coragem de reconhecer quando você está errado." }
+  ]
+}
