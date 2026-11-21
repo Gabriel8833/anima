@@ -22,9 +22,14 @@ function cabeloComum(c, p) {
   barba(c, p);
 }
 function cabeloRelojoeiro(c, p) {
-  shape(c, c => { c.moveTo(-78, 6); c.quadraticCurveTo(-92, -96, 0, -96); c.quadraticCurveTo(92, -96, 78, 6); c.quadraticCurveTo(76, -52, 0, -62); c.quadraticCurveTo(-76, -52, -78, 6); c.closePath(); }, '#7a7a84');
-  for (let i = 0; i < 4; i++) line(c, [[-50 + i * 30, -88], [-36 + i * 30, -62]], '#5a5a64', 4, 0.8);
+  // cabeça raspada: brilho + sombra de cabelo curtinho nas laterais
+  for (const sd of [-1, 1]) shape(c, c => { c.moveTo(sd * 70, -30); c.quadraticCurveTo(sd * 80, 0, sd * 72, 20); c.lineTo(sd * 64, 14); c.quadraticCurveTo(sd * 70, -6, sd * 62, -30); c.closePath(); }, '#b8b0a8', { stroke: null, alpha: 0.7 });
+  ellipse(c, -24, -52, 22, 10, '#ffffff', { stroke: null, alpha: 0.45 });
   barba(c, p);
+  if (p.semOculos) return;
+  const ox = p.olhar[0] * 6;
+  line(c, [[-10 + ox, -6], [10 + ox, -6]], '#111114', 5);
+  for (const sd of [-1, 1]) { circle(c, sd * 28 + ox, -4, 21, '#141418', { stroke: '#0a0a0c', lw: 5 }); ellipse(c, sd * 28 + ox - 7, -11, 7, 4, '#ffffff', { stroke: null, alpha: 0.35 }); line(c, [[sd * 49 + ox, -8], [sd * 72, -14]], '#111114', 5); }
 }
 export function voce(fase = 'comum') {
   const base = { pele: PELE, olhos: '#3a3a2a', sobrancelha: '#6a6a72', sobrancelhaW: 10 };
@@ -41,9 +46,10 @@ export const esposa = () => new Personagem({ pele: '#f6d6bc', olhos: '#3a5a3a', 
 // filho (adolescente): cabelo castanho, moletom azul, fones de ouvido
 export const filho = () => new Personagem({ pele: '#f6d6bc', olhos: '#3a3a2a', sobrancelha: '#5a3418', roupa: '#3a6ad0', roupaSombra: '#2a4ab0', manga: '#3a6ad0', enfeite: '#e8e8f0', cinto: '#2a4ab0', semFaixa: true, barra: -110, larguraBarra: 66, perna: '#3a3a44', sapato: '#e8e4dc',
   cabeloFrente: (c) => { shape(c, c => { c.moveTo(-78, 0); c.quadraticCurveTo(-88, -92, 0, -94); c.quadraticCurveTo(88, -92, 78, 0); c.lineTo(60, -26); c.lineTo(40, -10); c.lineTo(20, -36); c.lineTo(0, -16); c.lineTo(-24, -38); c.lineTo(-44, -12); c.lineTo(-60, -30); c.closePath(); }, '#7a4a22'); shape(c, c => c.arc(0, -10, 86, Math.PI * 1.05, Math.PI * 1.95), null, { stroke: '#2a2a2a', lw: 8 }); for (const s of [-1, 1]) rrect(c, s * 82 - 14, -24, 28, 44, 10, '#2a2a2a', { lw: 4 }); } });
-// Nico: jovem ladrão nervoso, gorro vermelho e jaqueta verde-oliva
-export const nico = () => new Personagem({ pele: '#e8b890', olhos: '#2a2a2a', sobrancelha: '#2a1a12', roupa: '#6a7a3a', roupaSombra: '#4a5a2a', manga: '#6a7a3a', enfeite: '#3a3a2a', cinto: '#3a3a2a', semFaixa: true, barra: -110, larguraBarra: 70, perna: '#2e3a5a', sapato: '#e8e4dc',
-  cabeloFrente: (c) => { shape(c, c => { c.moveTo(-80, -10); c.quadraticCurveTo(-82, -100, 0, -104); c.quadraticCurveTo(82, -100, 80, -10); c.closePath(); }, '#c0302a'); rrect(c, -86, -22, 172, 24, 10, '#a02020', { lw: 5 }); circle(c, 0, -110, 16, '#c0302a', { lw: 4 }); } });
+// Nico: jovem parceiro de rua, nervoso — gorro vermelho, moletom largo mostarda com capuz, calça larga
+export const nico = () => new Personagem({ pele: '#e8b890', olhos: '#2a2a2a', sobrancelha: '#2a1a12', roupa: '#d8a020', roupaSombra: '#b07a10', manga: '#d8a020', enfeite: '#b07a10', cinto: '#b07a10', semFaixa: true, barra: -90, larguraBarra: 96, perna: '#3a4a6a', sapato: '#e8e4dc',
+  extraTras: (c) => { shape(c, c => { c.moveTo(-62, -236); c.quadraticCurveTo(0, -200, 62, -236); c.quadraticCurveTo(70, -206, 40, -196); c.quadraticCurveTo(0, -186, -40, -196); c.quadraticCurveTo(-70, -206, -62, -236); c.closePath(); }, '#b07a10', { lw: 5 }); for (const sd of [-1, 1]) line(c, [[sd * 12, -210], [sd * 16, -160]], '#f6f2ea', 4); rrect(c, -34, -150, 68, 36, 8, '#b07a10', { lw: 4 }); },
+  cabeloFrente: (c) => { shape(c, c => { c.moveTo(-80, -10); c.quadraticCurveTo(-82, -100, 0, -104); c.quadraticCurveTo(82, -100, 80, -10); c.closePath(); }, '#c0302a'); rrect(c, -86, -22, 172, 24, 10, '#a02020', { lw: 5 }); for (let i = 0; i < 5; i++) line(c, [[-60 + i * 30, -90], [-60 + i * 30, -24]], '#a02020', 3, 0.6); } });
 // ladrões mascarados (quadrilha que falha), gângsteres e guarda
 export function mascarado(tipo = 0) { return new Personagem({ pele: '#2a2a30', olhos: '#ffffff', sobrancelha: '#2a2a30', roupa: '#2a2a34', roupaSombra: '#1a1a22', enfeite: '#1a1a22', cinto: '#1a1a22', semFaixa: true, barra: -110, larguraBarra: 70, perna: '#1a1a22', sapato: '#111111', blush: 0,
   cabeloFrente: (c) => { ellipse(c, 0, -2, 54, 20, '#f2cfae', { lw: 4 }); } }); }

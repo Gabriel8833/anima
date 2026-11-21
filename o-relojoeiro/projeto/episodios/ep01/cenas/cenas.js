@@ -3,6 +3,7 @@ import { kf, lerp, clamp, sstep, win, easeInOut, easeOut, easeIn, shake, impulse
 import { glow, sparkle, rrect, line, circle, poly, vgrad } from '../../../motor/desenho.js';
 import { exclamacao } from '../../../motor/balao.js';
 import { voce, esposa, filho, nico, mascarado, gangster, relogioBolso, xicara, carta, pinca, bolsaDinheiro } from '../../../personagens/elenco.js';
+import { deserto, calor, cacto } from '../../../cenarios/cidade.js';
 import { relogio, casa, relojoaria, bancada, cofreBanco, garagem, carroEscuro, plantaPlano, ruaChuva, chuva, bar, jornal } from '../../../cenarios/cidade.js';
 
 function despertador(c, x, y, t, toca) { const sh = toca ? Math.sin(t * 60) * 4 : 0; c.save(); c.translate(x + sh, y); relogio(c, 0, 0, 40, t, { moldura: '#c0302a' }); for (const s of [-1, 1]) circle(c, s * 30, -40, 14, '#d8b040', { lw: 4 }); if (toca) for (const s of [-1, 1]) line(c, [[s * 50, -50], [s * 70, -66]], '#ffd23a', 5); c.restore(); }
@@ -16,14 +17,20 @@ export const c1 = {
     return {
       desenhar(t) {
         V.reset(); V.s = 1.05;
+        if (t < 2.6) {
+          st.setCam(lerp(380, 700, t / 2.6), 1240, lerp(1.0, 1.12, t / 2.6));
+          deserto(st, t, { hora: 0.55 - t * 0.12 });
+          st.camada(0, c => calor(c, t));
+          return;
+        }
         if (t < 6) {
-          const cafe = t > 3;
+          const cafe = t > 3.5;
           st.setCam(cafe ? 420 : 560, 1260, cafe ? 1.45 : 1.3);
-          casa(st, t, { noite: 1 - sstep(0.5, 3, t) * 0.8 });
+          casa(st, t, { noite: 0 });
           st.mundo(c => {
-            despertador(c, 760, 1340, t, t < 1.6);
+            despertador(c, 760, 1340, t, t < 3.0);
             V.x = cafe ? 360 : 560; V.y = 1660;
-            if (!cafe) { const esp = win(t, 0.8, 1.3, 2.2, 2.7); V.bracos(lerp(0.2, 2.8, esp), 0.1, lerp(0.2, 2.8, esp), 0.1); V.exp = esp > 0.5 ? 'fechado' : 'normal'; V.boca = esp > 0.5 ? 'aberta' : 'reta'; V.olhar = [0.4, 0]; }
+            if (!cafe) { const esp = win(t, 2.7, 2.9, 3.2, 3.45); V.bracos(lerp(0.2, 2.8, esp), 0.1, lerp(0.2, 2.8, esp), 0.1); V.exp = esp > 0.5 ? 'fechado' : 'normal'; V.boca = esp > 0.5 ? 'aberta' : 'reta'; V.olhar = [0.4, 0]; }
             else { const gole = win(t, 3.8, 4.1, 4.8, 5.1); V.maoD = xicara(); V.bracos(0.3, 0.2, lerp(0.5, 0.9, gole), lerp(1.3, 2.3, gole)); V.exp = gole > 0.5 ? 'fechado' : 'preocupado'; V.boca = 'reta'; V.olhar = [0.6, 0.3]; }
             V.draw(c, t);
           });
@@ -97,7 +104,7 @@ export const c3 = {
         let cam;
         if (t < 32) cam = [480, 1250, 1.2];
         else if (t < 36.5) cam = [620, 1230, 0.95];
-        else { cam = [380, 1260, lerp(1.6, 2.1, (t - 36.5) / 6.5)]; }
+        else { const olho = win(t, 38.4, 38.8, 39.8, 40.3); cam = [lerp(380, 300, olho), lerp(1260, 1362, olho), lerp(lerp(1.6, 2.1, (t - 36.5) / 6.5), 4.2, easeInOut(olho))]; }
         st.setCam(cam[0], cam[1], cam[2], 0, shake(t, impulse(t, ALARME, 0.6)));
         cofreBanco(st, t, { alarme });
         st.mundo(c => {
@@ -135,14 +142,15 @@ export const c4 = {
       desenhar(t) {
         if (t < 47) {
           st.setCam(lerp(420, 560, (t - 43) / 4), 1270, 1.2);
-          garagem(st, t);
+          deserto(st, t, { hora: 0.25 });
           st.mundo(c => {
-            carroEscuro(c, 760, 1740, 0.9, { flip: -1, farol: 0 });
-            N.reset(); N.x = 780; N.y = 1660; N.s = 1.0; N.flip = -1; N.olhar = [0.8, 0]; N.exp = t > 45 ? 'normal' : 'preocupado'; N.boca = 'reta';
+            carroEscuro(c, 860, 1740, 0.9, { flip: -1, farol: 0, cor: '#6a5a4a' });
+            N.reset(); N.x = 780; N.y = 1660; N.s = 1.0; N.flip = -1; N.olhar = [0.8, 0]; N.exp = t > 45 ? 'normal' : 'preocupado'; N.boca = Math.sin(t * 11) > 0.3 && t < 45.5 ? 'aberta' : 'reta'; N.headTilt = Math.sin(t * 7) * 0.07; if (t < 45.6) N.bracoE = { a: 0.8 + Math.sin(t * 8) * 0.4, b: 1.2 };
             N.bracoD = { a: lerp(0.3, 1.4, win(t, 45.8, 46.2, 46.8, 47.2)), b: 0 }; N.draw(c, t);
             V.reset(); V.x = lerp(80, 470, clamp((t - 43) / 2.4)); V.y = 1680; V.s = 1.05; if (t < 45.4) V.walk = t * 6; V.olhar = [0.8, 0]; V.exp = 'determinado'; V.boca = t > 45.4 && t < 46 ? 'aberta' : 'reta';
             V.bracoD = { a: lerp(0.2, 1.4, win(t, 45.8, 46.2, 46.8, 47.2)), b: 0 }; V.draw(c, t);
           });
+          st.camada(0, c => calor(c, t, 0.8));
           return;
         }
         if (t < 51.5) {
@@ -229,15 +237,14 @@ export const c6 = {
         R.reset(); R.s = 1.05; R.capaVento = 0;
         if (t < 77) {
           st.setCam(540, lerp(1300, 1240, (t - 73) / 4), lerp(1.0, 1.3, (t - 73) / 4));
-          ruaChuva(st, t);
-          st.mundo(c => { R.x = 540; R.y = lerp(1600, 1700, (t - 73) / 4); R.s = lerp(0.85, 1.1, (t - 73) / 4); R.walk = t * 5; R.exp = 'determinado'; R.boca = 'reta'; R.olhar = [0, 0]; R.draw(c, t); });
-          st.camada(0, c => chuva(c, t, 1));
+          deserto(st, t, { hora: 2 });
+          st.mundo(c => { carroEscuro(c, 300, 1560, 0.7, { farol: 1, cor: '#1a1a20' }); c.save(); c.globalCompositeOperation = 'lighter'; glow(c, 450, 1500, 420, '#fff0c0', 0.5); c.restore(); R.x = 540; R.y = lerp(1600, 1700, (t - 73) / 4); R.s = lerp(0.85, 1.1, (t - 73) / 4); R.walk = t * 5; R.exp = 'determinado'; R.boca = 'reta'; R.olhar = [0, 0]; R.draw(c, t); });
           return;
         }
         if (t < 80) {
           st.setCam(540, 960, 1);
-          ruaChuva(st, t);
-          st.camada(0, c => { const k = easeOut(clamp((t - 77) / 0.6)); jornal(c, 540, lerp(2400, 960, k), 1.2, t, ['O RELOJOEIRO', 'ATACA DE NOVO']); chuva(c, t, 0.6); });
+          deserto(st, t, { hora: 2 });
+          st.camada(0, c => { const k = easeOut(clamp((t - 77) / 0.6)); c.save(); c.translate(540, lerp(2400, 960, k)); c.rotate(Math.sin(t * 3) * 0.03); jornal(c, 0, 0, 1.2, t, ['O RELOJOEIRO', 'ATACA DE NOVO']); c.restore(); });
           return;
         }
         if (t < 83.5) {
@@ -262,9 +269,9 @@ export const c6 = {
         // close final: o rosto frio e o relógio parado
         const [hx, hy] = [540, 1680 - 300 * 1.05];
         st.setCam(hx, hy + 120, lerp(1.9, 2.3, (t - 86) / 2));
-        ruaChuva(st, t);
+        deserto(st, t, { hora: 1.05 });
         st.mundo(c => { R.x = 540; R.y = 1680; R.maoD = relogioBolso(true); R.bracoD = { a: 1.0, b: 1.7 }; R.exp = 'determinado'; R.boca = 'reta'; R.olhar = [0, 0]; R.draw(c, t); });
-        st.camada(0, c => chuva(c, t, 0.7));
+        st.camada(0, c => calor(c, t, 0.6));
       },
     };
   },

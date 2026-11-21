@@ -16,7 +16,10 @@ export default {
     for (const [a, cor, dir] of [[2.6, '#2a2020', 1], [5.6, '#c8a040', -1], [10.1, '#1a1e24', 1], [14.6, '#000000', -1], [19.6, '#2a2020', 1], [23.6, '#000000', -1], [27.6, '#1a1e24', 1], [42.6, '#1a1e24', -1], [46.6, '#c8a040', 1], [51.1, '#000000', -1], [57.6, '#2a1a12', 1], [61.6, '#2a2020', -1], [66.1, '#2a2020', 1], [72.6, '#0a0c14', -1], [79.6, '#1a1210', 1], [83.1, '#000000', -1], [85.6, '#0a0c14', 1]])
       st.wipe(clamp((t - a) / 0.3) + clamp((t - a - 0.35) / 0.3), cor, dir);
     st.overlay('#ffffff', win(t, 53.9, 54.0, 54.05, 54.4) * 0.7);
-    st.grain(idx, 0.04);
+    // gradação de cor de cinema: amarelo quente no deserto e de dia, mais frio e verde à noite
+    const quente = t < 10.1 ? 1 : t < 14.6 ? 0.25 : t < 24 ? 0.7 : t < 28 ? 0.3 : t < 43 ? 0.2 : t < 47 ? 1 : t < 58 ? 0.35 : t < 66.1 ? 0.45 : t < 73 ? 0.2 : t < 86 ? 0.25 : 0.9;
+    { const c = st.c; c.save(); c.globalCompositeOperation = 'soft-light'; c.globalAlpha = 0.55 * quente; c.fillStyle = '#ffb000'; c.fillRect(0, 0, W, H); c.globalCompositeOperation = 'multiply'; c.globalAlpha = 0.22 * quente; c.fillStyle = '#ffd070'; c.fillRect(0, 0, W, H); c.globalAlpha = 0.18 * (1 - quente); c.fillStyle = '#9ac0b0'; c.fillRect(0, 0, W, H); c.restore(); }
+    st.grain(idx, 0.05);
     const ta = win(t, 0.4, 0.8, 4.0, 4.5), pop = easeBack(clamp((t - 0.4) / 0.45));
     st.text('E SE VOCÊ FOSSE', W / 2, 300, { size: 84, fill: '#ffffff', alpha: ta, scale: 0.6 + 0.4 * pop, lw: 18 });
     st.text('O RELOJOEIRO?', W / 2, 420, { size: 120, fill: '#d8b040', alpha: win(t, 0.7, 1.1, 4.0, 4.5), scale: 0.6 + 0.4 * easeBack(clamp((t - 0.7) / 0.45)), lw: 22 });

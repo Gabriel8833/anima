@@ -21,6 +21,7 @@ export function casa(st, t, { noite = 0, frio = 0 } = {}) {
   st.camada(0.9, c => {
     vgrad(c, -400, -200, 1900, 2400, [[0, mix('#e8d8c0', '#2a2638', noite)], [1, mix('#d8c4a4', '#1a1828', noite)]]);
     rrect(c, 580, 480, 360, 380, 10, mix('#ffd8a0', '#1a2a4a', noite), { lw: 10 }); line(c, [[760, 480], [760, 860]], OUT, 8); line(c, [[580, 670], [940, 670]], OUT, 8);
+    if (noite < 0.6) { c.save(); c.beginPath(); c.rect(590, 490, 340, 360); c.clip(); c.globalAlpha *= 1 - noite; poly(c, [[590, 850], [620, 720], [720, 710], [760, 760], [930, 760], [930, 850]], '#c8703a', { lw: 4 }); rrect(c, 840, 740, 16, 80, 8, '#4a7a3a', { lw: 3 }); c.restore(); line(c, [[760, 480], [760, 860]], OUT, 8); line(c, [[580, 670], [940, 670]], OUT, 8); }
     if (noite) { circle(c, 860, 560, 34, '#f6f2d8', { stroke: null }); glow(c, 860, 560, 100, '#f6f2d8', 0.5); }
     else rays(c, 760, 560, -0.5, 4, 1000, 200, '#fff6d0', 0.22, t, 2);
     relogio(c, 260, 520, 70, t, { moldura: '#5a3a22' });
@@ -134,3 +135,43 @@ export function jornal(c, x, y, s, t, titulo) {
   for (let i = 0; i < 5; i++) line(c, [[-250, 260 + i * 22], [250 - (i % 2) * 60, 260 + i * 22]], '#8a8a8a', 4);
   c.restore();
 }
+// ---------- deserto (cidade árida do sudoeste) ----------
+// hora: 0 = dia, 1 = pôr do sol, 2 = noite
+export function cacto(c, x, y, s = 1, cor = '#5a8a3a') {
+  c.save(); c.translate(x, y); c.scale(s, s);
+  rrect(c, -22, -200, 44, 200, 22, cor, { lw: 5 });
+  shape(c, c => { c.moveTo(-22, -90); c.lineTo(-60, -90); c.quadraticCurveTo(-74, -90, -74, -110); c.lineTo(-74, -150); c.quadraticCurveTo(-60, -166, -48, -150); c.lineTo(-48, -112); c.lineTo(-22, -112); c.closePath(); }, cor, { lw: 5 });
+  shape(c, c => { c.moveTo(22, -120); c.lineTo(56, -120); c.lineTo(56, -170); c.quadraticCurveTo(68, -186, 80, -170); c.lineTo(80, -120); c.quadraticCurveTo(80, -98, 60, -98); c.lineTo(22, -98); c.closePath(); }, cor, { lw: 5 });
+  c.restore();
+}
+export function deserto(st, t, { hora = 0, estrada = true } = {}) {
+  const tarde = clamp(hora), noite = clamp(hora - 1);
+  const top = mix(mix('#e8a030', '#b8402a', tarde), '#0a0c20', noite), bot = mix(mix('#ffe08a', '#ffa850', tarde), '#2a2034', noite);
+  st.camada(0, c => {
+    vgrad(c, 0, 0, W, H, [[0, top], [0.75, bot], [1, bot]]);
+    if (noite < 0.5) { const sy = lerp(360, 980, tarde); glow(c, 780, sy, 520, mix('#fff2c0', '#ff7a30', tarde), 0.75); circle(c, 780, sy, 84, mix('#fff8e0', '#ffc070', tarde), { stroke: null }); }
+    else { const r = rng(3); c.save(); c.fillStyle = '#ffffff'; for (let i = 0; i < 70; i++) { c.globalAlpha = 0.3 + 0.6 * r(); c.fillRect(r() * W, r() * 1000, 3, 3); } c.restore(); circle(c, 300, 300, 46, '#f2eed8', { stroke: null }); glow(c, 300, 300, 160, '#f2eed8', 0.4); }
+    for (let i = 0; i < 3; i++) { const x = ((i * 420 + t * 14) % 1500) - 200; ellipse(c, x, 260 + i * 120, 180, 16, '#ffffff', { stroke: null, alpha: 0.18 * (1 - noite) }); }
+  });
+  const mesa = mix(mix('#c8703a', '#8a3424', tarde), '#1a1428', noite), mesa2 = mix(mix('#a85a30', '#6a2a20', tarde), '#120e1e', noite);
+  st.camada(0.25, c => {
+    shape(c, c => { c.moveTo(-600, 1460); c.lineTo(-500, 1260); c.lineTo(-180, 1240); c.lineTo(-120, 1300); c.lineTo(80, 1300); c.lineTo(140, 1460); c.closePath(); }, mesa, { lw: 5 });
+    shape(c, c => { c.moveTo(520, 1460); c.lineTo(640, 1180); c.lineTo(980, 1170); c.lineTo(1040, 1250); c.lineTo(1240, 1250); c.lineTo(1340, 1460); c.closePath(); }, mesa, { lw: 5 });
+    for (const [x, y] of [[-420, 1300], [700, 1220]]) line(c, [[x, y], [x + 200, y + 10]], mesa2, 6, 0.8);
+  });
+  st.camada(0.55, c => {
+    const casa = mix(mix('#e8c08a', '#c88a5a', tarde), '#2a2236', noite), jan = noite > 0.5 ? '#ffd890' : mix('#5a3a2a', '#3a2420', tarde);
+    for (const [x, w, h] of [[-300, 220, 120], [-40, 180, 100], [820, 240, 130], [1120, 180, 110]]) { rrect(c, x, 1470 - h, w, h, 6, casa, { lw: 5 }); for (let k = 0; k < 2; k++) rrect(c, x + 30 + k * (w - 90), 1470 - h + 30, 30, 34, 3, jan, { lw: 3 }); for (let k = 0; k < 4; k++) circle(c, x + 20 + k * (w - 40) / 3, 1470 - h + 14, 6, mix('#8a5a3a', '#1a1420', noite), { stroke: null }); }
+    cacto(c, 240, 1470, 0.6, mix('#4a7a3a', '#141a1e', noite)); cacto(c, 1300, 1470, 0.7, mix('#4a7a3a', '#141a1e', noite));
+    // poste e fios
+    rrect(c, 640, 1100, 14, 370, 3, mix('#6a4a2a', '#141018', noite), { stroke: null }); line(c, [[600, 1120], [700, 1120]], mix('#6a4a2a', '#141018', noite), 6); shape(c, c => { c.moveTo(-400, 1130); c.quadraticCurveTo(120, 1200, 640, 1124); c.quadraticCurveTo(1100, 1200, 1600, 1130); }, null, { stroke: mix('#3a2a1a', '#0a080e', noite), lw: 3 });
+  });
+  st.camada(1, c => {
+    vgrad(c, -1500, 1460, 4100, 900, [[0, mix(mix('#e0a868', '#b8683a', tarde), '#2a2030', noite)], [1, mix(mix('#c08048', '#8a4a2a', tarde), '#18121e', noite)]]);
+    if (estrada) { shape(c, c => { c.moveTo(380, 1462); c.lineTo(700, 1462); c.lineTo(1500, 2400); c.lineTo(-400, 2400); c.closePath(); }, mix(mix('#5a4a44', '#4a3434', tarde), '#16121a', noite), { stroke: null }); for (let i = 0; i < 6; i++) { const k = ((i / 6) + t * 0.05) % 1, y = 1470 + k * k * 900; rrect(c, 540 - 4 - k * 14, y, 8 + k * 28, 12 + k * 50, 2, '#e8c040', { stroke: null, alpha: 1 - noite * 0.5 }); } }
+    const r = rng(12); for (let i = 0; i < 14; i++) { const x = -500 + r() * 2100, y = 1500 + r() * 500; if (x > 300 && x < 800) continue; ellipse(c, x, y, 14 + r() * 20, 8 + r() * 8, mix('#a86a3a', '#100c14', noite), { lw: 3 }); }
+    for (const x of [-260, 1320]) cacto(c, x, 1720, 1.1, mix('#5a8a3a', '#141a1e', noite));
+  });
+}
+// calor tremendo no ar (sobre tudo)
+export function calor(c, t, a = 1) { c.save(); c.globalAlpha = 0.08 * a; c.strokeStyle = '#ffffff'; c.lineWidth = 3; for (let i = 0; i < 8; i++) { const y = 1300 + i * 30; c.beginPath(); for (let x = 0; x <= W; x += 40) c.lineTo(x, y + Math.sin(x * 0.02 + t * 6 + i) * 6); c.stroke(); } c.restore(); }
