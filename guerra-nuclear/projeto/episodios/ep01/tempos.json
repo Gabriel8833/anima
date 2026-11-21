@@ -1,0 +1,28 @@
+{
+  "titulo": "E se você sobrevivesse a uma guerra nuclear?",
+  "episodio": "",
+  "duracao": 86,
+  "cenas": {
+    "c1_o_ultimo_dia_normal": [0, 12],
+    "c2_o_primeiro_missil": [12, 24],
+    "c3_a_explosao": [24, 35],
+    "c4_30_dias_depois": [35, 47],
+    "c5_a_nova_humanidade": [47, 59],
+    "c6_o_perigo": [59, 70],
+    "c7_o_final": [70, 82.2]
+  },
+  "tela_preta": 999,
+  "continua": [999, 999],
+  "preto_final": 82.2,
+  "texto_final_tela": [82.6, 86],
+  "narracao": [
+    { "cena": 1, "inicio": 0.8,  "fim": 11.2, "texto": "Imagine acordar em uma manhã completamente normal. Você toma seu café, pega seu celular e se prepara para mais um dia. Mas naquele dia, o mundo estava prestes a acabar." },
+    { "cena": 2, "inicio": 12.6, "fim": 23.6, "texto": "Às 10 horas da manhã, os primeiros mísseis nucleares atingem as grandes cidades. Em questão de minutos, milhões de pessoas desaparecem. E você percebe que precisa encontrar um abrigo imediatamente." },
+    { "cena": 3, "inicio": 24.6, "fim": 34.0, "texto": "Você consegue entrar em uma construção subterrânea segundos antes da explosão atingir a região. Mas isso era apenas o começo." },
+    { "cena": 4, "inicio": 36.4, "fim": 46.6, "texto": "Depois de 30 dias, você finalmente sai do abrigo. Mas o mundo que conhecia não existe mais. A cidade está destruída e o ambiente está contaminado por radiação." },
+    { "cena": 5, "inicio": 47.8, "fim": 58.6, "texto": "Agora, encontrar comida e água potável é mais importante do que dinheiro. Você percebe que sobreviver depende de encontrar outros humanos e evitar regiões perigosas." },
+    { "cena": 6, "inicio": 59.6, "fim": 69.4, "texto": "Mas existe um problema ainda maior. Nem todos os sobreviventes são seus amigos. Alguns estão dispostos a fazer qualquer coisa para continuar vivos." },
+    { "cena": 7, "inicio": 70.6, "fim": 78.0, "texto": "E quando você finalmente acredita que está sozinho, encontra um sinal vindo de um abrigo que deveria estar abandonado há mais de 100 anos." },
+    { "cena": 7, "inicio": 79.4, "fim": 81.8, "texto": "Mas quem ainda estaria vivo lá dentro?" }
+  ]
+}
