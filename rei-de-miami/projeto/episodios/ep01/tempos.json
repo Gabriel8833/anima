@@ -1,0 +1,26 @@
+{
+  "titulo": "E se você fosse o rei de Miami?",
+  "episodio": "",
+  "duracao": 88,
+  "cenas": {
+    "c1_chegada_a_miami": [0, 13],
+    "c2_o_comeco": [13, 27],
+    "c3_a_ascensao": [27, 41],
+    "c4_o_imperio": [41, 55],
+    "c5_a_paranoia": [55, 69],
+    "c6_a_queda": [69, 84.4]
+  },
+  "tela_preta": 999,
+  "continua": [999, 999],
+  "preto_final": 84.4,
+  "texto_final_tela": [84.8, 88],
+  "narracao": [
+    { "cena": 1, "inicio": 0.8,  "fim": 12.4, "texto": "Imagine chegar a Miami nos anos 80 com uma mala pequena, alguns trocados no bolso e um sonho gigante: ter tudo o que essa cidade brilhante pode oferecer." },
+    { "cena": 2, "inicio": 13.6, "fim": 26.4, "texto": "Você começa lavando pratos por quase nada. Até que, numa noite, alguém oferece um trabalho fácil, rápido... e perigoso. Você sabe que é errado. Mas aceita." },
+    { "cena": 3, "inicio": 27.6, "fim": 40.4, "texto": "Em poucos anos, tudo muda. Ternos sob medida, carros que custam uma fortuna e reuniões com as pessoas mais poderosas da cidade. Agora, todo mundo sabe o seu nome." },
+    { "cena": 4, "inicio": 41.6, "fim": 54.4, "texto": "Você constrói um império: uma mansão gigante, seguranças em cada porta e mais dinheiro do que consegue gastar. Parece que nada pode te derrubar." },
+    { "cena": 5, "inicio": 55.6, "fim": 68.4, "texto": "Mas quanto mais você tem, menos você dorme. Cada sorriso parece uma traição. Cada funcionário pode ser um inimigo. E você começa a ficar sozinho." },
+    { "cena": 6, "inicio": 69.6, "fim": 79.4, "texto": "Até que, numa noite, as luzes vermelhas e azuis cercam a mansão. Você tenta defender tudo o que construiu... mas o império desaba em minutos." },
+    { "cena": 6, "inicio": 80.6, "fim": 84.0, "texto": "No fim, sobrou só uma pergunta: valeu a pena?" }
+  ]
+}
