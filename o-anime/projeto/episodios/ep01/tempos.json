@@ -1,0 +1,25 @@
+{
+  "titulo": "E se você achasse que estava em um anime?",
+  "episodio": "",
+  "duracao": 90,
+  "cenas": {
+    "c1_o_protagonista": [0, 15],
+    "c2_o_primeiro_teste": [15, 30],
+    "c3_os_bandidos": [30, 48],
+    "c4_a_arrogancia": [48, 65],
+    "c5_a_realidade": [65, 77.4],
+    "c6_o_fim_do_anime": [77.4, 90]
+  },
+  "tela_preta": 999,
+  "continua": [999, 999],
+  "preto_final": 87.9,
+  "texto_final_tela": [86.6, 90],
+  "narracao": [
+    { "cena": 1, "inicio": 0.6,  "fim": 14.4, "texto": "Imagine se você acordasse um dia achando que é o protagonista de um anime. Na sua cabeça, você tem um destino especial, uma força escondida e uma história que ninguém consegue entender. Só existe um pequeno problema: você é um completo fodido na vida real." },
+    { "cena": 2, "inicio": 15.4, "fim": 29.4, "texto": "Você começa a interpretar qualquer situação como se fosse uma batalha. Alguém olha torto? Rivalidade. Uma pessoa te desafia? Arco de treinamento. Você até começa a acreditar que está ficando mais forte a cada dia." },
+    { "cena": 3, "inicio": 30.4, "fim": 47.4, "texto": "Até que três bandidos tentam te assaltar. Você pensa: finalmente chegou minha batalha principal! Na sua cabeça, você é o próprio protagonista. E, por algum milagre, consegue escapar. Agora tem certeza absoluta de que possui uma proteção de roteiro." },
+    { "cena": 4, "inicio": 48.6, "fim": 64.4, "texto": "Depois disso, você fica insuportável. Conta para todo mundo que derrotou três criminosos, inventa golpes especiais e começa a achar que ninguém pode te vencer. Porra, você realmente acredita que é o escolhido!" },
+    { "cena": 5, "inicio": 65.4, "fim": 76.8, "texto": "Mas um dia, você encontra alguém que não está brincando. Você tenta agir como protagonista outra vez... só que dessa vez não existe golpe especial, não existe poder escondido e ninguém vai aparecer para te salvar." },
+    { "cena": 6, "inicio": 79.0, "fim": 87.8, "texto": "Porque você nunca esteve em um anime. Era só a sua cabeça tentando transformar a realidade em uma fantasia. E a porra da vida real não tem roteiro." }
+  ]
+}
