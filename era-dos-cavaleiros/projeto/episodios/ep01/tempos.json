@@ -1,0 +1,24 @@
+{
+  "titulo": "Como seria se você nascesse na era dos cavaleiros?",
+  "episodio": "Sua vida na Idade Média",
+  "duracao": 80,
+  "cenas": {
+    "c1_seu_nascimento": [0, 12],
+    "c2_sua_infancia": [12, 25],
+    "c3_o_sonho": [25, 38],
+    "c4_o_treinamento": [38, 51],
+    "c5_a_primeira_batalha": [51, 66],
+    "c6_o_final": [66, 80]
+  },
+  "tela_preta": 999,
+  "continua": [999, 999],
+  "texto_final_tela": [76.0, 80],
+  "narracao": [
+    { "cena": 1, "inicio": 0.8,  "fim": 11.4, "texto": "Imagine que você tivesse nascido há aproximadamente 800 anos, em plena Idade Média. Esqueça celulares, carros e eletricidade. Seu mundo seria completamente diferente." },
+    { "cena": 2, "inicio": 12.6, "fim": 24.4, "texto": "Desde pequeno, sua vida seria difícil. Você provavelmente teria que ajudar sua família, trabalhar e aprender a sobreviver em um mundo onde quase tudo dependia da força física." },
+    { "cena": 3, "inicio": 25.6, "fim": 37.4, "texto": "Mas você tinha um sonho: se tornar um cavaleiro. O problema é que não bastava querer. Você precisaria passar anos treinando para merecer esse título." },
+    { "cena": 4, "inicio": 38.6, "fim": 50.4, "texto": "Seu treinamento começaria ainda jovem. Você aprenderia a lutar com espadas, usar armas, montar cavalos e suportar o peso de uma armadura." },
+    { "cena": 5, "inicio": 51.6, "fim": 65.4, "texto": "E então chegaria o dia que mudaria sua vida para sempre. Você seria enviado para sua primeira batalha. O barulho das espadas, os cavalos e os gritos tornariam tudo muito mais assustador do que você imaginava." },
+    { "cena": 6, "inicio": 66.6, "fim": 76.0, "texto": "Ser um cavaleiro parecia um sonho, mas a realidade era muito mais difícil. E agora me diga: você conseguiria sobreviver a uma vida dessas?" }
+  ]
+}
