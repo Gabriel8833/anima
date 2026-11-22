@@ -1,0 +1,338 @@
+{
+ "titulo": "O filho que faz tudo e o que não faz nada",
+ "duracao": 184.6,
+ "falas": [
+  {
+   "cena": 1,
+   "quem": "N",
+   "inicio": 0.6,
+   "fim": 12.03,
+   "texto": "Imagine nascer numa família onde existem dois tipos de filhos... O primeiro faz praticamente tudo dentro de casa. O segundo... bom, o segundo parece que paga aluguel só pra ocupar o sofá."
+  },
+  {
+   "cena": 1,
+   "quem": "Pedro",
+   "inicio": 12.43,
+   "fim": 14.45,
+   "texto": "Ô mãe, cadê meu carregador?"
+  },
+  {
+   "cena": 1,
+   "quem": "Mãe",
+   "inicio": 14.65,
+   "fim": 16.68,
+   "texto": "Tá na mesa, meu filho!"
+  },
+  {
+   "cena": 1,
+   "quem": "Lucas",
+   "inicio": 17.08,
+   "fim": 19.1,
+   "texto": "Alguém pode me ajudar aqui?"
+  },
+  {
+   "cena": 2,
+   "quem": "N",
+   "inicio": 21.1,
+   "fim": 31.13,
+   "texto": "Lucas é aquele filho que faz de tudo. Lava louça, limpa a casa, tira o lixo, arruma a cozinha... O desgraçado praticamente virou funcionário terceirizado da própria família."
+  },
+  {
+   "cena": 2,
+   "quem": "Mãe",
+   "inicio": 32.73,
+   "fim": 35.09,
+   "texto": "Lucas! Você limpou a casa inteira?"
+  },
+  {
+   "cena": 2,
+   "quem": "Lucas",
+   "inicio": 35.29,
+   "fim": 36.28,
+   "texto": "Limpei, mãe!"
+  },
+  {
+   "cena": 2,
+   "quem": "Mãe",
+   "inicio": 36.78,
+   "fim": 40.88,
+   "texto": "Tá... mas por que deixou aquele copo em cima da mesa?"
+  },
+  {
+   "cena": 2,
+   "quem": "N",
+   "inicio": 43.88,
+   "fim": 50.04,
+   "texto": "PORRA! O CARA LIMPOU UMA CASA INTEIRA E O JULGAMENTO FINAL FOI POR CAUSA DE UM COPO!"
+  },
+  {
+   "cena": 3,
+   "quem": "Mãe",
+   "inicio": 52.24,
+   "fim": 55.99,
+   "texto": "Pedro, meu filho, você pode tirar o lixo pra mim?"
+  },
+  {
+   "cena": 3,
+   "quem": "Pedro",
+   "inicio": 57.19,
+   "fim": 58.87,
+   "texto": "Ah, mãe... justo agora?"
+  },
+  {
+   "cena": 3,
+   "quem": "Mãe",
+   "inicio": 66.87,
+   "fim": 69.93,
+   "texto": "MEU DEUS! QUE MENINO PRESTATIVO! OBRIGADA, MEU FILHO!"
+  },
+  {
+   "cena": 3,
+   "quem": "Lucas",
+   "inicio": 70.53,
+   "fim": 74.28,
+   "texto": "Eu tirei o lixo ontem, anteontem e a semana inteira..."
+  },
+  {
+   "cena": 3,
+   "quem": "Mãe",
+   "inicio": 74.48,
+   "fim": 75.81,
+   "texto": "Lucas, não começa!"
+  },
+  {
+   "cena": 3,
+   "quem": "N",
+   "inicio": 76.21,
+   "fim": 83.43,
+   "texto": "Pedro realizou uma tarefa de aproximadamente quarenta segundos e recebeu uma homenagem digna de quem voltou da Segunda Guerra Mundial."
+  },
+  {
+   "cena": 4,
+   "quem": "Mãe",
+   "inicio": 85.63,
+   "fim": 88.34,
+   "texto": "Come, meu filho. Você é tão esforçado!"
+  },
+  {
+   "cena": 4,
+   "quem": "Lucas",
+   "inicio": 89.54,
+   "fim": 96.74,
+   "texto": "Então quer dizer que, quando eu faço dez coisas, ninguém percebe... Mas quando ele faz uma, vira funcionário do mês?"
+  },
+  {
+   "cena": 4,
+   "quem": "Pedro",
+   "inicio": 97.04,
+   "fim": 99.06,
+   "texto": "É porque eu sou diferenciado."
+  },
+  {
+   "cena": 4,
+   "quem": "Lucas",
+   "inicio": 99.46,
+   "fim": 102.87,
+   "texto": "Diferenciado é teu nível de preguiça, seu filho da..."
+  },
+  {
+   "cena": 5,
+   "quem": "N",
+   "inicio": 105.67,
+   "fim": 144.46,
+   "texto": "Mas sabe por que isso acontece? Existe uma coisa chamada adaptação às expectativas. Quando você faz algo constantemente, as pessoas começam a enxergar aquilo como sua obrigação. Seu esforço deixa de ser novidade e passa a ser considerado o mínimo. Já quando alguém que nunca ajuda faz alguma coisa, aquilo parece uma conquista extraordinária. E tem outro detalhe: muitas famílias acabam criando papéis sem perceber. Um vira o responsável, o outro vira o preguiçoso que sempre precisa ser lembrado. Mas cuidado: isso não significa que toda família faz isso de propósito. Às vezes, as pessoas simplesmente se acostumam tanto com a ajuda de alguém que esquecem de reconhecer o esforço."
+  },
+  {
+   "cena": 6,
+   "quem": "Mãe",
+   "inicio": 147.66,
+   "fim": 150.38,
+   "texto": "Lucas, você não vai limpar a cozinha?"
+  },
+  {
+   "cena": 6,
+   "quem": "Lucas",
+   "inicio": 150.68,
+   "fim": 155.46,
+   "texto": "Hoje não, mãe. Hoje eu sou um ser humano em período de experiência."
+  },
+  {
+   "cena": 6,
+   "quem": "Pedro",
+   "inicio": 155.86,
+   "fim": 157.88,
+   "texto": "Ué, então quem vai fazer?"
+  },
+  {
+   "cena": 6,
+   "quem": "Lucas",
+   "inicio": 158.18,
+   "fim": 160.55,
+   "texto": "Parabéns, filho favorito. Sua promoção chegou."
+  },
+  {
+   "cena": 6,
+   "quem": "N",
+   "inicio": 163.25,
+   "fim": 180.65,
+   "texto": "E fica a reflexão: ajudar dentro de casa é responsabilidade de todos. Mas ninguém deveria precisar fazer tudo para só ser lembrado quando comete um erro. Porque, às vezes, o filho que parece não fazer nada não é o mais valorizado... É simplesmente aquele de quem menos se espera."
+  }
+ ],
+ "narracao": [
+  {
+   "inicio": 0.6,
+   "fim": 12.03,
+   "texto": "Imagine nascer numa família onde existem dois tipos de filhos... O primeiro faz praticamente tudo dentro de casa. O segundo... bom, o segundo parece que paga aluguel só pra ocupar o sofá."
+  },
+  {
+   "inicio": 12.43,
+   "fim": 14.45,
+   "texto": "— Pedro: Ô mãe, cadê meu carregador?"
+  },
+  {
+   "inicio": 14.65,
+   "fim": 16.68,
+   "texto": "— Mãe: Tá na mesa, meu filho!"
+  },
+  {
+   "inicio": 17.08,
+   "fim": 19.1,
+   "texto": "— Lucas: Alguém pode me ajudar aqui?"
+  },
+  {
+   "inicio": 21.1,
+   "fim": 31.13,
+   "texto": "Lucas é aquele filho que faz de tudo. Lava louça, limpa a casa, tira o lixo, arruma a cozinha... O desgraçado praticamente virou funcionário terceirizado da própria família."
+  },
+  {
+   "inicio": 32.73,
+   "fim": 35.09,
+   "texto": "— Mãe: Lucas! Você limpou a casa inteira?"
+  },
+  {
+   "inicio": 35.29,
+   "fim": 36.28,
+   "texto": "— Lucas: Limpei, mãe!"
+  },
+  {
+   "inicio": 36.78,
+   "fim": 40.88,
+   "texto": "— Mãe: Tá... mas por que deixou aquele copo em cima da mesa?"
+  },
+  {
+   "inicio": 43.88,
+   "fim": 50.04,
+   "texto": "PORRA! O CARA LIMPOU UMA CASA INTEIRA E O JULGAMENTO FINAL FOI POR CAUSA DE UM COPO!"
+  },
+  {
+   "inicio": 52.24,
+   "fim": 55.99,
+   "texto": "— Mãe: Pedro, meu filho, você pode tirar o lixo pra mim?"
+  },
+  {
+   "inicio": 57.19,
+   "fim": 58.87,
+   "texto": "— Pedro: Ah, mãe... justo agora?"
+  },
+  {
+   "inicio": 66.87,
+   "fim": 69.93,
+   "texto": "— Mãe: MEU DEUS! QUE MENINO PRESTATIVO! OBRIGADA, MEU FILHO!"
+  },
+  {
+   "inicio": 70.53,
+   "fim": 74.28,
+   "texto": "— Lucas: Eu tirei o lixo ontem, anteontem e a semana inteira..."
+  },
+  {
+   "inicio": 74.48,
+   "fim": 75.81,
+   "texto": "— Mãe: Lucas, não começa!"
+  },
+  {
+   "inicio": 76.21,
+   "fim": 83.43,
+   "texto": "Pedro realizou uma tarefa de aproximadamente quarenta segundos e recebeu uma homenagem digna de quem voltou da Segunda Guerra Mundial."
+  },
+  {
+   "inicio": 85.63,
+   "fim": 88.34,
+   "texto": "— Mãe: Come, meu filho. Você é tão esforçado!"
+  },
+  {
+   "inicio": 89.54,
+   "fim": 96.74,
+   "texto": "— Lucas: Então quer dizer que, quando eu faço dez coisas, ninguém percebe... Mas quando ele faz uma, vira funcionário do mês?"
+  },
+  {
+   "inicio": 97.04,
+   "fim": 99.06,
+   "texto": "— Pedro: É porque eu sou diferenciado."
+  },
+  {
+   "inicio": 99.46,
+   "fim": 102.87,
+   "texto": "— Lucas: Diferenciado é teu nível de preguiça, seu filho da..."
+  },
+  {
+   "inicio": 105.67,
+   "fim": 144.46,
+   "texto": "Mas sabe por que isso acontece? Existe uma coisa chamada adaptação às expectativas. Quando você faz algo constantemente, as pessoas começam a enxergar aquilo como sua obrigação. Seu esforço deixa de ser novidade e passa a ser considerado o mínimo. Já quando alguém que nunca ajuda faz alguma coisa, aquilo parece uma conquista extraordinária. E tem outro detalhe: muitas famílias acabam criando papéis sem perceber. Um vira o responsável, o outro vira o preguiçoso que sempre precisa ser lembrado. Mas cuidado: isso não significa que toda família faz isso de propósito. Às vezes, as pessoas simplesmente se acostumam tanto com a ajuda de alguém que esquecem de reconhecer o esforço."
+  },
+  {
+   "inicio": 147.66,
+   "fim": 150.38,
+   "texto": "— Mãe: Lucas, você não vai limpar a cozinha?"
+  },
+  {
+   "inicio": 150.68,
+   "fim": 155.46,
+   "texto": "— Lucas: Hoje não, mãe. Hoje eu sou um ser humano em período de experiência."
+  },
+  {
+   "inicio": 155.86,
+   "fim": 157.88,
+   "texto": "— Pedro: Ué, então quem vai fazer?"
+  },
+  {
+   "inicio": 158.18,
+   "fim": 160.55,
+   "texto": "— Lucas: Parabéns, filho favorito. Sua promoção chegou."
+  },
+  {
+   "inicio": 163.25,
+   "fim": 180.65,
+   "texto": "E fica a reflexão: ajudar dentro de casa é responsabilidade de todos. Mas ninguém deveria precisar fazer tudo para só ser lembrado quando comete um erro. Porque, às vezes, o filho que parece não fazer nada não é o mais valorizado... É simplesmente aquele de quem menos se espera."
+  }
+ ],
+ "cenas": {
+  "1": [
+   0.6,
+   20.7
+  ],
+  "2": [
+   21.1,
+   50.64
+  ],
+  "3": [
+   52.24,
+   84.43
+  ],
+  "4": [
+   85.63,
+   104.87
+  ],
+  "5": [
+   105.67,
+   145.26
+  ],
+  "6": [
+   147.66,
+   181.25
+  ]
+ },
+ "texto_final_tela": [
+  181.2,
+  184.6
+ ]
+}
