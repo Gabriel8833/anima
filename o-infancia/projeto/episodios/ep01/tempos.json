@@ -1,0 +1,36 @@
+{
+ "titulo": "E se você pudesse voltar à sua infância?",
+ "duracao": 60,
+ "narracao": [
+  {
+   "cena": 1,
+   "inicio": 1.0,
+   "fim": 5.8,
+   "texto": "E se você pudesse voltar à sua infância por apenas um dia?"
+  },
+  {
+   "cena": 2,
+   "inicio": 10.8,
+   "fim": 17.0,
+   "texto": "Você acordaria sem preocupações, tomaria café da manhã e sairia correndo para encontrar seus amigos."
+  },
+  {
+   "cena": 3,
+   "inicio": 21.0,
+   "fim": 29.6,
+   "texto": "A única preocupação seria decidir quem vai ser o goleiro. E claro... ninguém queria ser!"
+  },
+  {
+   "cena": 4,
+   "inicio": 32.8,
+   "fim": 40.6,
+   "texto": "Depois de brincar até escurecer, você voltaria para casa, ligaria seu videogame e assistiria ao seu desenho favorito."
+  },
+  {
+   "cena": 5,
+   "inicio": 44.6,
+   "fim": 57.0,
+   "texto": "Mas, quando você fechasse os olhos e voltasse ao presente, perceberia que daria qualquer coisa para viver aquilo novamente. Porque naquela época você queria crescer logo... e hoje só queria voltar."
+  }
+ ]
+}
