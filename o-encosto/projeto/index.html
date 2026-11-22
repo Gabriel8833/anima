@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>O Encosto Profissional</title>
+<style>html,body{margin:0;background:#000}canvas{display:block;max-height:100vh}</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import { createStudio, runEpisode } from './motor/estudio.js';
+const q = new URLSearchParams(location.search);
+const ep = (await import(`./episodios/${q.get('ep') || 'ep01'}/episodio.js`)).default;
+const st = createStudio({ scale: parseFloat(q.get('scale') || '1') }); st.legendas = q.get('legendas') === '1';
+runEpisode(st, ep);
+window.duracao = ep.duracao;
+// Visualização ao vivo no navegador: ?play=1
+if (q.get('play')) { const t0 = performance.now(); const loop = () => { const t = ((performance.now() - t0) / 1000) % ep.duracao; window.renderFrame(t); requestAnimationFrame(loop); }; loop(); }
+</script></body></html>

@@ -1,0 +1,220 @@
+{
+ "titulo": "Imagine ter um irmão que é um encosto profissional",
+ "duracao": 73.9,
+ "falas": [
+  {
+   "cena": 1,
+   "quem": "N",
+   "inicio": 0.6,
+   "fim": 8.73,
+   "texto": "Imagine ser aquele filho que faz tudo dentro de casa... Você lava louça, varre, limpa, arruma... Enquanto seu irmão tá no sofá há tanto tempo que já deveria ter escritura daquele lugar!",
+   "arquivo": "audio/f00.wav"
+  },
+  {
+   "cena": 2,
+   "quem": "Mãe",
+   "inicio": 12.13,
+   "fim": 14.09,
+   "texto": "LUCAS! QUE PORRA É ESSA AQUI?",
+   "arquivo": "audio/f01.wav"
+  },
+  {
+   "cena": 2,
+   "quem": "Lucas",
+   "inicio": 14.39,
+   "fim": 15.26,
+   "texto": "É um copo, mãe...",
+   "arquivo": "audio/f02.wav"
+  },
+  {
+   "cena": 2,
+   "quem": "Mãe",
+   "inicio": 15.56,
+   "fim": 16.88,
+   "texto": "MAS CUSTAVA LAVAR?",
+   "arquivo": "audio/f03.wav"
+  },
+  {
+   "cena": 2,
+   "quem": "N",
+   "inicio": 18.08,
+   "fim": 23.31,
+   "texto": "O desgraçado limpou até a alma da casa, mas deixou um copo! PRONTO! VIROU O MAIOR VAGABUNDO DO BRASIL!",
+   "arquivo": "audio/f04.wav"
+  },
+  {
+   "cena": 3,
+   "quem": "Mãe",
+   "inicio": 24.31,
+   "fim": 26.59,
+   "texto": "Pedro, meu filho, tira o lixo pra mim?",
+   "arquivo": "audio/f05.wav"
+  },
+  {
+   "cena": 3,
+   "quem": "Mãe",
+   "inicio": 33.59,
+   "fim": 36.89,
+   "texto": "MEU DEUS! QUE FILHO MARAVILHOSO! SEMPRE ME AJUDANDO!",
+   "arquivo": "audio/f06.wav"
+  },
+  {
+   "cena": 3,
+   "quem": "Lucas",
+   "inicio": 37.49,
+   "fim": 41.83,
+   "texto": "AH, VAI SE FODER! ELE JOGOU UM SACO DE LIXO NA RUA, NÃO DESCOBRIU A CURA DO CÂNCER!",
+   "arquivo": "audio/f07.wav"
+  },
+  {
+   "cena": 3,
+   "quem": "Pedro",
+   "inicio": 42.13,
+   "fim": 44.44,
+   "texto": "Tá com inveja porque eu sou o favorito.",
+   "arquivo": "audio/f08.wav"
+  },
+  {
+   "cena": 3,
+   "quem": "Lucas",
+   "inicio": 44.74,
+   "fim": 47.22,
+   "texto": "FAVORITO É O CARALHO! TU É UM MÓVEL COM CPF!",
+   "arquivo": "audio/f09.wav"
+  },
+  {
+   "cena": 4,
+   "quem": "Mãe",
+   "inicio": 49.62,
+   "fim": 51.78,
+   "texto": "LUCAS! QUEM VAI LIMPAR ESSA CASA?",
+   "arquivo": "audio/f10.wav"
+  },
+  {
+   "cena": 4,
+   "quem": "Lucas",
+   "inicio": 52.08,
+   "fim": 56.26,
+   "texto": "Não sei, mãe. Contrata o Pedro. Pelo visto, ele é um funcionário exemplar.",
+   "arquivo": "audio/f11.wav"
+  },
+  {
+   "cena": 4,
+   "quem": "Pedro",
+   "inicio": 56.56,
+   "fim": 58.8,
+   "texto": "EU? MAS EU NÃO SEI FAZER NADA!",
+   "arquivo": "audio/f12.wav"
+  },
+  {
+   "cena": 4,
+   "quem": "Lucas",
+   "inicio": 59.1,
+   "fim": 62.28,
+   "texto": "ENTÃO APRENDE, PORRA! ATÉ UMA BARATA TRABALHA MAIS QUE VOCÊ!",
+   "arquivo": "audio/f13.wav"
+  },
+  {
+   "cena": 4,
+   "quem": "N",
+   "inicio": 63.08,
+   "fim": 66.56,
+   "texto": "E naquele dia, Pedro descobriu que a vassoura não era um objeto de decoração.",
+   "arquivo": "audio/f14.wav"
+  },
+  {
+   "cena": 4,
+   "quem": "Lucas",
+   "inicio": 68.16,
+   "fim": 70.26,
+   "texto": "ISSO! TÁ QUASE VIRANDO UM SER HUMANO!",
+   "arquivo": "audio/f15.wav"
+  }
+ ],
+ "narracao": [
+  {
+   "inicio": 0.6,
+   "fim": 8.73,
+   "texto": "Imagine ser aquele filho que faz tudo dentro de casa... Você lava louça, varre, limpa, arruma... Enquanto seu irmão tá no sofá há tanto tempo que já deveria ter escritura daquele lugar!"
+  },
+  {
+   "inicio": 12.13,
+   "fim": 14.09,
+   "texto": "— Mãe: LUCAS! QUE PORRA É ESSA AQUI?"
+  },
+  {
+   "inicio": 14.39,
+   "fim": 15.26,
+   "texto": "— Lucas: É um copo, mãe..."
+  },
+  {
+   "inicio": 15.56,
+   "fim": 16.88,
+   "texto": "— Mãe: MAS CUSTAVA LAVAR?"
+  },
+  {
+   "inicio": 18.08,
+   "fim": 23.31,
+   "texto": "O desgraçado limpou até a alma da casa, mas deixou um copo! PRONTO! VIROU O MAIOR VAGABUNDO DO BRASIL!"
+  },
+  {
+   "inicio": 24.31,
+   "fim": 26.59,
+   "texto": "— Mãe: Pedro, meu filho, tira o lixo pra mim?"
+  },
+  {
+   "inicio": 33.59,
+   "fim": 36.89,
+   "texto": "— Mãe: MEU DEUS! QUE FILHO MARAVILHOSO! SEMPRE ME AJUDANDO!"
+  },
+  {
+   "inicio": 37.49,
+   "fim": 41.83,
+   "texto": "— Lucas: AH, VAI SE FODER! ELE JOGOU UM SACO DE LIXO NA RUA, NÃO DESCOBRIU A CURA DO CÂNCER!"
+  },
+  {
+   "inicio": 42.13,
+   "fim": 44.44,
+   "texto": "— Pedro: Tá com inveja porque eu sou o favorito."
+  },
+  {
+   "inicio": 44.74,
+   "fim": 47.22,
+   "texto": "— Lucas: FAVORITO É O CARALHO! TU É UM MÓVEL COM CPF!"
+  },
+  {
+   "inicio": 49.62,
+   "fim": 51.78,
+   "texto": "— Mãe: LUCAS! QUEM VAI LIMPAR ESSA CASA?"
+  },
+  {
+   "inicio": 52.08,
+   "fim": 56.26,
+   "texto": "— Lucas: Não sei, mãe. Contrata o Pedro. Pelo visto, ele é um funcionário exemplar."
+  },
+  {
+   "inicio": 56.56,
+   "fim": 58.8,
+   "texto": "— Pedro: EU? MAS EU NÃO SEI FAZER NADA!"
+  },
+  {
+   "inicio": 59.1,
+   "fim": 62.28,
+   "texto": "— Lucas: ENTÃO APRENDE, PORRA! ATÉ UMA BARATA TRABALHA MAIS QUE VOCÊ!"
+  },
+  {
+   "inicio": 63.08,
+   "fim": 66.56,
+   "texto": "E naquele dia, Pedro descobriu que a vassoura não era um objeto de decoração."
+  },
+  {
+   "inicio": 68.16,
+   "fim": 70.26,
+   "texto": "— Lucas: ISSO! TÁ QUASE VIRANDO UM SER HUMANO!"
+  }
+ ],
+ "texto_final_tela": [
+  70.5,
+  73.9
+ ]
+}
