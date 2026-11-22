@@ -1,0 +1,69 @@
+{
+ "titulo": "Gabriel Ganley — um sonho que deixou sua marca",
+ "episodio": "",
+ "duracao": 120,
+ "cenas": {
+  "c1": [
+   0,
+   14.0
+  ],
+  "c2": [
+   14.0,
+   37.9
+  ],
+  "c3": [
+   37.9,
+   61.8
+  ],
+  "c4": [
+   61.8,
+   85.3
+  ],
+  "c5": [
+   85.3,
+   116.2
+  ]
+ },
+ "tela_preta": 999,
+ "continua": [
+  999,
+  999
+ ],
+ "preto_final": 116.2,
+ "texto_final_tela": [
+  116.4,
+  120
+ ],
+ "narracao": [
+  {
+   "cena": 1,
+   "inicio": 0.6,
+   "fim": 13.6,
+   "texto": "Algumas pessoas passam pela vida sem saber exatamente o que querem ser. Outras encontram um sonho tão grande que decidem dedicar anos de suas vidas para alcançá-lo. Gabriel Ganley encontrou o seu muito cedo: o fisiculturismo."
+  },
+  {
+   "cena": 2,
+   "inicio": 14.4,
+   "fim": 37.5,
+   "texto": "Nascido no Rio de Janeiro, Gabriel começou na musculação aos 15 anos. Com o tempo, aquilo deixou de ser apenas um hobby. Ele começou a compartilhar sua rotina, seus treinos e sua evolução. Aos poucos, milhares de pessoas passaram a acompanhar sua jornada. E o garoto que gravava vídeos com um simples celular começou a conquistar espaço em um mundo que exige dedicação extrema."
+  },
+  {
+   "cena": 3,
+   "inicio": 38.3,
+   "fim": 61.0,
+   "texto": "Gabriel também carregava grandes ambições. Participou de competições, conquistou patrocínio e construiu uma comunidade que acompanhava cada passo seu. Durante parte de sua trajetória, destacou-se no fisiculturismo natural. Mais tarde, decidiu seguir outro caminho dentro do esporte e falou abertamente sobre o uso de recursos hormonais. Ele queria chegar cada vez mais longe. Seu sonho era competir entre os grandes nomes do bodybuilding."
+  },
+  {
+   "cena": 4,
+   "inicio": 62.6,
+   "fim": 84.6,
+   "texto": "Mas, em 23 de maio de 2026, uma notícia abalou a comunidade fitness. Gabriel Ganley morreu aos 22 anos. Sua morte foi atribuída, segundo o atestado de óbito divulgado pela imprensa, a uma cardiomiopatia hipertrófica. Uma vida jovem, cheia de planos, interrompida antes de muitos dos sonhos que ainda estavam por acontecer."
+  },
+  {
+   "cena": 5,
+   "inicio": 86.0,
+   "fim": 115.6,
+   "texto": "E talvez a maior reflexão dessa história seja que não devemos confundir dedicação com colocar a própria vida em risco. O esporte pode transformar vidas, construir disciplina e ensinar persistência. Mas nenhum físico, competição ou reconhecimento vale mais do que a saúde. Gabriel deixou uma marca em milhares de pessoas. Sua trajetória também nos lembra que, por trás de cada corpo, existe uma vida, uma família e sonhos que vão muito além do espelho. Descanse em paz, Gabriel Ganley. Você será lembrado."
+  }
+ ]
+}
