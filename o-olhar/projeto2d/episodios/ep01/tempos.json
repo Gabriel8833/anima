@@ -1,0 +1,72 @@
+{
+ "titulo": "Por que olhamos para cima quando tentamos lembrar?",
+ "duracao": 60,
+ "narracao": [
+  {
+   "cena": 1,
+   "inicio": 0.6,
+   "fim": 7.8,
+   "texto": "Você já percebeu que, quando alguém pergunta alguma coisa que você não lembra, sua cabeça automaticamente olha para cima?"
+  },
+  {
+   "cena": 2,
+   "inicio": 8.4,
+   "fim": 11.4,
+   "texto": "Parece que a resposta está escrita no teto, né?"
+  },
+  {
+   "cena": 2,
+   "inicio": 12.0,
+   "fim": 13.6,
+   "texto": "Mas por que fazemos isso?"
+  },
+  {
+   "cena": 3,
+   "inicio": 14.2,
+   "fim": 19.2,
+   "texto": "Na verdade, nossos olhos e nosso cérebro trabalham juntos durante o processo de lembrar."
+  },
+  {
+   "cena": 4,
+   "inicio": 19.6,
+   "fim": 27.4,
+   "texto": "Quando tentamos recuperar uma informação, podemos desviar o olhar para reduzir distrações visuais e concentrar nossa atenção no pensamento."
+  },
+  {
+   "cena": 4,
+   "inicio": 27.8,
+   "fim": 32.6,
+   "texto": "É como se o cérebro estivesse procurando um arquivo perdido em uma gaveta gigantesca."
+  },
+  {
+   "cena": 5,
+   "inicio": 33.2,
+   "fim": 36.6,
+   "texto": "E tem um detalhe curioso: nem todo mundo olha para cima."
+  },
+  {
+   "cena": 5,
+   "inicio": 36.8,
+   "fim": 42.0,
+   "texto": "Algumas pessoas olham para os lados, fecham os olhos ou simplesmente ficam encarando o nada."
+  },
+  {
+   "cena": 6,
+   "inicio": 42.6,
+   "fim": 49.8,
+   "texto": "Então, da próxima vez que alguém perguntar alguma coisa e você olhar para o teto, não precisa procurar a resposta lá em cima."
+  },
+  {
+   "cena": 6,
+   "inicio": 50.4,
+   "fim": 52.0,
+   "texto": "Ela está na sua cabeça!"
+  },
+  {
+   "cena": 6,
+   "inicio": 53.2,
+   "fim": 55.2,
+   "texto": "Ou pelo menos deveria estar."
+  }
+ ]
+}
