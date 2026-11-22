@@ -1,0 +1,99 @@
+{
+ "titulo": "Como controlar sua adrenalina em uma situação de perigo",
+ "episodio": "",
+ "duracao": 120,
+ "cenas": {
+  "c1_o_perigo": [
+   0,
+   13.6
+  ],
+  "c2_chora": [
+   13.6,
+   30.3
+  ],
+  "c3_perdido": [
+   30.3,
+   43.9
+  ],
+  "c4_agressivo": [
+   43.9,
+   58.1
+  ],
+  "c5_paralisado": [
+   58.1,
+   73.8
+  ],
+  "c6_impulsivo": [
+   73.8,
+   85.6
+  ],
+  "c7_calma": [
+   85.6,
+   106.2
+  ],
+  "c8_licao": [
+   106.2,
+   117.6
+  ]
+ },
+ "tela_preta": 999,
+ "continua": [
+  999,
+  999
+ ],
+ "preto_final": 117.6,
+ "texto_final_tela": [
+  117.7,
+  120
+ ],
+ "narracao": [
+  {
+   "cena": 1,
+   "inicio": 0.5,
+   "fim": 13.3,
+   "texto": "Imagine que você está andando na rua e, de repente, acontece uma situação de perigo. Seu coração dispara, suas mãos começam a tremer e sua mente parece entrar em pane. Isso é a adrenalina. Mas você sabe como seu corpo pode reagir?"
+  },
+  {
+   "cena": 2,
+   "inicio": 13.8,
+   "fim": 30.0,
+   "texto": "Primeiro tipo: a pessoa que sente vontade de chorar. Em situações de pressão, algumas pessoas ficam emocionalmente sobrecarregadas. E não, chorar não significa ser fraco. Se isso acontecer, tente respirar lentamente, soltando o ar por mais tempo do que inspira. Procure um lugar seguro e concentre-se em uma tarefa simples de cada vez."
+  },
+  {
+   "cena": 3,
+   "inicio": 30.5,
+   "fim": 43.6,
+   "texto": "Segundo tipo: a pessoa que simplesmente não sabe o que fazer. Sua cabeça fica cheia de pensamentos e você não consegue decidir. Nesse momento, pare por alguns segundos, se estiver seguro. Observe o ambiente e escolha uma única prioridade: sair do perigo imediato."
+  },
+  {
+   "cena": 4,
+   "inicio": 44.1,
+   "fim": 57.8,
+   "texto": "Terceiro tipo: a pessoa que perde a cabeça e fica agressiva. A tensão pode fazer você interpretar tudo como uma ameaça. Não procure briga, não tente bancar o herói e evite confrontos desnecessários. Afaste-se da confusão, mantenha as mãos livres e procure uma saída segura."
+  },
+  {
+   "cena": 5,
+   "inicio": 58.3,
+   "fim": 73.5,
+   "texto": "Quarto tipo: a pessoa que simplesmente trava. Ela sabe que precisa agir, mas parece que seu corpo não responde. Tente começar com movimentos pequenos: mexa os dedos, sinta os pés no chão e diga em voz baixa qual é sua próxima ação. Não pense em resolver tudo de uma vez."
+  },
+  {
+   "cena": 6,
+   "inicio": 74.0,
+   "fim": 85.3,
+   "texto": "Quinto tipo: a pessoa que age por impulso. Ela quer resolver tudo imediatamente, mas pode acabar se colocando em ainda mais perigo. Antes de agir, observe os riscos. Ajudar alguém não significa se transformar em outra vítima."
+  },
+  {
+   "cena": 7,
+   "inicio": 85.8,
+   "fim": 105.9,
+   "texto": "Sexto tipo: a pessoa que consegue organizar melhor seus pensamentos mesmo sob pressão. Ela não é necessariamente alguém sem medo. Ela apenas consegue transformar o medo em uma ação de cada vez. Procure segurança, peça ajuda e, no Brasil, ligue para o 190 em caso de emergência policial, 192 para o SAMU ou 193 para os Bombeiros, conforme a situação."
+  },
+  {
+   "cena": 8,
+   "inicio": 106.4,
+   "fim": 117.4,
+   "texto": "Você não precisa eliminar sua adrenalina para sobreviver. Precisa aprender a não deixar o desespero decidir tudo por você. Porque, em uma situação de perigo, às vezes, os próximos dez segundos podem fazer toda a diferença."
+  }
+ ]
+}
