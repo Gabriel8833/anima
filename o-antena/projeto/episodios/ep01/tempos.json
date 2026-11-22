@@ -1,0 +1,63 @@
+{
+ "titulo": "Por que o teto do carro tem uma antena?",
+ "episodio": "",
+ "duracao": 55,
+ "cenas": {
+  "c1": [
+   0,
+   9.0
+  ],
+  "c2": [
+   9.0,
+   20.4
+  ],
+  "c3": [
+   20.4,
+   31.0
+  ],
+  "c4": [
+   31.0,
+   42.4
+  ],
+  "c5": [
+   42.4,
+   55
+  ]
+ },
+ "texto_final_tela": [
+  51.8,
+  55
+ ],
+ "narracao": [
+  {
+   "cena": 1,
+   "inicio": 0.5,
+   "fim": 8.4,
+   "texto": "Você já parou pra pensar por que quase todo carro tem uma antena em cima? Não, ela não está ali só pra enfeitar o veículo!"
+  },
+  {
+   "cena": 2,
+   "inicio": 9.4,
+   "fim": 19.6,
+   "texto": "A função principal dela é captar ondas de rádio! É assim que o seu carro consegue receber sinais de emissoras e transformar essas ondas em música, notícias e informações."
+  },
+  {
+   "cena": 3,
+   "inicio": 20.8,
+   "fim": 30.4,
+   "texto": "Mas por que colocar justamente no teto? Porque, nessa posição, a antena geralmente consegue receber melhor os sinais, ficando menos obstruída pela estrutura metálica do veículo."
+  },
+  {
+   "cena": 4,
+   "inicio": 31.4,
+   "fim": 41.6,
+   "texto": "E sabe aquela anteninha que parece uma barbatana de tubarão? Ela pode esconder várias funções, como rádio, GPS e até comunicação por satélite, dependendo do modelo do veículo."
+  },
+  {
+   "cena": 5,
+   "inicio": 42.8,
+   "fim": 51.4,
+   "texto": "Então, da próxima vez que você entrar em um carro, lembre-se: aquela pequena antena pode estar fazendo muito mais do que você imaginava!"
+  }
+ ]
+}
