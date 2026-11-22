@@ -2,8 +2,11 @@
 import { sstep, win, clamp } from '../../motor/base.js';
 import { W, H } from '../../motor/estudio.js';
 import { c1, c2, c3, c4, c5 } from './cenas/cenas.js';
+import { blocosLegenda, desenharLegenda } from '../../motor/serie.js';
 
 const tempos = await (await fetch(new URL('./tempos.json', import.meta.url))).json();
+tempos.tela_preta = 999;
+const LEG = blocosLegenda(tempos);
 
 export default {
   tempos, duracao: tempos.duracao,
@@ -24,4 +27,5 @@ export default {
     st.grain(idx, 0.035);
     st.overlay('#000', sstep(57.6, 60, t));
   },
+  legenda(st, t) { desenharLegenda(st, t, LEG, tempos, 1560); },
 };
