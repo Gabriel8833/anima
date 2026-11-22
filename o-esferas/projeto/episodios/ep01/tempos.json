@@ -1,0 +1,41 @@
+{
+ "titulo": "Por que existem bolas nos fios elétricos?",
+ "episodio": "",
+ "duracao": 57.9,
+ "texto_final_tela": [
+  54.9,
+  57.9
+ ],
+ "narracao": [
+  {
+   "cena": 1,
+   "inicio": 0.5,
+   "fim": 8.9,
+   "texto": "Você já reparou que existem umas bolas laranjas penduradas nos fios de alta tensão? Não, a companhia elétrica não está treinando basquete nas alturas."
+  },
+  {
+   "cena": 2,
+   "inicio": 9.5,
+   "fim": 15.5,
+   "texto": "Na verdade, essas bolas têm uma função muito importante: elas são chamadas de esferas de sinalização aérea."
+  },
+  {
+   "cena": 3,
+   "inicio": 16.1,
+   "fim": 30.5,
+   "texto": "Elas servem para deixar os cabos mais visíveis para pilotos de aviões e helicópteros, principalmente em regiões onde aeronaves voam mais baixo. Afinal, imagine um piloto voando tranquilamente e só perceber um cabo de alta tensão quando já está perto demais..."
+  },
+  {
+   "cena": 4,
+   "inicio": 31.1,
+   "fim": 42.3,
+   "texto": "E por que geralmente são laranjas? Porque essa cor chama bastante atenção contra o céu e a paisagem, ajudando na identificação dos cabos. Existem também esferas de outras cores, dependendo do ambiente."
+  },
+  {
+   "cena": 5,
+   "inicio": 42.9,
+   "fim": 54.5,
+   "texto": "Então, da próxima vez que você vir uma dessas bolas, lembre-se: ela não está ali para jogar basquete. Está ali para evitar que alguém transforme um voo tranquilo em uma colisão bastante perigosa!"
+  }
+ ]
+}
