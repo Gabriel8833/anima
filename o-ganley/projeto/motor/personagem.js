@@ -83,7 +83,7 @@ export class Personagem {
     // braços e mãos
     for (const side of [-1, 1]) {
       const { S, E, H, a2 } = this.armPts(side);
-      limb(c, [S, E, H], 27, d.manga || d.roupa);
+      limb(c, [S, E, H], this.bracoW ?? 27, d.manga || d.roupa);
       if (d.enfeite) { c.save(); c.translate(lerp(E[0], H[0], 0.82), lerp(E[1], H[1], 0.82)); c.rotate(-side * a2); ellipse(c, 0, 0, 17, 7, d.enfeite, { lw: 4 }); c.restore(); }
       circle(c, H[0], H[1], 15, d.pele);
       const item = side < 0 ? this.maoE : this.maoD;

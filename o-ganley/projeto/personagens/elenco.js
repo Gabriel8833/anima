@@ -171,7 +171,7 @@ export function gabriel(fase = 1) {
   return new Personagem({ pele: '#e8b48c', olhos: '#2a1a12', sobrancelha: '#2a1a12', sobrancelhaW: 9, roupa: regata ? '#1e1e24' : '#9aa0a8', roupaSombra: regata ? '#0e0e12' : '#7a8088', manga: regata ? '#e8b48c' : '#9aa0a8', enfeite: regata ? '#c89470' : '#7a8088', cinto: regata ? '#1e1e24' : '#9aa0a8', semFaixa: true, barra: -108, larguraBarra: 70, perna: '#2a2a32', sapato: '#f2eee6',
     extraTras: (c, p) => {
       const f = p.forca ?? (regata ? 0.6 : 0);
-      if (f > 0) { for (const s of [-1, 1]) circle(c, s * (52 + f * 10), -214, 18 + f * 16, '#e8b48c', { lw: 5 }); line(c, [[-30, -196], [-6, -186]], 'rgba(0,0,0,0.25)', 4); line(c, [[30, -196], [6, -186]], 'rgba(0,0,0,0.25)', 4); }
+      p.bracoW = 27; // boneco normal, sem músculos desenhados
       if (regata && p.patch) { rrect(c, 14, -206, 26, 18, 3, '#e8c040', { lw: 2 }); }
     },
     cabeloFrente: (c) => { const cor = '#1e140e'; shape(c, c => { c.moveTo(-76, -14); c.quadraticCurveTo(-80, -94, 0, -98); c.quadraticCurveTo(80, -94, 76, -14); c.quadraticCurveTo(64, -62, 20, -66); c.lineTo(-10, -74); c.quadraticCurveTo(-60, -60, -76, -14); c.closePath(); }, cor); for (const x of [-30, 0, 30]) line(c, [[x, -94], [x + 10, -76]], '#3a2a20', 3); } });
