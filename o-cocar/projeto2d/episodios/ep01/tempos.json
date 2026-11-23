@@ -1,0 +1,60 @@
+{
+ "titulo": "Por que coçamos a cabeça quando estamos confusos?",
+ "duracao": 60,
+ "narracao": [
+  {
+   "cena": 1,
+   "inicio": 0.6,
+   "fim": 6.6,
+   "texto": "Você já percebeu que, quando não entende alguma coisa, sua mão automaticamente vai parar na cabeça?"
+  },
+  {
+   "cena": 2,
+   "inicio": 7.4,
+   "fim": 11.8,
+   "texto": "Parece que coçar o couro cabeludo vai fazer o cérebro funcionar melhor, né?"
+  },
+  {
+   "cena": 3,
+   "inicio": 12.6,
+   "fim": 15.6,
+   "texto": "Mas existe uma explicação interessante para esse comportamento."
+  },
+  {
+   "cena": 3,
+   "inicio": 16.0,
+   "fim": 24.6,
+   "texto": "Coçar a cabeça quando estamos confusos pode ser um gesto automático associado à tensão, à dúvida e à tentativa de lidar com uma situação desconfortável."
+  },
+  {
+   "cena": 4,
+   "inicio": 25.2,
+   "fim": 29.8,
+   "texto": "Na psicologia, comportamentos assim podem ser chamados de comportamentos de deslocamento."
+  },
+  {
+   "cena": 4,
+   "inicio": 30.2,
+   "fim": 36.4,
+   "texto": "É como se o corpo encontrasse uma pequena ação para fazer enquanto a cabeça tenta organizar as ideias."
+  },
+  {
+   "cena": 5,
+   "inicio": 37.0,
+   "fim": 42.6,
+   "texto": "E o mais engraçado é que, às vezes, você coça tanto a cabeça tentando encontrar uma resposta..."
+  },
+  {
+   "cena": 5,
+   "inicio": 43.0,
+   "fim": 45.8,
+   "texto": "Que acaba esquecendo até qual era a pergunta!"
+  },
+  {
+   "cena": 5,
+   "inicio": 46.6,
+   "fim": 54.4,
+   "texto": "Então, da próxima vez que sua mão for parar na cabeça, talvez seu cérebro esteja precisando de alguns segundos para organizar a bagunça!"
+  }
+ ]
+}
