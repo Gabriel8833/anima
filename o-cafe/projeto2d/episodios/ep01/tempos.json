@@ -1,0 +1,195 @@
+{
+ "titulo": "E se você voltasse pra infância sendo o café com leite?",
+ "duracao": 85.2,
+ "narracao": [
+  {
+   "id": "1a",
+   "cena": 1,
+   "inicio": 0.4,
+   "fim": 2.69,
+   "texto": "E se você pudesse voltar pra sua infância?"
+  },
+  {
+   "id": "1b",
+   "cena": 1,
+   "inicio": 2.84,
+   "fim": 6.78,
+   "texto": "Você acordaria em 2010, sem boleto, sem emprego e sem nenhuma responsabilidade."
+  },
+  {
+   "id": "1c",
+   "cena": 1,
+   "inicio": 6.93,
+   "fim": 13.33,
+   "texto": "Sua maior preocupação seria saber se hoje ia ter futebol na rua ou se sua mãe ia te obrigar a arrumar o quarto."
+  },
+  {
+   "id": "2a",
+   "cena": 2,
+   "inicio": 13.73,
+   "fim": 16.84,
+   "texto": "Você pega sua bicicleta, chama os amigos e vai jogar futebol."
+  },
+  {
+   "id": "2b",
+   "cena": 2,
+   "inicio": 16.99,
+   "fim": 20.11,
+   "texto": "Mas na hora de escolher os times, começa o verdadeiro inferno."
+  },
+  {
+   "id": "2c",
+   "cena": 2,
+   "inicio": 20.26,
+   "fim": 22.0,
+   "texto": "Todo mundo é escolhido, menos você."
+  },
+  {
+   "id": "2d",
+   "cena": 2,
+   "inicio": 22.15,
+   "fim": 24.99,
+   "texto": "Até o cachorro da rua tem mais moral que você!"
+  },
+  {
+   "id": "3a",
+   "cena": 3,
+   "inicio": 25.39,
+   "fim": 27.68,
+   "texto": "E você era o famoso café com leite!"
+  },
+  {
+   "id": "3b",
+   "cena": 3,
+   "inicio": 27.83,
+   "fim": 29.85,
+   "texto": "Podia jogar, mas não podia ser marcado."
+  },
+  {
+   "id": "3c",
+   "cena": 3,
+   "inicio": 30.0,
+   "fim": 31.47,
+   "texto": "Fazia gol e não valia."
+  },
+  {
+   "id": "3d",
+   "cena": 3,
+   "inicio": 31.62,
+   "fim": 33.64,
+   "texto": "Levava uma bolada e todo mundo gritava:"
+  },
+  {
+   "id": "3e",
+   "cena": 3,
+   "inicio": 33.79,
+   "fim": 36.39,
+   "texto": "\"NÃO VALE, ELE É CAFÉ COM LEITE, PORRA!\""
+  },
+  {
+   "id": "3f",
+   "cena": 3,
+   "inicio": 36.54,
+   "fim": 39.38,
+   "texto": "Você não era jogador, era praticamente um enfeite de campo!"
+  },
+  {
+   "id": "4a",
+   "cena": 4,
+   "inicio": 39.78,
+   "fim": 41.79,
+   "texto": "Na queimada, você era o primeiro eliminado."
+  },
+  {
+   "id": "4b",
+   "cena": 4,
+   "inicio": 41.94,
+   "fim": 43.69,
+   "texto": "No esconde-esconde, ninguém nem procurava você."
+  },
+  {
+   "id": "4c",
+   "cena": 4,
+   "inicio": 43.84,
+   "fim": 47.5,
+   "texto": "E no pega-pega, os filhos da puta ainda reclamavam quando você corria devagar!"
+  },
+  {
+   "id": "5a",
+   "cena": 5,
+   "inicio": 47.9,
+   "fim": 51.01,
+   "texto": "Mas você tinha uma esperança: conseguir ser o dono da bola."
+  },
+  {
+   "id": "5b",
+   "cena": 5,
+   "inicio": 51.16,
+   "fim": 54.0,
+   "texto": "Até que, quando finalmente chegava sua vez, algum desgraçado gritava:"
+  },
+  {
+   "id": "5c",
+   "cena": 5,
+   "inicio": 54.15,
+   "fim": 56.13,
+   "texto": "\"A BOLA É MINHA, VOU EMBORA!\""
+  },
+  {
+   "id": "5d",
+   "cena": 5,
+   "inicio": 56.28,
+   "fim": 58.02,
+   "texto": "E pronto. A democracia acabava ali!"
+  },
+  {
+   "id": "6a",
+   "cena": 6,
+   "inicio": 58.42,
+   "fim": 61.81,
+   "texto": "E quando a brincadeira finalmente ficava boa, sua mãe aparecia na janela:"
+  },
+  {
+   "id": "6b",
+   "cena": 6,
+   "inicio": 61.96,
+   "fim": 63.0,
+   "texto": "\"VEM TOMAR BANHO!\""
+  },
+  {
+   "id": "6c",
+   "cena": 6,
+   "inicio": 63.15,
+   "fim": 65.12,
+   "texto": "E você: \"SÓ MAIS CINCO MINUTOS!\""
+  },
+  {
+   "id": "6d",
+   "cena": 6,
+   "inicio": 65.27,
+   "fim": 68.39,
+   "texto": "Mano, aqueles cinco minutos valiam mais que qualquer férias na Disney!"
+  },
+  {
+   "id": "7a",
+   "cena": 7,
+   "inicio": 68.79,
+   "fim": 72.11,
+   "texto": "E o pior é que você reclamava de tudo isso..."
+  },
+  {
+   "id": "7b",
+   "cena": 7,
+   "inicio": 72.61,
+   "fim": 76.26,
+   "texto": "mas hoje daria qualquer coisa pra viver mais uma tarde daquelas."
+  },
+  {
+   "id": "7c",
+   "cena": 7,
+   "inicio": 76.41,
+   "fim": 81.99,
+   "texto": "Sem preocupação, sem boleto e sem ter que fingir que sabe o que tá fazendo da vida."
+  }
+ ]
+}
