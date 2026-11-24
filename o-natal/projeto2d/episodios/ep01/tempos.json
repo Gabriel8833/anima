@@ -1,0 +1,126 @@
+{
+ "titulo": "O pior Natal da minha vida",
+ "duracao": 59.6,
+ "narracao": [
+  {
+   "id": "1a",
+   "quem": "narr",
+   "cena": 1,
+   "inicio": 0.35,
+   "fim": 5.61,
+   "texto": "Imagine passar o Natal com sua família e descobrir que o verdadeiro inferno tem árvore decorada, pisca-pisca e pavê."
+  },
+  {
+   "id": "2a",
+   "quem": "narr",
+   "cena": 2,
+   "inicio": 5.91,
+   "fim": 11.14,
+   "texto": "Você chega todo feliz, mas não demora cinco minutos para seu tio aparecer com aquela piada de merda..."
+  },
+  {
+   "id": "2b",
+   "quem": "tio",
+   "cena": 2,
+   "inicio": 11.26,
+   "fim": 12.78,
+   "texto": "\"É pavê ou pra comer?\""
+  },
+  {
+   "id": "2c",
+   "quem": "prot",
+   "cena": 2,
+   "inicio": 12.9,
+   "fim": 13.54,
+   "texto": "\"PORRA, TIO!\""
+  },
+  {
+   "id": "3a",
+   "quem": "narr",
+   "cena": 3,
+   "inicio": 13.84,
+   "fim": 17.97,
+   "texto": "Aí chega sua tia, com aquele sorriso de quem vai acabar com sua autoestima..."
+  },
+  {
+   "id": "3b",
+   "quem": "tia",
+   "cena": 3,
+   "inicio": 18.09,
+   "fim": 19.02,
+   "texto": "\"E as namoradinhas?\""
+  },
+  {
+   "id": "3c",
+   "quem": "prot",
+   "cena": 3,
+   "inicio": 19.94,
+   "fim": 20.88,
+   "texto": "\"NÃO TEM, CARALHO!\""
+  },
+  {
+   "id": "4a",
+   "quem": "narr",
+   "cena": 4,
+   "inicio": 21.18,
+   "fim": 25.61,
+   "texto": "Mas o verdadeiro demônio da noite é aquela velha desgraçada que aparece com arroz e uva-passa."
+  },
+  {
+   "id": "4b",
+   "quem": "prot",
+   "cena": 4,
+   "inicio": 25.73,
+   "fim": 28.72,
+   "texto": "\"ISSO NÃO É COMIDA, É UM CRIME CONTRA A HUMANIDADE!\""
+  },
+  {
+   "id": "5a",
+   "quem": "narr",
+   "cena": 5,
+   "inicio": 29.02,
+   "fim": 40.3,
+   "texto": "Enquanto isso, seu primo está pulando no sofá igual um animal descontrolado, seu avô está roncando mais que uma moto velha e seu tio já está bêbado contando que quase virou jogador de futebol em 1987."
+  },
+  {
+   "id": "6a",
+   "quem": "narr",
+   "cena": 6,
+   "inicio": 40.6,
+   "fim": 43.12,
+   "texto": "Você finalmente pega seu prato e sua mãe solta:"
+  },
+  {
+   "id": "6b",
+   "quem": "mae",
+   "cena": 6,
+   "inicio": 43.24,
+   "fim": 44.76,
+   "texto": "\"Deixa um pouco pros outros!\""
+  },
+  {
+   "id": "6c",
+   "quem": "prot",
+   "cena": 6,
+   "inicio": 44.88,
+   "fim": 49.34,
+   "texto": "\"VAI TOMAR NO CU! EU TRABALHEI O ANO INTEIRO PRA COMER TRÊS PEDAÇOS DE CARNE!\""
+  },
+  {
+   "id": "7a",
+   "quem": "narr",
+   "cena": 7,
+   "inicio": 49.64,
+   "fim": 53.25,
+   "texto": "No fim, você olha pra árvore de Natal e faz um único pedido:"
+  },
+  {
+   "id": "7b",
+   "quem": "prot",
+   "cena": 7,
+   "inicio": 53.37,
+   "fim": 56.36,
+   "texto": "Papai Noel, me tira dessa família, pelo amor de Deus!"
+  }
+ ]
+}
