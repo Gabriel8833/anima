@@ -1,0 +1,97 @@
+{
+ "titulo": "Por que você não consegue fazer cócegas em si mesmo?",
+ "duracao": 55.9,
+ "narracao": [
+  {
+   "id": "1a",
+   "cena": 1,
+   "inicio": 0.5,
+   "fim": 4.21,
+   "texto": "Já tentou fazer cócegas em si mesmo? Pois é... não funciona."
+  },
+  {
+   "id": "1b",
+   "cena": 1,
+   "inicio": 4.46,
+   "fim": 6.2,
+   "texto": "Nem com as duas mãos."
+  },
+  {
+   "id": "2a",
+   "cena": 2,
+   "inicio": 6.75,
+   "fim": 8.81,
+   "texto": "O culpado é o seu cérebro."
+  },
+  {
+   "id": "2b",
+   "cena": 2,
+   "inicio": 9.06,
+   "fim": 14.08,
+   "texto": "Toda vez que você decide se mexer, ele já sabe exatamente o que vai acontecer."
+  },
+  {
+   "id": "3a",
+   "cena": 3,
+   "inicio": 14.63,
+   "fim": 18.99,
+   "texto": "Agora, quando outra pessoa faz cócegas em você, o toque chega sem aviso."
+  },
+  {
+   "id": "3b",
+   "cena": 3,
+   "inicio": 19.24,
+   "fim": 22.29,
+   "texto": "É surpresa total, e o cérebro reage com tudo!"
+  },
+  {
+   "id": "4a",
+   "cena": 4,
+   "inicio": 22.84,
+   "fim": 28.52,
+   "texto": "Isso acontece porque, ao mandar um comando para os músculos, o cérebro guarda uma cópia dessa ordem."
+  },
+  {
+   "id": "4b",
+   "cena": 4,
+   "inicio": 28.77,
+   "fim": 32.47,
+   "texto": "Com ela, ele prevê onde e quando o toque vai acontecer."
+  },
+  {
+   "id": "4c",
+   "cena": 4,
+   "inicio": 32.72,
+   "fim": 36.43,
+   "texto": "Se a previsão bate com a sensação real, a surpresa diminui."
+  },
+  {
+   "id": "5a",
+   "cena": 5,
+   "inicio": 36.98,
+   "fim": 42.0,
+   "texto": "Então, quando você tenta fazer cócegas em si mesmo, o cérebro já viu esse filme."
+  },
+  {
+   "id": "5b",
+   "cena": 5,
+   "inicio": 42.25,
+   "fim": 46.61,
+   "texto": "Você ainda sente o toque, mas, sem a surpresa, a graça vai embora."
+  },
+  {
+   "id": "6a",
+   "cena": 6,
+   "inicio": 47.16,
+   "fim": 50.89,
+   "texto": "Resumindo: seu cérebro é tão bom em prever o futuro..."
+  },
+  {
+   "id": "6b",
+   "cena": 6,
+   "inicio": 51.14,
+   "fim": 52.88,
+   "texto": "que estraga a própria piada."
+  }
+ ]
+}
