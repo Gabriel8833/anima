@@ -1,0 +1,90 @@
+{
+ "titulo": "Paralisia do sono",
+ "duracao": 59.8,
+ "narracao": [
+  {
+   "id": "1a",
+   "cena": 1,
+   "inicio": 0.8,
+   "fim": 7.25,
+   "texto": "Imagine acordar de madrugada, abrir os olhos e perceber que existe alguém parado no canto do seu quarto..."
+  },
+  {
+   "id": "2a",
+   "cena": 2,
+   "inicio": 7.75,
+   "fim": 12.85,
+   "texto": "Você tenta gritar, levantar ou mexer um dedo... mas seu corpo simplesmente não responde."
+  },
+  {
+   "id": "3a",
+   "cena": 3,
+   "inicio": 13.35,
+   "fim": 16.84,
+   "texto": "Você está acordado, mas completamente preso dentro do próprio corpo."
+  },
+  {
+   "id": "3b",
+   "cena": 3,
+   "inicio": 17.14,
+   "fim": 19.27,
+   "texto": "Isso se chama paralisia do sono."
+  },
+  {
+   "id": "4a",
+   "cena": 4,
+   "inicio": 19.77,
+   "fim": 27.33,
+   "texto": "Durante uma fase do sono chamada REM, seu cérebro bloqueia temporariamente os movimentos dos músculos para impedir que você encene seus sonhos."
+  },
+  {
+   "id": "4b",
+   "cena": 4,
+   "inicio": 27.63,
+   "fim": 31.12,
+   "texto": "Mas, às vezes, sua consciência desperta antes desse bloqueio desaparecer."
+  },
+  {
+   "id": "5a",
+   "cena": 5,
+   "inicio": 31.62,
+   "fim": 34.09,
+   "texto": "E é aí que começa o pesadelo."
+  },
+  {
+   "id": "5b",
+   "cena": 5,
+   "inicio": 34.39,
+   "fim": 43.31,
+   "texto": "Seu cérebro pode produzir alucinações tão realistas que você sente uma presença no quarto, escuta ruídos ou até enxerga uma figura se aproximando da sua cama."
+  },
+  {
+   "id": "6a",
+   "cena": 6,
+   "inicio": 43.81,
+   "fim": 46.62,
+   "texto": "A experiência pode durar segundos ou alguns minutos."
+  },
+  {
+   "id": "6b",
+   "cena": 6,
+   "inicio": 46.92,
+   "fim": 51.08,
+   "texto": "E quando finalmente consegue se mexer, aquela presença assustadora pode simplesmente desaparecer."
+  },
+  {
+   "id": "7a",
+   "cena": 7,
+   "inicio": 51.58,
+   "fim": 52.7,
+   "texto": "O mais assustador?"
+  },
+  {
+   "id": "7b",
+   "cena": 7,
+   "inicio": 53.3,
+   "fim": 57.47,
+   "texto": "Você não precisa estar sonhando para sentir que está vivendo um pesadelo."
+  }
+ ]
+}
