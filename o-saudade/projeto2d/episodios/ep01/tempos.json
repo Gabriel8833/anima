@@ -1,0 +1,76 @@
+{
+ "titulo": "Por que sentimos saudade de momentos que nem aproveitamos direito?",
+ "duracao": 59.1,
+ "narracao": [
+  {
+   "id": "1a",
+   "cena": 1,
+   "inicio": 0.9,
+   "fim": 5.14,
+   "texto": "Sabe aquela época em que você não via a hora de crescer?"
+  },
+  {
+   "id": "2a",
+   "cena": 2,
+   "inicio": 5.69,
+   "fim": 11.61,
+   "texto": "Aquelas tardes brincando na rua, as conversas sem sentido com os amigos, os domingos em família..."
+  },
+  {
+   "id": "3a",
+   "cena": 3,
+   "inicio": 12.16,
+   "fim": 17.08,
+   "texto": "Naquele momento, tudo parecia tão normal que você nem percebia o quanto era especial."
+  },
+  {
+   "id": "3b",
+   "cena": 3,
+   "inicio": 17.43,
+   "fim": 18.91,
+   "texto": "Mas o tempo passou."
+  },
+  {
+   "id": "4a",
+   "cena": 4,
+   "inicio": 19.46,
+   "fim": 25.77,
+   "texto": "Os amigos seguiram caminhos diferentes, as brincadeiras acabaram e até aqueles lugares que você frequentava parecem diferentes agora."
+  },
+  {
+   "id": "5a",
+   "cena": 5,
+   "inicio": 26.32,
+   "fim": 32.28,
+   "texto": "E o mais estranho é que você sente saudade de momentos que, na época, nem aproveitou direito."
+  },
+  {
+   "id": "6a",
+   "cena": 6,
+   "inicio": 32.83,
+   "fim": 36.03,
+   "texto": "Isso acontece porque nossa memória não guarda apenas acontecimentos."
+  },
+  {
+   "id": "6b",
+   "cena": 6,
+   "inicio": 36.38,
+   "fim": 40.97,
+   "texto": "Ela também está ligada às emoções e aos significados que damos a eles."
+  },
+  {
+   "id": "7a",
+   "cena": 7,
+   "inicio": 41.52,
+   "fim": 46.79,
+   "texto": "Às vezes, só percebemos o valor de uma fase quando ela já ficou para trás."
+  },
+  {
+   "id": "7b",
+   "cena": 7,
+   "inicio": 47.14,
+   "fim": 56.55,
+   "texto": "E talvez a parte mais triste de crescer seja descobrir que alguns dos dias mais felizes da sua vida estavam acontecendo enquanto você só esperava pelo amanhã."
+  }
+ ]
+}
