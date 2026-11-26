@@ -1,0 +1,97 @@
+{
+ "titulo": "Por que você entra em um cômodo e esquece o que foi fazer?",
+ "duracao": 58.3,
+ "narracao": [
+  {
+   "id": "1a",
+   "cena": 1,
+   "inicio": 0.4,
+   "fim": 4.94,
+   "texto": "Você já entrou em um cômodo e simplesmente esqueceu o que foi fazer lá?"
+  },
+  {
+   "id": "2a",
+   "cena": 2,
+   "inicio": 5.69,
+   "fim": 8.32,
+   "texto": "Você estava com um objetivo, uma missão..."
+  },
+  {
+   "id": "2b",
+   "cena": 2,
+   "inicio": 8.54,
+   "fim": 11.18,
+   "texto": "e, do nada, seu cérebro decidiu pedir demissão."
+  },
+  {
+   "id": "3a",
+   "cena": 3,
+   "inicio": 11.68,
+   "fim": 15.27,
+   "texto": "Você para na porta, olha para os lados e tenta lembrar:"
+  },
+  {
+   "id": "3b",
+   "cena": 3,
+   "inicio": 15.49,
+   "fim": 17.49,
+   "texto": "\"Que porra eu vim fazer aqui?\""
+  },
+  {
+   "id": "4a",
+   "cena": 4,
+   "inicio": 17.99,
+   "fim": 22.54,
+   "texto": "Mas calma, isso não significa que você está ficando velho ou perdendo a memória."
+  },
+  {
+   "id": "4b",
+   "cena": 4,
+   "inicio": 22.76,
+   "fim": 26.67,
+   "texto": "Existe uma explicação curiosa para isso: o efeito da mudança de ambiente."
+  },
+  {
+   "id": "5a",
+   "cena": 5,
+   "inicio": 27.17,
+   "fim": 34.25,
+   "texto": "Quando você atravessa uma porta e entra em outro cômodo, seu cérebro pode interpretar isso como o início de um novo episódio."
+  },
+  {
+   "id": "5b",
+   "cena": 5,
+   "inicio": 34.47,
+   "fim": 39.33,
+   "texto": "Isso pode dificultar o acesso à informação que estava na sua memória de curto prazo."
+  },
+  {
+   "id": "6a",
+   "cena": 6,
+   "inicio": 39.83,
+   "fim": 44.38,
+   "texto": "É como se o cérebro fechasse uma aba e esquecesse o que estava fazendo."
+  },
+  {
+   "id": "7a",
+   "cena": 7,
+   "inicio": 44.88,
+   "fim": 46.25,
+   "texto": "E sabe o pior?"
+  },
+  {
+   "id": "7b",
+   "cena": 7,
+   "inicio": 46.72,
+   "fim": 51.58,
+   "texto": "Às vezes, basta voltar para o cômodo anterior para lembrar exatamente o que você queria!"
+  },
+  {
+   "id": "7c",
+   "cena": 7,
+   "inicio": 51.8,
+   "fim": 55.71,
+   "texto": "Parabéns, seu cérebro acabou de te dar um Windows 98."
+  }
+ ]
+}
