@@ -1,0 +1,104 @@
+{
+ "titulo": "Por que sentimos vontade de rir em momentos sérios?",
+ "duracao": 56.0,
+ "narracao": [
+  {
+   "id": "1a",
+   "cena": 1,
+   "inicio": 0.35,
+   "fim": 4.14,
+   "texto": "Você já tentou segurar uma risada em um momento extremamente sério..."
+  },
+  {
+   "id": "1b",
+   "cena": 1,
+   "inicio": 4.34,
+   "fim": 6.35,
+   "texto": "e quanto mais tentava, pior ficava?"
+  },
+  {
+   "id": "2a",
+   "cena": 2,
+   "inicio": 6.9,
+   "fim": 9.54,
+   "texto": "Seu cérebro parece um completo desgraçado nessas horas."
+  },
+  {
+   "id": "3a",
+   "cena": 3,
+   "inicio": 10.09,
+   "fim": 14.2,
+   "texto": "Imagine você no meio de um funeral, todo mundo chorando, clima pesado..."
+  },
+  {
+   "id": "3b",
+   "cena": 3,
+   "inicio": 14.4,
+   "fim": 17.35,
+   "texto": "e do nada você lembra de uma piada idiota."
+  },
+  {
+   "id": "4a",
+   "cena": 4,
+   "inicio": 17.9,
+   "fim": 21.38,
+   "texto": "Você começa a tremer, morde a boca, olha pro chão..."
+  },
+  {
+   "id": "4b",
+   "cena": 4,
+   "inicio": 21.58,
+   "fim": 23.27,
+   "texto": "e parece que vai explodir."
+  },
+  {
+   "id": "5a",
+   "cena": 5,
+   "inicio": 23.82,
+   "fim": 26.77,
+   "texto": "Mas calma, você não é necessariamente insensível ou maluco."
+  },
+  {
+   "id": "5b",
+   "cena": 5,
+   "inicio": 26.97,
+   "fim": 29.93,
+   "texto": "Isso acontece porque o riso nem sempre significa felicidade."
+  },
+  {
+   "id": "6a",
+   "cena": 6,
+   "inicio": 30.48,
+   "fim": 35.34,
+   "texto": "Às vezes, ele é uma resposta do cérebro ao nervosismo, à tensão e ao desconforto."
+  },
+  {
+   "id": "7a",
+   "cena": 7,
+   "inicio": 35.89,
+   "fim": 39.37,
+   "texto": "É como se seu cérebro estivesse tentando descarregar o estresse..."
+  },
+  {
+   "id": "7b",
+   "cena": 7,
+   "inicio": 39.57,
+   "fim": 41.89,
+   "texto": "só que escolheu a pior hora possível."
+  },
+  {
+   "id": "7c",
+   "cena": 7,
+   "inicio": 42.09,
+   "fim": 46.0,
+   "texto": "Por isso, quanto mais você tenta não rir, mais difícil pode ficar."
+  },
+  {
+   "id": "7d",
+   "cena": 7,
+   "inicio": 46.2,
+   "fim": 50.42,
+   "texto": "Seu cérebro simplesmente escolheu o modo palhaço no pior momento da sua vida."
+  }
+ ]
+}
