@@ -1,0 +1,97 @@
+{
+ "titulo": "Misandria",
+ "duracao": 56.4,
+ "narracao": [
+  {
+   "id": "1a",
+   "cena": 1,
+   "inicio": 0.9,
+   "fim": 3.08,
+   "texto": "Você já ouviu falar em misandria?"
+  },
+  {
+   "id": "2a",
+   "cena": 2,
+   "inicio": 3.68,
+   "fim": 9.26,
+   "texto": "Imagine um garoto entrando em uma sala e sendo julgado antes mesmo de abrir a boca."
+  },
+  {
+   "id": "2b",
+   "cena": 2,
+   "inicio": 9.56,
+   "fim": 11.74,
+   "texto": "Alguém olha para ele e diz:"
+  },
+  {
+   "id": "2c",
+   "cena": 2,
+   "inicio": 12.04,
+   "fim": 13.55,
+   "texto": "Homem é tudo igual!"
+  },
+  {
+   "id": "3a",
+   "cena": 3,
+   "inicio": 14.15,
+   "fim": 16.33,
+   "texto": "Ele tenta conversar, mas é interrompido."
+  },
+  {
+   "id": "3b",
+   "cena": 3,
+   "inicio": 16.63,
+   "fim": 20.51,
+   "texto": "Tenta se defender, mas escuta que está apenas provando o ponto."
+  },
+  {
+   "id": "4a",
+   "cena": 4,
+   "inicio": 21.11,
+   "fim": 27.36,
+   "texto": "Agora, imagine isso acontecendo repetidamente, até que ele comece a ser tratado como culpado simplesmente por ser homem."
+  },
+  {
+   "id": "4b",
+   "cena": 4,
+   "inicio": 27.66,
+   "fim": 30.52,
+   "texto": "Isso representa uma forma de preconceito chamada misandria."
+  },
+  {
+   "id": "5a",
+   "cena": 5,
+   "inicio": 31.12,
+   "fim": 36.7,
+   "texto": "A misandria é a aversão, o desprezo ou a hostilidade direcionada aos homens por serem homens."
+  },
+  {
+   "id": "5b",
+   "cena": 5,
+   "inicio": 37.0,
+   "fim": 40.88,
+   "texto": "Mas existe uma diferença importante: criticar atitudes machistas não é misandria."
+  },
+  {
+   "id": "6a",
+   "cena": 6,
+   "inicio": 41.48,
+   "fim": 46.03,
+   "texto": "O problema é generalizar e tratar todos os homens como se fossem iguais."
+  },
+  {
+   "id": "6b",
+   "cena": 6,
+   "inicio": 46.33,
+   "fim": 49.87,
+   "texto": "Assim como qualquer preconceito, isso merece ser compreendido e combatido."
+  },
+  {
+   "id": "6c",
+   "cena": 6,
+   "inicio": 50.17,
+   "fim": 53.37,
+   "texto": "Porque respeito não deveria depender do gênero de ninguém."
+  }
+ ]
+}
