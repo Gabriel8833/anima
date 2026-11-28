@@ -1,0 +1,83 @@
+{
+ "titulo": "Como é perceber que seus pais também estão envelhecendo?",
+ "duracao": 56.9,
+ "narracao": [
+  {
+   "id": "1a",
+   "cena": 1,
+   "inicio": 0.8,
+   "fim": 4.29,
+   "texto": "Quando somos crianças, acreditamos que nossos pais são praticamente invencíveis."
+  },
+  {
+   "id": "2a",
+   "cena": 2,
+   "inicio": 4.84,
+   "fim": 9.01,
+   "texto": "Eles parecem saber de tudo, resolver qualquer problema e nunca se cansar."
+  },
+  {
+   "id": "3a",
+   "cena": 3,
+   "inicio": 9.56,
+   "fim": 11.41,
+   "texto": "Mas o tempo passa..."
+  },
+  {
+   "id": "3b",
+   "cena": 3,
+   "inicio": 11.71,
+   "fim": 17.24,
+   "texto": "E um dia você percebe que seu pai já não tem a mesma disposição de antes."
+  },
+  {
+   "id": "3c",
+   "cena": 3,
+   "inicio": 17.54,
+   "fim": 20.69,
+   "texto": "Que sua mãe reclama mais das dores nas costas."
+  },
+  {
+   "id": "4a",
+   "cena": 4,
+   "inicio": 21.24,
+   "fim": 26.76,
+   "texto": "Que os cabelos estão ficando brancos e que algumas coisas simples começaram a exigir mais esforço."
+  },
+  {
+   "id": "5a",
+   "cena": 5,
+   "inicio": 27.31,
+   "fim": 33.85,
+   "texto": "E o mais estranho é que você continua enxergando neles aquelas pessoas que cuidavam de você quando era pequeno."
+  },
+  {
+   "id": "6a",
+   "cena": 6,
+   "inicio": 34.4,
+   "fim": 37.89,
+   "texto": "Só que agora o tempo também está passando por eles."
+  },
+  {
+   "id": "6b",
+   "cena": 6,
+   "inicio": 38.19,
+   "fim": 43.38,
+   "texto": "A verdade é que, enquanto você estava ocupado tentando crescer, seus pais também estavam envelhecendo."
+  },
+  {
+   "id": "7a",
+   "cena": 7,
+   "inicio": 43.93,
+   "fim": 47.42,
+   "texto": "Então, se ainda pode, aproveite os momentos ao lado deles."
+  },
+  {
+   "id": "7b",
+   "cena": 7,
+   "inicio": 47.72,
+   "fim": 53.92,
+   "texto": "Porque um dia, até os abraços mais comuns podem se tornar lembranças que você daria tudo para reviver."
+  }
+ ]
+}
