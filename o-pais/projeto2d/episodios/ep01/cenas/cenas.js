@@ -70,7 +70,7 @@ export const c2 = {
           st.mundo(cc => { Pa.reset(); Pa.x = x; Pa.y = CH; Pa.piscar = piscada(t); Pa.exp = 'feliz'; Pa.boca = 'sorriso'; Pa.olhar = [1, 0]; Pa.walk = t * 9; Pa.ik(-1, -80, -110); Pa.ik(1, 80, -110); Pa.draw(cc, t); const [lx, ly] = Pa.mao(-1), [rx, ry] = Pa.mao(1); sacola(cc, lx, ly + 10); sacola(cc, rx, ry + 10); F.reset(); F.x = x - 200; F.y = CH + 20; anda(F, t, 14); F.exp = 'feliz'; F.boca = 'aberta'; F.olhar = [1, -0.4]; F.draw(cc, t); });
         } else { // abraço depois do machucado
           st.setCam(560, 1480, 1.7); quintal(st, t, { sol: 1 });
-          st.mundo(cc => { Ma.reset(); Ma.x = 600; Ma.y = CH; Ma.lean = 0.2; Ma.piscar = piscada(t, 3); Ma.exp = 'feliz'; Ma.boca = 'sorriso'; Ma.olhar = [-1, 0.6]; Ma.draw(cc, t); F.reset(); F.x = 470; F.y = CH + 20; F.exp = q < 0.4 ? 'preocupado' : 'feliz'; F.boca = q < 0.4 ? 'triste' : 'sorriso'; F.olhar = [1, -0.6]; F.draw(cc, t); rrect(cc, 456, CH - 60, 26, 14, 4, '#f2d6b0', { lw: 3 }); Ma.frente = [true, true]; Ma.ik(-1, -170, -170); Ma.ik(1, -90, -190); Ma.drawArms(cc, t); });
+          st.mundo(cc => { Ma.reset(); Ma.x = 600; Ma.y = CH; Ma.lean = 0.2; Ma.piscar = piscada(t, 3); Ma.exp = 'feliz'; Ma.boca = 'sorriso'; Ma.olhar = [-1, 0.6]; Ma.frente = [true, true]; Ma.ik(-1, -150, -95); Ma.ik(1, -40, -120); Ma.semBracos = true; Ma.draw(cc, t); Ma.semBracos = false; F.reset(); F.x = 470; F.y = CH + 20; F.exp = q < 0.4 ? 'preocupado' : 'feliz'; F.boca = q < 0.4 ? 'triste' : 'sorriso'; F.olhar = [1, -0.6]; F.draw(cc, t); rrect(cc, 456, CH - 60, 26, 14, 4, '#f2d6b0', { lw: 3 }); Ma.drawArms(cc, t); });
         }
         memoria(st, 1);
         const tr = Math.min(...[1, 2, 3].map(k => Math.abs(t - (B[1] + k * d))));
@@ -217,7 +217,7 @@ export const c5 = {
           cozinhaCasa(st, t, { quente: k });
           st.mundo(cc => {
             cc.save(); cc.globalAlpha = 1 - k * 0.6; Mv.reset(); Mv.x = 760; Mv.y = CH - 20; Mv.piscar = piscada(t, 3); respira(Mv, t); Mv.exp = 'feliz'; Mv.boca = 'sorriso'; Mv.olhar = [-0.6, 0]; Mv.draw(cc, t); cc.restore();
-            if (k > 0.01) { cc.save(); cc.globalAlpha = k * 0.85; Mj.reset(); Mj.x = 640; Mj.y = CH; Mj.lean = 0.2; Mj.exp = 'feliz'; Mj.boca = 'sorriso'; Mj.olhar = [-1, 0.6]; Mj.draw(cc, t); F.reset(); F.x = 510; F.y = CH + 20; F.exp = 'feliz'; F.boca = 'sorriso'; F.olhar = [1, -0.6]; F.draw(cc, t); Mj.frente = [true, true]; Mj.ik(-1, -170, -170); Mj.ik(1, -90, -190); Mj.drawArms(cc, t); cc.restore(); }
+            if (k > 0.01) { cc.save(); cc.globalAlpha = k * 0.85; Mj.reset(); Mj.x = 640; Mj.y = CH; Mj.lean = 0.2; Mj.exp = 'feliz'; Mj.boca = 'sorriso'; Mj.olhar = [-1, 0.6]; Mj.frente = [true, true]; Mj.ik(-1, -150, -95); Mj.ik(1, -40, -120); Mj.semBracos = true; Mj.draw(cc, t); Mj.semBracos = false; F.reset(); F.x = 510; F.y = CH + 20; F.exp = 'feliz'; F.boca = 'sorriso'; F.olhar = [1, -0.6]; F.draw(cc, t); Mj.drawArms(cc, t); cc.restore(); }
           });
           memoria(st, k); suave(st, 1 - k);
           return;
@@ -297,11 +297,12 @@ export const c7 = {
             sofaCasa(cc, 540);
             P.reset(); P.x = 400; P.y = CH - 20; P.piscar = piscada(t, 3); respira(P, t); P.exp = abraca > 0.5 ? 'fechado' : 'feliz'; P.boca = 'sorriso'; P.olhar = [1, 0];
             M.reset(); M.x = 690; M.y = CH - 20; M.piscar = piscada(t, 3.4, 1); respira(M, t, 1); M.exp = 'feliz'; M.boca = 'sorriso'; M.olhar = [-1, 0.2];
-            P.draw(cc, t); M.draw(cc, t);
+            if (abraca > 0) { const hy = adultoF ? -125 : -80; P.frente = [true, true]; P.ik(1, lerp(66, 105, abraca), lerp(-150, hy, abraca)); M.frente = [true, true]; M.ik(-1, lerp(-66, -110, abraca), lerp(-150, hy - 10, abraca) + Math.sin(t * 3) * 6 * abraca); P.semBracos = M.semBracos = true; }
+            P.draw(cc, t); M.draw(cc, t); P.semBracos = M.semBracos = false;
             Fi.reset(); Fi.x = 545; Fi.y = adultoF ? lerp(CH - 60, CH + 20, levanta) : CH + 30; Fi.piscar = piscada(t, 4); Fi.exp = abraca > 0.5 ? 'fechado' : 'feliz'; Fi.boca = 'sorriso';
-            if (abraca > 0) { Fi.frente = [true, true]; Fi.ik(-1, lerp(-66, -150, abraca), lerp(-150, -230, abraca)); Fi.ik(1, lerp(66, 150, abraca), lerp(-150, -230, abraca)); }
+            if (abraca > 0) { Fi.frente = [true, true]; Fi.ik(-1, lerp(-66, -130, abraca), lerp(-150, -195, abraca)); Fi.ik(1, lerp(66, 130, abraca), lerp(-150, -195, abraca)); }
             Fi.draw(cc, t);
-            if (abraca > 0) { P.frente = [true, true]; P.ik(1, 140, -210); M.frente = [true, true]; M.ik(-1, lerp(-66, -150, abraca), lerp(-150, -330, abraca) + Math.sin(t * 3) * 8 * abraca); P.drawArms(cc, t); M.drawArms(cc, t); }
+            if (abraca > 0) { P.drawArms(cc, t); M.drawArms(cc, t); }
             cc.restore();
           });
         };

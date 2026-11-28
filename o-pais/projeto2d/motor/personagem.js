@@ -81,7 +81,7 @@ export class Personagem {
     }
     d.extraTras?.(c, this, t);
     // braços e mãos (os marcados em this.frente são desenhados depois da cabeça)
-    for (const side of [-1, 1]) if (!this.frente?.[side < 0 ? 0 : 1]) this.desenharBraco(c, side, t);
+    for (const side of [-1, 1]) if (!this.semBracos && !this.frente?.[side < 0 ? 0 : 1]) this.desenharBraco(c, side, t);
     // cabeça
     const kc = d.cab || 1; c.save(); c.translate(0, HEAD_Y + 65 + this.headY); c.rotate(this.headTilt); c.translate(0, -65 * kc); c.scale(kc, kc);
     d.atrasCabeca?.(c, this, t);
@@ -91,7 +91,7 @@ export class Personagem {
     this.rosto(c, t);
     d.cabeloFrente?.(c, this, t);
     c.restore();
-    for (const side of [-1, 1]) if (this.frente?.[side < 0 ? 0 : 1]) this.desenharBraco(c, side, t);
+    for (const side of [-1, 1]) if (!this.semBracos && this.frente?.[side < 0 ? 0 : 1]) this.desenharBraco(c, side, t);
     d.extraFrente?.(c, this, t);
     c.restore();
   }
